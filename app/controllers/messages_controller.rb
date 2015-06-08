@@ -1,8 +1,8 @@
 class MessagesController < ApplicationController
   include MessagesHelper
 
-  before_action :init_messages, only: [:send_message]
-  #prepend_before_filter :authenticate_user!
+  before_action :init_messages, only: [:send_message, :api_send_message]
+  prepend_before_filter :authenticate_user!, except: [:api_send_message]
 
   layout "administrator"
 
@@ -45,45 +45,26 @@ class MessagesController < ApplicationController
     render :new
   end
 
+  def api_send_message
+    @profile = Profile.find_by_name("Numéro unique")
+    @message = params[:message]
+    @number = params[:msisdn]
+    @error = false
+    @status = 1
+
+    validate_custom_number
+    validate_message
+
+    unless @error
+      @sent_messages = 0
+      @failed_messages = 0
+      deliver_messages
+    end
+
+    render text: @status
+  end
+
   def deliver_messages
-    if @profile.name == "PMU"
-      @subscribers = Subscriber.where("profile_id = #{Profile.pmu_profile_id} AND last_registration_date > TIMESTAMP '#{DateTime.now}' -  INTERVAL ' 1 day' * last_registration_period")
-      set_transaction("Envoi de message aux abonnés du PMU.", @subscribers.count)
-      deliver_generic_message
-    end
-
-    if @profile.name == "LOTO BONHEUR"
-      @subscribers = Subscriber.where("profile_id = #{Profile.loto_bonheur_profile_id} AND last_registration_date > TIMESTAMP '#{DateTime.now}' -  INTERVAL ' 1 day' * last_registration_period")
-      set_transaction("Envoi de message aux abonnés du LOTO BONHEUR.", @subscribers.count)
-      deliver_generic_message
-    end
-
-=begin
-    if @profile.name == "Quinté"
-      @subscribers = Subscriber.where("profile_id = 1 AND last_registration_date > TIMESTAMP '#{DateTime.now}' -  INTERVAL ' 1 day' * last_registration_period")
-      set_transaction("Envoi de message aux abonnés du Quinté.", @subscribers.count)
-      deliver_generic_message
-    end
-=end
-
-    if @profile.name == "Nouveaux inscrits"
-      @subscribers = Subscriber.where("received_messages = NULL or received_messages = 0")
-      set_transaction("Envoi de message aux nouveaux inscrits.", @subscribers.count)
-      deliver_generic_message
-    end
-
-    if @profile.name == "Participants en cours"
-      @subscribers = Subscriber.where("last_registration_date > TIMESTAMP '#{DateTime.now}' -  INTERVAL ' 1 day' * last_registration_period")
-      set_transaction("Envoi de message aux partcipants en cours.", @subscribers.count)
-      deliver_generic_message
-    end
-
-    if @profile.name == "Participants non actifs"
-      @subscribers = Subscriber.where("last_registration_date < TIMESTAMP '#{DateTime.now}' -  INTERVAL ' 1 day' * last_registration_period")
-      set_transaction("Envoi de message aux participants non actifs", @subscribers.count)
-      deliver_generic_message
-    end
-
     if @profile.name == "Numéro unique"
       set_transaction("Envoi de message à un numéro.", 1)
       send_message_request(@number.split.first)
@@ -102,22 +83,7 @@ class MessagesController < ApplicationController
     @transaction = SmsTransaction.create(started_at: DateTime.now, profile_id: @profile.id, description: description, number_of_messages: subscribers_count)
   end
 
-  # Handle message delivery for: PMU, LOTO BONHEUR, Nouveaux inscrits, Clients actifs, clients non actifs
-  def deliver_generic_message
-    unless @subscribers.blank?
 
-      Thread.new do
-        send_message_job(@subscribers)
-        if (ActiveRecord::Base.connection && ActiveRecord::Base.connection.active?)
-          ActiveRecord::Base.connection.close
-        end
-      end
-
-      @success_message = messages!("Les messages ont été envoyés. Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
-    else
-      @error_message << "Aucun message n'a été envoyé car il n'y avait aucun abonné dans la liste correspondant à vos critères.<br />"
-    end
-  end
 
   def deliver_message_to_excel_list
     Thread.new do
@@ -133,28 +99,22 @@ class MessagesController < ApplicationController
         ActiveRecord::Base.connection.close
       end
     end
-    #if (@sent_messages + @failed_messages) == 0
-      #@error_message << "Le fichier ne contenait aucun numéro valide.<br />"
-    #else
-      @success_message = messages!("Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
-    #end
+    @success_message = messages!("Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
   end
 
   def send_message_job(subscribers)
-    #10.times do
-      subscribers.each do |subscriber|
-        @subscriber = subscriber
-        send_message_request(@subscriber.msisdn)
-      end
-      @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages)
-    #end
+    subscribers.each do |subscriber|
+      @subscriber = subscriber
+      send_message_request(@subscriber.msisdn)
+    end
+    @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages)
   end
 
   def send_message_request(msisdn)
     if msisdn.match(/\./)
       msisdn = "22" + msisdn[0..8]
     end
-    request = Typhoeus::Request.new("http://smsplus3.routesms.com:8080/bulksms/bulksms?username=ngser1&password=abcd1234&type=0&dlr=1&destination=#{msisdn}&source=LONACI&message=#{URI.escape(@message)}", followlocation: true, method: :get)
+    request = Typhoeus::Request.new("http://smsplus3.routesms.com:8080/bulksms/bulksms?username=ngser1&password=abcd1234&type=0&dlr=1&destination=#{msisdn}&source=PAYMONEY&message=#{URI.escape(@message)}", followlocation: true, method: :get)
 
     request.on_complete do |response|
       if response.success?
@@ -183,13 +143,15 @@ class MessagesController < ApplicationController
     if @message.blank?
       @error_message << "Le contenu du message ne peut pas être vide.<br />"
       @error = true
+      @status = "3" # Le message est vide
     end
   end
 
   def validate_custom_number
-    if @number.blank? || not_a_number?(@number) || @number.length < 8 || @number.length > 13
+    if @number.blank? || not_a_number?(@number) || (@number.length != 11)
       @error_message << "Veuillez entrer un numéro de téléphone valide.<br />"
       @error = true
+      @status = "2" # Le numéro de téléphone n'est pas valide
     end
   end
 

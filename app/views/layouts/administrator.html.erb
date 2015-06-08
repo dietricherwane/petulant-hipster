@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  <title>Quick Win::Administrator</title>
+  <title>SmsGateway::NGSER::Administrator</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -25,14 +25,6 @@
 
     <!-- Left navigation -->
     <ul id="menu" class="nav">
-        <li class="ui">
-          <a href="#" class="<%= @profile_active ? @profile_active : 'exp inactive' %>" id = "<%= @profile_current_id %>"><span>Profils</span><strong>3</strong></a>
-          <ul class = "sub">
-            <li class = "<%= @pmu_active_subclass %>"><%= link_to 'PMU', pmu_subscribers_path %></li>
-            <li class = "<%= @loto_bonheur_active_subclass %>"><%= link_to 'Loto Bonheur', loto_bonheur_subscribers_path %></li>
-            <li class = "last <%= @load_subscribers_active_subclass %>"><%= link_to 'Charger une liste', subscribers_load_list_path %></li>
-          </ul>
-        </li>
         <li class="mail">
           <a href="#" class="<%= @message_active ? @message_active : 'exp inactive' %>" id = "<%= @message_current_id %>"><span>Messages</span><strong>1</strong></a>
           <ul class = "sub">
