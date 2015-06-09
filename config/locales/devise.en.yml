@@ -19,9 +19,9 @@ en:
       unconfirmed: "Vous devez confirmer votre compte avant de pouvoir vous connecter."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation de compte::QuickWin"
+        subject: "Confirmation de compte::SmsGateway"
       reset_password_instructions:
-        subject: "Réinitialisation de mot de passe::QuickWin"
+        subject: "Réinitialisation de mot de passe::SmsGateway"
       unlock_instructions:
         subject: "Unlock Instructions"
     omniauth_callbacks:
