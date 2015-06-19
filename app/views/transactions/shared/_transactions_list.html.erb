@@ -1,6 +1,7 @@
 <thead>
   <tr>
     <td>Profil</td>
+    <td>Service</td>
     <td>Date de début</td>
     <td>Date de fin</td>
     <td>Nombre total de messages</td>
@@ -16,6 +17,9 @@
         <% status = (transaction.ended_at.blank? ? 'taskD' : 'taskPr') %>
         <td class = "<%= status %>">
           <%= link_to transaction.profile.name, message_logs_path(transaction.id) %>
+        </td>
+        <td>
+          <%= transaction.sender_service %>
         </td>
         <td>
           <%= (transaction.started_at.strftime("%d-%m-%Y") rescue "") + " - " + (transaction.started_at.strftime("%Hh %Mmn") rescue "") %>

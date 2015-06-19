@@ -1,8 +1,8 @@
 class MessagesController < ApplicationController
   include MessagesHelper
 
-  before_action :init_messages, only: [:send_message, :api_send_message]
-  prepend_before_filter :authenticate_user!, except: [:api_send_message]
+  before_action :init_messages, only: [:send_message, :api_send_message, :filter_api_send_message]
+  prepend_before_filter :authenticate_user!, except: [:api_send_message, :filter_api_send_message]
 
   layout "administrator"
 
@@ -45,15 +45,33 @@ class MessagesController < ApplicationController
     render :new
   end
 
+  def filter_api_send_message
+    session[:authentication_token] = "0d1773a649e4c88bff44c49ec154615c"
+    session[:service] = params[:service]
+    session[:message] = params[:message]
+    session[:msisdn] = params[:msisdn]
+
+    if ["PayMoney"].include?(params[:service])
+      redirect_to request.base_url + "/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/#{session[:msisdn]}/#{session[:message]}"
+    else
+      render text: "4"
+    end
+  end
+
   def api_send_message
     @profile = Profile.find_by_name("Numéro unique")
-    @message = params[:message]
-    @number = params[:msisdn]
+    @message = session[:message]
+    @number = session[:msisdn]
+    @service = session[:service]
     @error = false
     @status = 0
 
-    validate_custom_number
-    validate_message
+    if session[:authentication_token] == "0d1773a649e4c88bff44c49ec154615c"
+      validate_custom_number
+      validate_message
+    else
+      @error = true
+    end
 
     unless @error
       @sent_messages = 0
@@ -80,7 +98,7 @@ class MessagesController < ApplicationController
   end
 
   def set_transaction(description, subscribers_count)
-    @transaction = SmsTransaction.create(started_at: DateTime.now, profile_id: @profile.id, description: description, number_of_messages: subscribers_count)
+    @transaction = SmsTransaction.create(started_at: DateTime.now, profile_id: @profile.id, description: description, number_of_messages: subscribers_count, sender_service: session[:service])
   end
 
 
@@ -114,7 +132,7 @@ class MessagesController < ApplicationController
     if msisdn.match(/\./)
       msisdn = "22" + msisdn[0..8]
     end
-    request = Typhoeus::Request.new("http://smsplus3.routesms.com:8080/bulksms/bulksms?username=ngser1&password=abcd1234&type=0&dlr=1&destination=#{msisdn}&source=PAYMONEY&message=#{URI.escape(@message)}", followlocation: true, method: :get)
+    request = Typhoeus::Request.new("http://smsplus3.routesms.com:8080/bulksms/bulksms?username=ngser1&password=abcd1234&type=0&dlr=1&destination=#{msisdn}&source=#{session[:service]}&message=#{URI.escape(@message)}", followlocation: true, method: :get)
 
     request.on_complete do |response|
       if response.success?
