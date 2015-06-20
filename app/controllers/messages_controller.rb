@@ -66,7 +66,7 @@ class MessagesController < ApplicationController
     @number = session[:msisdn]
     @service = session[:service]
     @error = false
-    @status = 0
+    @status = "0"
 
     if session[:authentication_token] == "0d1773a649e4c88bff44c49ec154615c"
       validate_custom_number
@@ -80,6 +80,8 @@ class MessagesController < ApplicationController
       @failed_messages = 0
       deliver_messages
     end
+
+    session[:authentication_token] = ""
 
     render text: @status
   end
@@ -144,7 +146,8 @@ class MessagesController < ApplicationController
           @sent_messages += 1
           @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: result[0], message_id: result[2])
         else
-          @status = "0"
+          #@status = "0"
+          @status = "6"
           @failed_messages += 1
           @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: result[0])
         end
