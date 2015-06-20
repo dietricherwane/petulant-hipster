@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'search' => 'search#index', as: :search
   post 'search/perform' => 'search#perform', as: :perform_search
   get 'search/perform' => 'search#index'
+
+  get "request_log" => "custom_logs#logs"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

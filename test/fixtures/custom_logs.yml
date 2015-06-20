@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender_service: MyText
+  message: MyText
+  msisdn: MyText
+
+two:
+  sender_service: MyText
+  message: MyText
+  msisdn: MyText

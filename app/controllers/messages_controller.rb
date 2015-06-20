@@ -51,6 +51,8 @@ class MessagesController < ApplicationController
     session[:message] = params[:message]
     session[:msisdn] = params[:msisdn]
 
+    CustomLog.create(sender_service: params[:service], message: params[:message], msisdn: params[:msisdn])
+
     if ["PayMoney"].include?(params[:service])
       redirect_to request.base_url + "/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/#{session[:msisdn]}/#{session[:message]}"
     else
