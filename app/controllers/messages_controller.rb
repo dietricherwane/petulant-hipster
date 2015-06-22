@@ -46,15 +46,15 @@ class MessagesController < ApplicationController
   end
 
   def filter_api_send_message
-    session[:authentication_token] = "0d1773a649e4c88bff44c49ec154615c"
-    session[:service] = params[:service]
-    session[:message] = params[:message]
-    session[:msisdn] = params[:msisdn]
+    @authentication_token = "0d1773a649e4c88bff44c49ec154615c"
+    @service = params[:service]
+    @message = params[:message]
+    @number = params[:msisdn]
 
     CustomLog.create(sender_service: params[:service], message: params[:message], msisdn: params[:msisdn])
 
-    if ["PayMoney"].include?(params[:service])
-      redirect_to request.base_url + "/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/#{session[:msisdn]}/#{session[:message]}"
+    if ["PayMoney"].include?(@service)
+      api_send_message
     else
       render text: "4"
     end
@@ -62,13 +62,10 @@ class MessagesController < ApplicationController
 
   def api_send_message
     @profile = Profile.find_by_name("Numéro unique")
-    @message = session[:message]
-    @number = session[:msisdn]
-    @service = session[:service]
     @error = false
     @status = "0"
 
-    if session[:authentication_token] == "0d1773a649e4c88bff44c49ec154615c"
+    if @authentication_token == "0d1773a649e4c88bff44c49ec154615c"
       validate_custom_number
       validate_message
     else
@@ -80,8 +77,6 @@ class MessagesController < ApplicationController
       @failed_messages = 0
       deliver_messages
     end
-
-    session[:authentication_token] = ""
 
     render text: @status
   end
