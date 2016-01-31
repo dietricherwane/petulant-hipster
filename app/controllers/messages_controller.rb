@@ -22,6 +22,7 @@ class MessagesController < ApplicationController
 
     unless @error
       @profile = Profile.find_by_id(@profile_id)
+      @service = "Paymoney"
       if @profile
         if @profile.name == "Numéro unique"
           validate_custom_number
@@ -65,6 +66,7 @@ class MessagesController < ApplicationController
     @error = false
     @status = "0"
 
+
     if @authentication_token == "0d1773a649e4c88bff44c49ec154615c"
       validate_custom_number
       validate_message
@@ -93,6 +95,7 @@ class MessagesController < ApplicationController
     if @profile.name == "Liste de numéros"
       set_transaction("Envoi de message à une liste de numéros.", 0)
       deliver_message_to_excel_list
+      puts "**************deliver to excel list"
     end
   end
 
@@ -103,10 +106,13 @@ class MessagesController < ApplicationController
 
 
   def deliver_message_to_excel_list
-    Thread.new do
+    puts "entering thread"
+    #Thread.new do
       @spreadsheet = Spreadsheet.open(@subscribers_file.path).worksheet(0)
+      puts "sheet opened"
       @spreadsheet.each do |row|
         msisdn = row[0].to_s
+        puts msisdn
         unless not_a_number?(msisdn) or msisdn.length < 11
           send_message_request(msisdn[-11,11])
         end
@@ -115,7 +121,7 @@ class MessagesController < ApplicationController
       if (ActiveRecord::Base.connection && ActiveRecord::Base.connection.active?)
         ActiveRecord::Base.connection.close
       end
-    end
+    #end
     @success_message = messages!("Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
   end
 
@@ -177,7 +183,7 @@ class MessagesController < ApplicationController
 
   # Make sure the user uploads an xls or xlsx file
   def validate_subscribers_file
-    if @subscribers_file.blank? || (@subscribers_file.content_type != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    if @subscribers_file.blank? || (@subscribers_file.content_type != "application/vnd.ms-excel")
       @error_message << "Veuillez choisir un fichier Excel contenant une liste de numéros.<br />"
       @error = true
     end
