@@ -48,16 +48,19 @@ class MessagesController < ApplicationController
 
   def filter_api_send_message
     @authentication_token = "0d1773a649e4c88bff44c49ec154615c"
-    @service = params[:service]
     @message = params[:message]
     @number = params[:msisdn]
+    @login = params[:login]
+    @password = params[:password]
+    @sender = params[:sender]
+    @service = Customer.where("login = ? AND password = ?", @login, @password).first.label rescue ""
 
-    CustomLog.create(sender_service: params[:service], message: params[:message], msisdn: params[:msisdn])
+    CustomLog.create(sender_service: "#{@service} | #{@login.to_s} | #{@password.to_s}", message: params[:message], msisdn: params[:msisdn])
 
-    if ["PayMoney"].include?(@service)
-      api_send_message
-    else
+    if !@login.blank? && @service.blank?
       render text: "4"
+    else
+      api_send_message
     end
   end
 
@@ -137,7 +140,7 @@ class MessagesController < ApplicationController
     if msisdn.match(/\./)
       msisdn = "22" + msisdn[0..8]
     end
-    request = Typhoeus::Request.new("http://smsplus3.routesms.com:8080/bulksms/bulksms?username=ngser1&password=abcd1234&type=0&dlr=1&destination=#{msisdn}&source=#{@service}&message=#{URI.escape(@message)}", followlocation: true, method: :get)
+    request = Typhoeus::Request.new("http://smsplus3.routesms.com:8080/bulksms/bulksms?username=ngser1&password=abcd1234&type=0&dlr=1&destination=#{msisdn}&source=#{@sender}&message=#{URI.escape(@message)}", followlocation: true, method: :get)
 
     request.on_complete do |response|
       if response.success?
@@ -183,7 +186,7 @@ class MessagesController < ApplicationController
 
   # Make sure the user uploads an xls or xlsx file
   def validate_subscribers_file
-    if @subscribers_file.blank? || (@subscribers_file.content_type != "application/vnd.ms-excel")
+    if @subscribers_file.blank? || (@subscribers_file.content_type != "application/vnd.ms-excel" && @subscribers_file.content_type != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
       @error_message << "Veuillez choisir un fichier Excel contenant une liste de numéros.<br />"
       @error = true
     end
