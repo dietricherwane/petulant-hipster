@@ -53,11 +53,12 @@ class MessagesController < ApplicationController
     @login = params[:login]
     @password = params[:password]
     @sender = params[:sender]
-    @service = Customer.where("login = ? AND password = ?", @login, @password).first.label rescue ""
+    @service_id = params[:service_id]
+    @service = Customer.where("login = ? AND password = ? AND service_id = ?", @login, @password, @service_id).first.label rescue ""
 
     CustomLog.create(sender_service: "#{@service} | #{@login.to_s} | #{@password.to_s}", message: params[:message], msisdn: params[:msisdn])
 
-    if !@login.blank? && @service.blank?
+    if @service.blank?
       render text: "4"
     else
       api_send_message
