@@ -59,13 +59,13 @@ class MessagesController < ApplicationController
     CustomLog.create(sender_service: "#{@service} | #{@login.to_s} | #{@password.to_s}", message: params[:message], msisdn: params[:msisdn])
 
     if @login.blank? && @password.blank? && @service.blank?
+      api_send_message
+    else
       if !@service.blank?
         api_send_message
       else
-        render text: "6"
+        render text: "4"
       end
-    else
-      render text: "4"
     end
   end
 
