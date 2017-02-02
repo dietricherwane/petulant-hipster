@@ -141,11 +141,7 @@ class MessagesController < ApplicationController
     if msisdn.match(/\./)
       msisdn = "22" + msisdn[0..8]
     end
-<<<<<<< HEAD
-    request = Typhoeus::Request.new("http://smsplus3.routesms.com:8080/bulksms/bulksms?username=ngser1&password=abcd1234&type=0&dlr=1&destination=#{msisdn}&source=LONACI&message=#{URI.escape(@message)}", followlocation: true, method: :get)
-=======
     request = Typhoeus::Request.new("http://smsplus3.routesms.com:8080/bulksms/bulksms?username=ngser1&password=abcd1234&type=0&dlr=1&destination=#{msisdn}&source=#{@sender}&message=#{URI.escape(@message)}", followlocation: true, method: :get)
->>>>>>> 7f4a30f3226fb09cf54ee49893df67a7e3b6b656
 
     request.on_complete do |response|
       if response.success?
@@ -191,12 +187,7 @@ class MessagesController < ApplicationController
 
   # Make sure the user uploads an xls or xlsx file
   def validate_subscribers_file
-<<<<<<< HEAD
-      if @subscribers_file.blank? || (@subscribers_file.content_type != "application/vnd.ms-excel" && @subscribers_file.content_type != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-   # if @subscribers_file.blank? || (@subscribers_file.content_type != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-=======
     if @subscribers_file.blank? || (@subscribers_file.content_type != "application/vnd.ms-excel" && @subscribers_file.content_type != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
->>>>>>> 7f4a30f3226fb09cf54ee49893df67a7e3b6b656
       @error_message << "Veuillez choisir un fichier Excel contenant une liste de numéros.<br />"
       @error = true
     end
