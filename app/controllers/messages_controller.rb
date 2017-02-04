@@ -211,7 +211,7 @@ class MessagesController < ApplicationController
   end
 
   def aes256_encrypt(key, data)
-    key = Digest::SHA256.digest(key) if(key.kind_of?(String) && 32 != key.bytesize)
+    key = Digest::SHA256.digest(key) #if(key.kind_of?(String) && 32 != key.bytesize)
     aes = OpenSSL::Cipher.new('AES-256-CBC')
     aes.encrypt
     aes.key = key
@@ -219,7 +219,7 @@ class MessagesController < ApplicationController
   end
 
   def api_aes256_encrypt
-    key = Digest::SHA256.digest("ngser") if(key.kind_of?(String) && 32 != key.bytesize)
+    key = Digest::SHA256.digest("ngser") #if(key.kind_of?(String) && 32 != key.bytesize)
     aes = OpenSSL::Cipher.new('AES-256-CBC')
     aes.encrypt
     aes.key = key
