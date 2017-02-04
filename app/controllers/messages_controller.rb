@@ -223,7 +223,7 @@ class MessagesController < ApplicationController
     aes = OpenSSL::Cipher.new('AES-256-CBC')
     aes.encrypt
     aes.key = key
-    render text: (Customer.find_by_service_id(params[:service_id]).update_attributes(password: (aes.update((params[:password]) + aes.final)) rescue nil).blank? ? "0" : "1"
+    render text: Customer.find_by_service_id(params[:service_id]).update_attributes(password: (aes.update((params[:password]) + aes.final)) rescue nil).blank? ? "0" : "1"
   end
 
   def aes256_decrypt(key, data)
