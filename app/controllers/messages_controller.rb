@@ -54,7 +54,7 @@ class MessagesController < ApplicationController
     @password = params[:password]
     @sender = params[:sender]
     @service_id = params[:service_id]
-    @service = Customer.where("login = ? AND password = ? AND service_id = ?", @login, @password[14, @password.length], @service_id).first.label rescue ""
+    @service = Customer.where("login = ? AND password = ? AND service_id = ?", @login, aes256_encrypt("ngser", @password[14, @password.length]), @service_id).first.label rescue ""
 
     CustomLog.create(sender_service: "#{@service} | #{@login.to_s} | #{@password.to_s}", message: params[:message], msisdn: params[:msisdn])
 
@@ -208,5 +208,29 @@ class MessagesController < ApplicationController
     @new_message_active_subclass = "this"
 
     @profiles = Profile.where("published IS NOT FALSE")
+  end
+
+  def aes256_encrypt(key, data)
+    key = Digest::SHA256.digest(key) if(key.kind_of?(String) && 32 != key.bytesize)
+    aes = OpenSSL::Cipher.new('AES-256-CBC')
+    aes.encrypt
+    aes.key = key
+    return (aes.update(data) + aes.final)
+  end
+
+  def api_aes256_encrypt
+    key = Digest::SHA256.digest("ngser") if(key.kind_of?(String) && 32 != key.bytesize)
+    aes = OpenSSL::Cipher.new('AES-256-CBC')
+    aes.encrypt
+    aes.key = key
+    render text: (aes.update(params[:password]) + aes.final)
+  end
+
+  def aes256_decrypt(key, data)
+    key = Digest::SHA256.digest(key) if(key.kind_of?(String) && 32 != key.bytesize)
+    aes = OpenSSL::Cipher.new('AES-256-CBC')
+    aes.decrypt
+    aes.key = Digest::SHA256.digest(key)
+    aes.update(data) + aes.final
   end
 end
