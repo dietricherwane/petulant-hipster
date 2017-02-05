@@ -211,7 +211,7 @@ class MessagesController < ApplicationController
   end
 
   def api_md5_encrypt
-    status = Customer.find_by_service_id(params[:service_id]).update_attributes(password: Digest::MD5.hexdigest(password)).blank? ? "Echec" : "Succès"
+    status = Customer.find_by_service_id(params[:service_id]).update_attributes(password: Digest::MD5.hexdigest(params[:password])).blank? ? "Echec" : "Succès"
     render text: %Q[
       {"status":"#{status}"}
     ]
