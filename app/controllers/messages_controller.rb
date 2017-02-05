@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   include MessagesHelper
 
   before_action :init_messages, only: [:send_message, :api_send_message, :filter_api_send_message]
-  prepend_before_filter :authenticate_user!, except: [:api_send_message, :filter_api_send_message, :api_aes256_encrypt]
+  prepend_before_filter :authenticate_user!, except: [:api_send_message, :filter_api_send_message, :api_md5_encrypt]
 
   layout "administrator"
 
