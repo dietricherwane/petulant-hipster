@@ -64,7 +64,7 @@ class MessagesController < ApplicationController
       if !@service.blank?
         api_send_message
       else
-        render text: aes256_encrypt("ngser", @password[14, @password.length])#"4"
+        render text: "4"
       end
     end
   end
