@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/:login/:password/:service_id/:sender/:msisdn/:message' => 'messages#filter_api_send_message'
   get '/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/:msisdn/:message' => 'messages#api_send_message'
 
-  get "/aes256encrypt/:password/:service_id" => 'messages#api_aes256_encrypt'
+  get "/md5_encrypt/:password/:service_id" => 'messages#api_md5_encrypt'
 
   get 'transactions' => 'transactions#list', as: :transactions
 
