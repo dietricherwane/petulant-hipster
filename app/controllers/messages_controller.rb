@@ -54,7 +54,7 @@ class MessagesController < ApplicationController
     @password = params[:password]
     @sender = params[:sender]
     @service_id = params[:service_id]
-    @service = Customer.where("login = ? AND pgp_sym_decrypt(password, 'Pilote2017@key#') = ? AND service_id = ?", @login, @password[14, @password.length], @service_id).first.id rescue nil
+    @service = Customer.where("login = ? AND password = pgp_sym_decrypt(?, 'Pilote2017@key#') AND service_id = ?", @login, @password[14, @password.length], @service_id).first.id rescue nil
 
     CustomLog.create(sender_service: "#{@service} | #{@login.to_s} | #{@password.to_s}", message: params[:message], msisdn: params[:msisdn])
 
