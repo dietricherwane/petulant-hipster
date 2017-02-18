@@ -211,7 +211,7 @@ class MessagesController < ApplicationController
   end
 
   def api_md5_encrypt
-    status = (ActiveRecord::Base.connection.execute("UPDATE customers SET password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(params[:password])}', 'Pilote2017@key#') WHERE service_id = '#{params[:service_id]}'") rescue nil).blank? ? "Echec" : "Succès"
+    status = (ActiveRecord::Base.connection.execute("UPDATE customers SET bytea_password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(params[:password])}', 'Pilote2017@key#') WHERE service_id = '#{params[:service_id]}'") rescue nil).blank? ? "Echec" : "Succès"
     #status = Customer.find_by_service_id(params[:service_id]).update_attributes(password: Digest::MD5.hexdigest(params[:password])).blank? ? "Echec" : "Succès"
     render text: %Q[
       {"status":"#{status}"}
