@@ -62,8 +62,14 @@ class MessagesController < ApplicationController
       api_send_message
     else
       if !@service.blank?
-        api_send_message
+        if ActiveRecord::Base.connection.execute("select pgp_sym_decrypt('#{@service.password}', 'Pilote2017@key#')").first["pgp_sym_decrypt"] == @password[14, @password.length]
+          api_send_message
+        else
+          # Invalid password
+          render text: "5"
+        end
       else
+        # Service not found
         render text: "4"
       end
     end
