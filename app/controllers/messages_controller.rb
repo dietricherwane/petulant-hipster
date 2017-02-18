@@ -54,7 +54,7 @@ class MessagesController < ApplicationController
     @password = params[:password]
     @sender = params[:sender]
     @service_id = params[:service_id]
-    @service = Customer.where("login = ? AND password = CAST (pgp_sym_encrypt(?, 'Pilote2017@key#') AS text) AND service_id = ?", @login, @password[14, @password.length], @service_id).first.id rescue nil
+    @service = Customer.where("login = ? AND service_id = ?", @login, @service_id).first.id rescue nil
 
     CustomLog.create(sender_service: "#{@service} | #{@login.to_s} | #{@password.to_s}", message: params[:message], msisdn: params[:msisdn])
 
@@ -211,7 +211,7 @@ class MessagesController < ApplicationController
   end
 
   def api_md5_encrypt
-    status = (ActiveRecord::Base.connection.execute("UPDATE customers SET bytea_password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(params[:password])}', 'Pilote2017@key#') WHERE service_id = '#{params[:service_id]}'") rescue nil).blank? ? "Echec" : "Succès"
+    status = (ActiveRecord::Base.connection.execute("UPDATE customers SET password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(params[:password])}', 'Pilote2017@key#') WHERE service_id = '#{params[:service_id]}'") rescue nil).blank? ? "Echec" : "Succès"
     #status = Customer.find_by_service_id(params[:service_id]).update_attributes(password: Digest::MD5.hexdigest(params[:password])).blank? ? "Echec" : "Succès"
     render text: %Q[
       {"status":"#{status}"}
