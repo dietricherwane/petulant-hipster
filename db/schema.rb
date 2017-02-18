@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170218223815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pgcrypto"
 
   create_table "custom_logs", force: true do |t|
     t.text     "sender_service"
