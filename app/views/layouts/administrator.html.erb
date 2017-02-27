@@ -25,18 +25,25 @@
 
     <!-- Left navigation -->
     <ul id="menu" class="nav">
-        <li class="mail">
-          <a href="#" class="<%= @message_active ? @message_active : 'exp inactive' %>" id = "<%= @message_current_id %>"><span>Messages</span><strong>1</strong></a>
-          <ul class = "sub">
-            <li class = "<%= @new_message_active_subclass %>"><%= link_to 'Envoyer un message', message_path %></li>
-          </ul>
-        </li>
-        <li class="files">
-          <a href="<%= transactions_path %>" class="<%= @transactions_active ? 'active' : '' %>"><span>Transactions</span></a>
-        </li>
-        <li class="magnify">
-          <a href="<%= search_path %>" class="<%= @search_active ? 'active' : '' %>"><span>Rechercher</span></a>
-        </li>
+      <li class="user">
+        <a href="#" class="<%= @customer_active ? @customer_active : 'exp inactive' %>" id = "<%= @customer_current_id %>"><span>Clients</span><strong>2</strong></a>
+        <ul class = "sub">
+          <li class = "<%= @new_customer_active_subclass %>"><%= link_to 'Créer', new_customer_path %></li>
+          <li class = "<%= @list_customers_active_subclass %>"><%= link_to 'Liste', list_customers_path %></li>
+        </ul>
+      </li>
+      <li class="mail">
+        <a href="#" class="<%= @message_active ? @message_active : 'exp inactive' %>" id = "<%= @message_current_id %>"><span>Messages</span><strong>1</strong></a>
+        <ul class = "sub">
+          <li class = "<%= @new_message_active_subclass %>"><%= link_to 'Envoyer un message', message_path %></li>
+        </ul>
+      </li>
+      <li class="files">
+        <a href="<%= transactions_path %>" class="<%= @transactions_active ? 'active' : '' %>"><span>Transactions</span></a>
+      </li>
+      <li class="magnify">
+        <a href="<%= search_path %>" class="<%= @search_active ? 'active' : '' %>"><span>Rechercher</span></a>
+      </li>
     </ul>
 </div>
 

@@ -52,17 +52,18 @@ class MessagesController < ApplicationController
     @number = params[:msisdn]
     @login = params[:login]
     @password = params[:password]
-    @sender = params[:sender]
+    #@sender = params[:sender]
     @service_id = params[:service_id]
-    @service = Customer.where("login = ? AND service_id = ?", @login, @service_id).first rescue nil
+    @service = Customer.where("login = ?", @login).first rescue nil
 
-    CustomLog.create(sender_service: "#{@service.id rescue nil} | #{@login.to_s} | #{@password.to_s}", message: params[:message], msisdn: params[:msisdn])
+    CustomLog.create(sender_service: "#{@login.to_s} | #{@password.to_s}", message: params[:message], msisdn: params[:msisdn])
 
     if @login.blank? && @password.blank? && @service.blank?
       api_send_message
     else
       if !@service.blank?
         if ActiveRecord::Base.connection.execute("select pgp_sym_decrypt('#{@service.password}', 'Pilote2017@key#')").first["pgp_sym_decrypt"] == @password[14, @password.length]
+          @sender = @service.sender
           api_send_message
         else
           # Invalid password
@@ -101,7 +102,7 @@ class MessagesController < ApplicationController
     if @profile.name == "Numéro unique"
       set_transaction("Envoi de message à un numéro.", 1)
       send_message_request(@number.split.first)
-      @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages)
+      @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages, user_id: (@service.user.id rescue nil))
 
       @success_message = messages!("Le message a été envoyé. Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
     end
@@ -159,12 +160,12 @@ class MessagesController < ApplicationController
         if result[0] == "1701"
           @status = "1"
           @sent_messages += 1
-          @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: result[0], message_id: result[2])
+          @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: result[0], message_id: result[2], customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
         else
           #@status = "0"
           @status = "6"
           @failed_messages += 1
-          @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: result[0])
+          @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: result[0], customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
         end
       end
     end

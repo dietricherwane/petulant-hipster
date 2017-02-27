@@ -58,8 +58,8 @@ class SearchController < ApplicationController
           message_logs_query << " AND created_at < '#{@end_date}'"
         end
       end
-      @message_logs = MessageLog.where(message_logs_query)
-      @message_logs_count = MessageLog.where(message_logs_query).count
+      @message_logs = MessageLog.where(message_logs_query + " AND user_id = #{current_user.id}")
+      @message_logs_count = @message_logs.count
       @message_logs = @message_logs.page(params[:page])
     else
       if !@begin_date.blank? and !@end_date.blank?
@@ -72,8 +72,8 @@ class SearchController < ApplicationController
           message_logs_query << " AND created_at < '#{@end_date}'"
         end
       end
-      @transaction_logs = SmsTransaction.where(transaction_logs_query)
-      @transaction_logs_count = SmsTransaction.where(transaction_logs_query).count
+      @transaction_logs = SmsTransaction.where(transaction_logs_query + " AND user_id = #{current_user.id}")
+      @transaction_logs_count = @transaction_logs.count
       @transaction_logs = @transaction_logs.page(params[:page])
     end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170218223815) do
+ActiveRecord::Schema.define(version: 20170227165728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 20170218223815) do
     t.string   "iv"
     t.string   "key"
     t.binary   "bytea_password"
+    t.integer  "user_id"
+    t.string   "sender"
+    t.boolean  "status"
   end
 
   create_table "delayed_jobs", force: true do |t|
@@ -66,6 +69,8 @@ ActiveRecord::Schema.define(version: 20170218223815) do
     t.string   "status",             limit: 200
     t.string   "message_id",         limit: 200
     t.string   "msisdn"
+    t.integer  "customer_id"
+    t.integer  "user_id"
   end
 
   add_index "message_logs", ["period_id"], name: "index_message_logs_on_period_id", using: :btree
@@ -117,6 +122,7 @@ ActiveRecord::Schema.define(version: 20170218223815) do
     t.integer  "failed_messages",    limit: 8
     t.integer  "number_of_messages", limit: 8
     t.string   "sender_service"
+    t.integer  "user_id"
   end
 
   add_index "sms_transactions", ["profile_id"], name: "index_sms_transactions_on_profile_id", using: :btree
