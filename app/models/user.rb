@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
 
   attr_accessible :firstname, :lastname, :email, :password, :password_confirmation
 
+  # Relationships
+  has_many :customers
+  has_many :message_logs
+  has_many :sms_transactions
+
   # Renaming attributes into more friendly text
   HUMANIZED_ATTRIBUTES = {
     firstname: "Nom",
