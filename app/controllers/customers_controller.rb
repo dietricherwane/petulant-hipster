@@ -32,9 +32,9 @@ class CustomersController < ApplicationController
     else
       if @customer.save &&  @error_message.blank?
         if @existing_customer.blank?
-          ActiveRecord::Base.connection.execute("UPDATE customers SET password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(@customer.password)}', 'Pilote2017@key#') WHERE id = '#{@customer.id}'") rescue nil
+          ActiveRecord::Base.connection.execute("UPDATE customers SET password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(@customer.password)}', 'Pilote2017@key#') WHERE id = '#{@customer.id}'")# rescue nil
         else
-          ActiveRecord::Base.connection.execute("UPDATE customers SET password = '#{@existing_customer.password}', login = '#{@existing_password.login}' WHERE user_id = #{current_user.id}") rescue nil
+          ActiveRecord::Base.connection.execute("UPDATE customers SET password = '#{@existing_customer.password}', login = '#{@existing_customer.login}' WHERE user_id = #{current_user.id}")# rescue nil
         end
         @success_message = messages!("Le client a été correctement créé", "success")
         @customer = current_user.customers.new()
