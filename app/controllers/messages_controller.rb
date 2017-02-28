@@ -52,18 +52,18 @@ class MessagesController < ApplicationController
     @number = params[:msisdn]
     @login = params[:login]
     @password = params[:password]
-    #@sender = params[:sender]
+    @sender = params[:sender]
     @service_id = params[:service_id]
-    @service = Customer.where("login = ?", @login).first rescue nil
+    @service = Customer.where("login = ? AND status IS NOT FALSE AND label = ?", @login, @service_id).first rescue nil
 
-    CustomLog.create(sender_service: "#{@login.to_s} | #{@password.to_s}", message: params[:message], msisdn: params[:msisdn])
+    CustomLog.create(sender_service: "#{@sender.to_s} | #{@login.to_s} | #{@password.to_s}", message: params[:message], msisdn: params[:msisdn])
 
     if @login.blank? && @password.blank? && @service.blank?
       api_send_message
     else
       if !@service.blank?
         if ActiveRecord::Base.connection.execute("select pgp_sym_decrypt('#{@service.password}', 'Pilote2017@key#')").first["pgp_sym_decrypt"] == @password[14, @password.length]
-          @sender = @service.sender
+          #@sender = @service.sender
           api_send_message
         else
           # Invalid password
