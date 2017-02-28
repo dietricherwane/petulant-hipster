@@ -36,37 +36,31 @@
             <div class="clear"></div>
           </div>
 
-          <div class="formRow">
-            <label><%= f.label(:sender) %></label>
-            <div class="formRight">
-              <%= f.text_field :sender, placeholder: "Emetteur" %>
+          <% if !@customer_exists %>
+            <div class="formRow">
+              <label><%= f.label(:login) %></label>
+              <div class="formRight">
+                <%= f.text_field :login, placeholder: "Login" %>
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-          </div>
 
-          <div class="formRow">
-            <label><%= f.label(:login) %></label>
-            <div class="formRight">
-              <%= f.text_field :login, placeholder: "Login" %>
+            <div class="formRow">
+              <label><%= f.label(:password) %></label>
+              <div class="formRight">
+                <%= f.password_field :password, placeholder: "Mot de passe" %>
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-          </div>
 
-          <div class="formRow">
-            <label><%= f.label(:password) %></label>
-            <div class="formRight">
-              <%= f.password_field :password, placeholder: "Mot de passe" %>
+            <div class="formRow">
+              <label>Confirmation du mot de passe</label>
+              <div class="formRight">
+                <%= password_field_tag :password_confirmation, "", placeholder: "Confirmation du mot de passe" %>
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-          </div>
-
-          <div class="formRow">
-            <label>Confirmation du mot de passe</label>
-            <div class="formRight">
-              <%= password_field_tag :password_confirmation, "", placeholder: "Confirmation du mot de passe" %>
-            </div>
-            <div class="clear"></div>
-          </div>
+          <% end %>
 
           <div class="formRow">
             <%= submit_tag 'Créer', class: 'basic' %>

@@ -8,12 +8,22 @@ class CustomersController < ApplicationController
 
   def new
     @customer = current_user.customers.new()
+    @customer_exists = current_user.customers.blank? ? false : true
   end
 
   def create
     init_customer_view
     @error_message = ""
     @success_message = ""
+    @customer_exists = current_user.customers.blank? ? false : true
+    @existing_customer = current_user.customers.first rescue nil
+
+    if @existing_customer != blank?
+      params[:customer][:login] = @existing_customer.login
+      params[:customer][:password] = 'duke'
+      params[:password_confirmation] = 'duke'
+    end
+
     @customer = Customer.new(params[:customer].merge({user_id: params[:customer][:user_id]}))
 
     if params[:customer][:password] =! params[:password_confirmation]
@@ -21,7 +31,11 @@ class CustomersController < ApplicationController
       @error_message = messages!(@error_message + @customer.errors.full_messages.map { |msg| "#{msg}<br />" }.join, "error")
     else
       if @customer.save &&  @error_message.blank?
-        ActiveRecord::Base.connection.execute("UPDATE customers SET password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(@customer.password)}', 'Pilote2017@key#') WHERE id = '#{@customer.id}'") rescue nil
+        if @existing_customer.blank?
+          ActiveRecord::Base.connection.execute("UPDATE customers SET password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(@customer.password)}', 'Pilote2017@key#') WHERE id = '#{@customer.id}'") rescue nil
+        else
+          ActiveRecord::Base.connection.execute("UPDATE customers SET password = '#{@existing_customer.password}', login = '#{@existing_password.login}' WHERE user_id = #{current_user.id}") rescue nil
+        end
         @success_message = messages!("Le client a été correctement créé", "success")
         @customer = current_user.customers.new()
       else

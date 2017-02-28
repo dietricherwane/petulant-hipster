@@ -22,6 +22,6 @@ class Customer < ActiveRecord::Base
   end
 
   # Validations
-  validates :user_id, :label, :sender, :login ,:password, presence: true
-  validates :login, uniqueness: true
+  validates :user_id, :label, :login ,:password, presence: true
+  validates :label, uniqueness: true
 end
