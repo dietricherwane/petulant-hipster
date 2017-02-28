@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'message/send' => 'messages#send_message', as: :send_message
   get 'message/send' => 'messages#new'
   get '/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/:sender/:msisdn/:message' => 'messages#filter_api_send_message'
-  get '/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/:login/:password/:msisdn/:message' => 'messages#filter_api_send_message'
+  get '/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/:login/:password/:service_id/:sender/:msisdn/:message' => 'messages#filter_api_send_message'
   #get '/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/:login/:password/:service_id/:sender/:msisdn/:message' => 'messages#filter_api_send_message'
   get '/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/:msisdn/:message' => 'messages#api_send_message'
 
