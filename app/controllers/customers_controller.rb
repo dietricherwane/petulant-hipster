@@ -24,7 +24,7 @@ class CustomersController < ApplicationController
       params[:password_confirmation] = 'duke'
     end
 
-    @customer = Customer.new(params[:customer].merge({user_id: params[:customer][:user_id]}))
+    @customer = Customer.new(params[:customer].merge({user_id: params[:customer][:user_id], md5_password: Digest::MD5.hexdigest(params[:customer][:password])}))
 
     if params[:customer][:password] =! params[:password_confirmation]
       @error_message = "Le mot de passe et sa confirmation doivent être identiques<br />"
@@ -75,7 +75,7 @@ class CustomersController < ApplicationController
 
       if @error_message.blank?
         if @customer.update_attributes(customer_params)
-          ActiveRecord::Base.connection.execute("UPDATE customers SET password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(@customer.password)}', 'Pilote2017@key#') WHERE id = '#{@customer.id}'") rescue nil
+          ActiveRecord::Base.connection.execute("UPDATE customers SET password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(@customer.password)}', 'Pilote2017@key#'), md5_password = '#{Digest::MD5.hexdigest(@customer.password)}' WHERE id = '#{@customer.id}'") rescue nil
           @success_message = messages!("Le profil du client: #{@customer.label} a été mis à jour", "success")
         else
           @error_message = messages!(@error_message + @customer.errors.full_messages.map { |msg| "#{msg}<br />" }.join, "error")
