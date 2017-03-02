@@ -1,6 +1,6 @@
 class Customer < ActiveRecord::Base
   # Set accessible fields
-  attr_accessible :label, :uuid, :login, :password, :service_id, :sender, :user_id, :status, :id
+  attr_accessible :label, :uuid, :login, :password, :service_id, :sender, :user_id, :status, :id, :md5_password
   #attr_encrypted :encrypted_password
 
   # Relationships
@@ -10,7 +10,7 @@ class Customer < ActiveRecord::Base
   # Renaming attributes into more friendly text
   HUMANIZED_ATTRIBUTES = {
     user_id: "L'utilisateur",
-    label: "Libellé",
+    label: "Service ID",
     login: "Login",
     password: "Mot de passe",
     sender: "Emetteur",

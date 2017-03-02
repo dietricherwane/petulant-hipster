@@ -26,9 +26,10 @@
 
       <thead>
   <tr>
-    <td>Libellé</td>
+    <td>Service ID</td>
     <td>Emetteur</td>
     <td>Login</td>
+    <td>Mot de passe MD5</td>
     <td>Date de création</td>
     <td>Actions</td>
   </tr>
@@ -47,6 +48,9 @@
               </td>
               <td>
                 <%= customer.login %>
+              </td>
+              <td>
+                <%= customer.md5_password %>
               </td>
               <td>
                 <%= customer.created_at.strftime("%d-%m-%Y") + " - " + customer.created_at.strftime("%Hh %Mmn") %>
