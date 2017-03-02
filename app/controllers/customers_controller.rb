@@ -8,7 +8,7 @@ class CustomersController < ApplicationController
 
   def new
     @customer = current_user.customers.new()
-    @customer_exists = current_user.customers.blank? ? false : true
+    @customer_exists = (current_user.customers.count == 0 ? false : true)
   end
 
   def create
