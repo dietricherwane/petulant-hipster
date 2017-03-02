@@ -18,8 +18,8 @@ class CustomersController < ApplicationController
     @customer_exists = (current_user.customers.count == 0 ? false : true)
     @existing_customer = current_user.customers.first rescue nil
 
-    if @existing_customer != blank?
-      params[:customer][:login] = @existing_customer.login rescue nil
+    if @customer_exists#@existing_customer != blank?
+      params[:customer][:login] = @existing_customer.login #rescue nil
       params[:customer][:password] = 'duke'
       params[:password_confirmation] = 'duke'
     end
