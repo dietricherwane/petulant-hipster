@@ -15,7 +15,7 @@ class CustomersController < ApplicationController
     init_customer_view
     @error_message = ""
     @success_message = ""
-    @customer_exists = current_user.customers.blank? ? false : true
+    @customer_exists = (current_user.customers.count == 0 ? false : true)
     @existing_customer = current_user.customers.first rescue nil
 
     if @existing_customer != blank?
