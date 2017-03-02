@@ -36,7 +36,7 @@
             <div class="clear"></div>
           </div>
 
-          <%# if @customer_exists == false %>
+          <% if @customer_exists == false %>
             <div class="formRow">
               <label><%= f.label(:login) %></label>
               <div class="formRight">
@@ -60,7 +60,7 @@
               </div>
               <div class="clear"></div>
             </div>
-          <%# end %>
+          <% end %>
 
           <div class="formRow">
             <%= submit_tag 'Créer', class: 'basic' %>
