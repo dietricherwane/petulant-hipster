@@ -36,7 +36,7 @@
             <div class="clear"></div>
           </div>
 
-          <% if !@customer_exists %>
+          <% if @customer_exists == false %>
             <div class="formRow">
               <label><%= f.label(:login) %></label>
               <div class="formRight">
