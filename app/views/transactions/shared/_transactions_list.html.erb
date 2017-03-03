@@ -2,8 +2,9 @@
   <tr>
     <td>Profil</td>
     <td>Service</td>
-    <td>Date de début</td>
-    <td>Date de fin</td>
+    <td>Emetteur</td>
+    <td>Date d'envoi</td>
+    <!--<td>Date de fin</td>-->
     <td>Nombre total de messages</td>
     <td>Nombre de messages envoyés</td>
     <td>Nombre de messages échoués</td>
@@ -19,14 +20,19 @@
           <%= link_to transaction.profile.name, message_logs_path(transaction.id) %>
         </td>
         <td>
+          <%= transaction.service_id %>
+          <%#= transaction.sender_service %>
+        </td>
+        <td>
           <%= transaction.sender_service %>
+          <%#= transaction.sender_service %>
         </td>
         <td>
           <%= (transaction.started_at.strftime("%d-%m-%Y") rescue "") + " - " + (transaction.started_at.strftime("%Hh %Mmn") rescue "") %>
         </td>
-        <td>
+        <!--<td>
           <%= (transaction.ended_at.strftime("%d-%m-%Y") rescue "") + " - " + (transaction.ended_at.strftime("%Hh %Mmn") rescue "") %>
-        </td>
+        </td>-->
         <td>
           <%= transaction.number_of_messages %>
         </td>

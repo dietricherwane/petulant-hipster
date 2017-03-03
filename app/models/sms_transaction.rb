@@ -4,7 +4,7 @@ class SmsTransaction < ActiveRecord::Base
   belongs_to :profile
   belongs_to :user
   # Set accessible fields
-  attr_accessible :started_at, :ended_at, :profile_id, :description, :send_messages, :failed_messages, :number_of_messages, :created_at, :sender_service, :user_id
+  attr_accessible :started_at, :ended_at, :profile_id, :description, :send_messages, :failed_messages, :number_of_messages, :created_at, :sender_service, :user_id, :service_id
 
   # Renaming attributes into more friendly text
   HUMANIZED_ATTRIBUTES = {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302104632) do
+ActiveRecord::Schema.define(version: 20170303134706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 20170302104632) do
     t.integer  "number_of_messages", limit: 8
     t.string   "sender_service"
     t.integer  "user_id"
+    t.string   "service_id"
   end
 
   add_index "sms_transactions", ["profile_id"], name: "index_sms_transactions_on_profile_id", using: :btree
