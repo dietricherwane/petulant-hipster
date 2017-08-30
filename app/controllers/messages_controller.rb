@@ -110,7 +110,6 @@ class MessagesController < ApplicationController
     if @profile.name == "Liste de numéros"
       set_transaction("Envoi de message à une liste de numéros.", 0)
       deliver_message_to_excel_list
-      puts "**************deliver to excel list"
     end
   end
 
@@ -128,7 +127,6 @@ class MessagesController < ApplicationController
       puts "sheet opened"
       @spreadsheet.each do |row|
         msisdn = row[0].to_s
-        puts msisdn
         unless not_a_number?(msisdn) or msisdn.length < 11
           send_message_request(msisdn[-11,11])
         end
@@ -153,20 +151,34 @@ class MessagesController < ApplicationController
     if msisdn.match(/\./)
       msisdn = "22" + msisdn[0..8]
     end
-    request = Typhoeus::Request.new("http://smsplus3.routesms.com:8080/bulksms/bulksms?username=ngser1&password=abcd1234&type=0&dlr=1&destination=#{msisdn}&source=#{@sender}&message=#{URI.escape(@message)}", followlocation: true, method: :get)
+    parameter = Parameter.first
+    sms_provider_url = parameter.sms_provider_url rescue ''
+    sms_provider_token = parameter.sms_provider_token rescue ''
+    body = %Q[
+      {
+        "outboundSMSMessageRequest": {
+            "address": ["tel:+#{msisdn}"],
+            "senderAddress": "tel:#{@sender}",
+            "outboundSMSTextMessage": {"message": #{URI.escape(@message)}},
+            "senderName": "NGSER"
+        }
+      }
+    ]
+    request = Typhoeus::Request.new(sms_provider_url, body: body, followlocation: true, method: :get, headers: { Authorization: "Bearer #{sms_provider_token}", Content-type: "application/json" })
 
     request.on_complete do |response|
       if response.success?
-        result = response.body.strip.split("|") rescue nil
-        if result[0] == "1701"
+        result = response.body.strip
+        status = JSON.parse(result)["outboundSMSMessageRequest"]["deliveryInfoList"]["deliveryInfo"].first["deliveryStatus"] rescue nil
+        if status == "DeliveredToNetwork"
           @status = "1"
           @sent_messages += 1
-          @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: result[0], message_id: result[2], customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
+          @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: status, message_id: JSON.parse(result)["outboundSMSMessageRequest"]["resourceURL"], customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
         else
           #@status = "0"
           @status = "6"
           @failed_messages += 1
-          @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: result[0], customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
+          @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: status, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
         end
       end
     end
