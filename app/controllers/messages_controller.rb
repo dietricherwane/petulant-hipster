@@ -153,7 +153,7 @@ class MessagesController < ApplicationController
     end
     parameter = Parameter.first
     sms_provider_url = parameter.sms_provider_url rescue ''
-    sms_provider_token = parameter.sms_provider_token rescue ''
+    sms_provider_token = parameter.sms_provider_token_ext rescue ''
     body = %Q[
       {
         "outboundSMSMessageRequest": {
