@@ -164,7 +164,7 @@ class MessagesController < ApplicationController
         }
       }
     ]
-    request = Typhoeus::Request.new(sms_provider_url, body: body, followlocation: true, method: :get, headers: { Authorization: "Bearer #{sms_provider_token}", Content-type: "application/json" })
+    request = Typhoeus::Request.new(sms_provider_url, body: body, followlocation: true, method: :post, headers: { Authorization: "Bearer #{sms_provider_token}", Accept: "application/json" })
 
     request.on_complete do |response|
       if response.success?
