@@ -159,12 +159,12 @@ class MessagesController < ApplicationController
         "outboundSMSMessageRequest": {
             "address": ["tel:+#{msisdn}"],
             "senderAddress": "tel:#{@sender}",
-            "outboundSMSTextMessage": {"message": "#{URI.escape(@message)}"},
+            "outboundSMSTextMessage": {"message": "#{@message}"},
             "senderName": "NGSER"
         }
       }
     ]
-    
+
     request = Typhoeus::Request.new(sms_provider_url + "/outbound/#{URI.escape(@sender)}/requests", body: body, followlocation: true, method: :post, headers: { Authorization: "Bearer #{sms_provider_token}", 'Content-Type'=> "application/json" })
 
     request.on_complete do |response|
