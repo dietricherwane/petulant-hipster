@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  require "base64"
   include MessagesHelper
 
   before_action :init_messages, only: [:send_message, :api_send_message, :filter_api_send_message]
@@ -152,39 +153,87 @@ class MessagesController < ApplicationController
       msisdn = "22" + msisdn[0..8]
     end
     parameter = Parameter.first
+
+    case (@service.sms_provider.name rescue nil)
+    when "BICS"
+      send_with_bics(parameter, msisdn, @sender, @message)
+    when "ROUTESMS"
+      send_with_routesms(parameter, msisdn, @sender, @message)
+    when "INFOBIP"
+      send_with_infobip(parameter, msisdn, @sender, @message)
+    else
+      send_with_routesms(parameter, msisdn, @sender, @message)
+    end
+
+    if @status == "1"
+      @status = "1"
+      @sent_messages += 1
+      @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, message_id: @message_id, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
+    else
+      @status = "6"
+      @failed_messages += 1
+      @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
+    end
+  end
+
+  def send_with_bics(parameter, msisdn, sender, message)
     sms_provider_url = parameter.sms_provider_url rescue ''
     sms_provider_token = parameter.sms_provider_token_ext rescue ''
     body = %Q[
       {
         "outboundSMSMessageRequest": {
             "address": ["tel:+#{msisdn}"],
-            "senderAddress": "tel:#{@sender}",
-            "outboundSMSTextMessage": {"message": "#{@message}"},
+            "senderAddress": "tel:#{sender}",
+            "outboundSMSTextMessage": {"message": "#{message}"},
             "senderName": "NGSER"
         }
       }
     ]
-
-    request = Typhoeus::Request.new(sms_provider_url + "/outbound/#{URI.escape(@sender)}/requests", body: body, followlocation: true, method: :post, headers: { Authorization: "Bearer #{sms_provider_token}", 'Content-Type'=> "application/json" })
-
-    request.on_complete do |response|
-      if response.success?
-        result = response.body.strip
-        status = JSON.parse(result)["outboundSMSMessageRequest"]["deliveryInfoList"]["deliveryInfo"].first["deliveryStatus"] rescue nil
-        if status == "DeliveredToNetwork"
-          @status = "1"
-          @sent_messages += 1
-          @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: status, message_id: JSON.parse(result)["outboundSMSMessageRequest"]["resourceURL"], customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
-        else
-          #@status = "0"
-          @status = "6"
-          @failed_messages += 1
-          @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: status, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
-        end
-      end
-    end
-
+    request = Typhoeus::Request.new(sms_provider_url + "/outbound/#{URI.escape(sender)}/requests", body: body, followlocation: true, method: :post, headers: { Authorization: "Bearer #{sms_provider_token}", 'Content-Type'=> "application/json" })
     request.run
+    result = request.response.body.strip rescue nil
+    @request_status = JSON.parse(result)["outboundSMSMessageRequest"]["deliveryInfoList"]["deliveryInfo"].first["deliveryStatus"] rescue nil
+    if @request_status == "DeliveredToNetwork"
+      @status = "1"
+      @message_id = JSON.parse(result)["outboundSMSMessageRequest"]["resourceURL"]
+    else
+      @status = "6"
+    end
+  end
+
+  def send_with_infobip(parameter, msisdn, sender, message)
+    sms_provider_url = parameter.infobip_provider_url rescue ''
+    auth_header = Base64.encode64(parameter.infobip_provider_username + ":" + infobip_provider_password) rescue ''
+    body = %Q[
+      {
+        "from": "#{sender}",
+        "to": "#{msisdn}",
+        "text": "#{message}"
+      }
+    ]
+    request = Typhoeus::Request.new(sms_provider_url, body: body, followlocation: true, method: :post, headers: { Authorization: "Basic #{auth_header}", 'Content-Type'=> "application/json" })
+    request.run
+    result = request.response.body.strip rescue nil
+    @request_status = JSON.parse(result)["messages"].first["status"]["groupName"] rescue nil
+    if @request_status == "ACCEPTED"
+      @status = "1"
+      @message_id = JSON.parse(result)["messages"].first["messageId"]
+    else
+      @status = "6"
+    end
+  end
+
+  def send_with_routesms(parameter, msisdn, sender, message)
+    request = Typhoeus::Request.new(parameter.routesms_provider_url + "?username=#{parameter.routesms_provider_username}&password=#{parameter.routesms_provider_password}&type=0&dlr=1&destination=#{msisdn}&source=#{sender}&message=#{URI.escape(message)}", followlocation: true, method: :get)
+    request.run
+    result = request.response.body.strip.split("|") rescue nil
+    @request_status = result[0]
+    if @request_status == "1701"
+      @status = "1"
+      @message_id = result[2]
+    else
+      @status = "6"
+    end
   end
 
   def validate_profile_id

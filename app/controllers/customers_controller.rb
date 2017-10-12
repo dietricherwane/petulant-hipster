@@ -8,6 +8,7 @@ class CustomersController < ApplicationController
 
   def new
     @customer = current_user.customers.new()
+    @sms_providers = SmsProvider.all
     @customer_exists = (current_user.customers.count == 0 ? false : true)
   end
 
@@ -17,6 +18,7 @@ class CustomersController < ApplicationController
     @success_message = ""
     @customer_exists = (current_user.customers.count == 0 ? false : true)
     @existing_customer = current_user.customers.first rescue nil
+    @sms_providers = SmsProvider.all
 
     if @customer_exists#@existing_customer != blank?
       params[:customer][:login] = @existing_customer.login #rescue nil
@@ -48,6 +50,7 @@ class CustomersController < ApplicationController
 
   def edit
     @customer = current_user.customers.where("id = #{params[:customer_id]}").first rescue nil
+    @sms_providers = SmsProvider.all
 
     if @customer.blank?
       @error_message = messages!("Le client n'a pas été trouvé", "error")
@@ -60,6 +63,7 @@ class CustomersController < ApplicationController
     @password = params[:customer][:password]
     @password_confirmation = params[:password_confirmation]
     @customer = current_user.customers.where("id = #{params[:customer][:id]}").first rescue nil
+    @sms_providers = SmsProvider.all
     customer_params = params[:customer]
     if @customer.blank?
       @error_message = messages!("Le client n'a pas été trouvé", "error")
