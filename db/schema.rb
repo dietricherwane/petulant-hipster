@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830104609) do
+ActiveRecord::Schema.define(version: 20171012011956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170830104609) do
     t.string   "sender"
     t.boolean  "status"
     t.string   "md5_password"
+    t.integer  "sms_provider_id"
   end
 
   create_table "delayed_jobs", force: true do |t|
@@ -85,6 +86,12 @@ ActiveRecord::Schema.define(version: 20170830104609) do
     t.datetime "updated_at"
     t.string   "sms_provider_token"
     t.text     "sms_provider_token_ext"
+    t.string   "routesms_provider_url"
+    t.string   "routesms_provider_username"
+    t.string   "routesms_provider_password"
+    t.string   "infobip_provider_url"
+    t.string   "infobip_provider_username"
+    t.string   "infobip_provider_password"
   end
 
   create_table "periods", force: true do |t|

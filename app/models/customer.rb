@@ -1,11 +1,12 @@
 class Customer < ActiveRecord::Base
   # Set accessible fields
-  attr_accessible :label, :uuid, :login, :password, :service_id, :sender, :user_id, :status, :id, :md5_password
+  attr_accessible :label, :uuid, :login, :password, :service_id, :sender, :user_id, :status, :id, :md5_password, :sms_provider_id
   #attr_encrypted :encrypted_password
 
   # Relationships
   belongs_to :user
   has_many :message_logs
+  belongs_to :sms_provider
 
   # Renaming attributes into more friendly text
   HUMANIZED_ATTRIBUTES = {
@@ -14,7 +15,8 @@ class Customer < ActiveRecord::Base
     login: "Login",
     password: "Mot de passe",
     sender: "Emetteur",
-    status: "Statut"
+    status: "Statut",
+    sms_provider_id: "Fournisseur SMS"
   }
 
   def self.human_attribute_name(attr, option = {})
@@ -22,6 +24,6 @@ class Customer < ActiveRecord::Base
   end
 
   # Validations
-  validates :user_id, :label, :login, :password, presence: true
+  validates :user_id, :label, :sms_provider_id, :login, :password, presence: true
   validates :label, uniqueness: true
 end

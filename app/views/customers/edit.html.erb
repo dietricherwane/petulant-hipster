@@ -37,6 +37,14 @@
           </div>
 
           <div class="formRow">
+            <label><%= label_tag(:sms_provider_id, "Profil") %></label>
+            <div class="formRight">
+              <%= collection_select(:customer, :sms_provider_id, @sms_providers, :id, :name, options ={selected: @customer.sms_provider_id}, html_options = {class: "selector"}) %>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="formRow">
             <label><%= f.label(:sender) %></label>
             <div class="formRight">
               <%= f.text_field :sender, placeholder: "Emetteur" %>
