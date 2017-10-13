@@ -224,7 +224,7 @@ class MessagesController < ApplicationController
   end
 
   def send_with_routesms(parameter, msisdn, sender, message)
-    request = Typhoeus::Request.new(parameter.routesms_provider_url + "?username=#{parameter.routesms_provider_username}&password=#{parameter.routesms_provider_password}&type=0&dlr=1&destination=#{msisdn}&source=#{sender}&message=#{URI.escape(message)}", followlocation: true, method: :get)
+    request = Typhoeus::Request.new(parameter.routesms_provider_url + "?username=#{parameter.routesms_provider_username}&password=#{parameter.routesms_provider_password}&type=0&dlr=1&destination=#{msisdn}&source=#{URI.escape(sender)}&message=#{URI.escape(message)}", followlocation: true, method: :get)
     request.run
     result = request.response.body.strip.split("|") rescue nil
     @request_status = result[0]
