@@ -26,4 +26,5 @@ class Customer < ActiveRecord::Base
   # Validations
   validates :user_id, :label, :sms_provider_id, :login, :password, presence: true
   validates :label, uniqueness: true
+  validates :bulk, numericality: {greater_than_or_equal_to: 0}
 end

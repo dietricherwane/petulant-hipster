@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012011956) do
+ActiveRecord::Schema.define(version: 20171202204453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20171012011956) do
     t.boolean  "status"
     t.string   "md5_password"
     t.integer  "sms_provider_id"
+    t.integer  "bulk"
   end
 
   create_table "delayed_jobs", force: true do |t|
