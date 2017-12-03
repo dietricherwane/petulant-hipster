@@ -154,25 +154,31 @@ class MessagesController < ApplicationController
     end
     parameter = Parameter.first
 
-    case (@service.sms_provider.name rescue nil)
-    when "BICS"
-      send_with_bics(parameter, msisdn, @sender, @message)
-    when "ROUTESMS"
-      send_with_routesms(parameter, msisdn, @sender, @message)
-    when "INFOBIP"
-      send_with_infobip(parameter, msisdn, @sender, @message)
-    else
-      send_with_routesms(parameter, msisdn, @sender, @message)
-    end
+    if @service.bulk.blank? or @service.bulk == 0
 
-    if @status == "1"
-      @status = "1"
-      @sent_messages += 1
-      @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, message_id: @message_id, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
     else
-      @status = "6"
-      @failed_messages += 1
-      @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
+      case (@service.sms_provider.name rescue nil)
+      when "BICS"
+        send_with_bics(parameter, msisdn, @sender, @message)
+      when "ROUTESMS"
+        send_with_routesms(parameter, msisdn, @sender, @message)
+      when "INFOBIP"
+        send_with_infobip(parameter, msisdn, @sender, @message)
+      else
+        send_with_routesms(parameter, msisdn, @sender, @message)
+      end
+
+      if @status == "1"
+        @status = "1"
+        @sent_messages += 1
+        @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, message_id: @message_id, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
+        # Décrémentation du compteur de SMS
+        @service.update_attributes(bulk: @service.bulk.to_i - 1)
+      else
+        @status = "6"
+        @failed_messages += 1
+        @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
+      end
     end
   end
 
@@ -286,5 +292,16 @@ class MessagesController < ApplicationController
     render text: %Q[
       {"status":"#{status}"}
     ]
+  end
+
+  def api_bulk
+    @service = Customer.find_by_login(params[:login])
+    @number = -1
+
+    if !@service.blank?
+      @number = @service.bulk.to_i
+    end
+
+    render text: @number
   end
 end

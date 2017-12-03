@@ -37,6 +37,14 @@
           </div>
 
           <div class="formRow">
+            <label><%= f.label(:bulk) %></label>
+            <div class="formRight">
+              <%= f.text_field :bulk, placeholder: "Nombre de SMS", value: 0 %>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="formRow">
             <label><%= label_tag(:sms_provider_id, "Profil") %></label>
             <div class="formRight">
               <%= collection_select(:customer, :sms_provider_id, @sms_providers, :id, :name, html_options = {class: "selector"}) %>
