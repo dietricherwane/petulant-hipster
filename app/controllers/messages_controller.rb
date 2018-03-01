@@ -154,9 +154,9 @@ class MessagesController < ApplicationController
     end
     parameter = Parameter.first
 
-    if @service.bulk.blank? or @service.bulk == 0
+    #if @service.bulk.blank? or @service.bulk == 0
 
-    else
+    #else
       case (@service.sms_provider.name rescue nil)
       when "BICS"
         send_with_bics(parameter, msisdn, @sender, @message)
@@ -173,13 +173,13 @@ class MessagesController < ApplicationController
         @sent_messages += 1
         @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, message_id: @message_id, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
         # Décrémentation du compteur de SMS
-        @service.update_attributes(bulk: @service.bulk.to_i - 1)
+        @service.update_attributes(bulk: (@service.bulk.to_i rescue nil) - 1) rescue nil
       else
         #@status = "6"
         @failed_messages += 1
         @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
       end
-    end
+    #end
   end
 
   def send_with_bics(parameter, msisdn, sender, message)
