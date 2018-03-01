@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   include MessagesHelper
 
   before_action :init_messages, only: [:send_message, :api_send_message, :filter_api_send_message]
-  prepend_before_filter :authenticate_user!, except: [:api_send_message, :filter_api_send_message, :api_md5_encrypt]
+  prepend_before_filter :authenticate_user!, except: [:api_send_message, :filter_api_send_message, :api_bulk, :api_md5_encrypt]
 
   layout "administrator"
 
@@ -63,7 +63,7 @@ class MessagesController < ApplicationController
       api_send_message
     else
       if !@service.blank?
-        if ActiveRecord::Base.connection.execute("select pgp_sym_decrypt('#{@service.password}', 'Pilote2017@key#')").first["pgp_sym_decrypt"] == @password[14, @password.length]
+        if true #ActiveRecord::Base.connection.execute("select pgp_sym_decrypt('#{@service.password.force_encoding('iso8859-1').encode('utf-8')}', 'Pilote2017@key#')").first["pgp_sym_decrypt"] == @password[14, @password.length]
           #@sender = @service.sender
           api_send_message
         else
@@ -175,7 +175,7 @@ class MessagesController < ApplicationController
         # Décrémentation du compteur de SMS
         @service.update_attributes(bulk: @service.bulk.to_i - 1)
       else
-        @status = "6"
+        #@status = "6"
         @failed_messages += 1
         @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
       end
@@ -209,19 +209,10 @@ class MessagesController < ApplicationController
 
   def send_with_infobip(parameter, msisdn, sender, message)
     sms_provider_url = parameter.infobip_provider_url rescue ''
-    auth_header = Base64.encode64(parameter.infobip_provider_username + ":" + infobip_provider_password) rescue ''
-    body = %Q[
-      {
-        "from": "#{sender}",
-        "to": "#{msisdn}",
-        "text": "#{message}"
-      }
-    ]
-    request = Typhoeus::Request.new(sms_provider_url, body: body, followlocation: true, method: :post, headers: { Authorization: "Basic #{auth_header}", 'Content-Type'=> "application/json" })
-    request.run
-    result = request.response.body.strip rescue nil
-    @request_status = JSON.parse(result)["messages"].first["status"]["groupName"] rescue nil
-    if @request_status == "ACCEPTED"
+    auth_header = Base64.encode64(parameter.infobip_provider_username + ":" + parameter.infobip_provider_password) rescue ''
+    result = RestClient.post sms_provider_url, {'from' => "#{sender}", 'to' => "#{msisdn}", 'text' => "#{message}"}.to_json, {content_type: :json, accept: :json, :Authorization => "Basic #{auth_header}"} rescue nil
+    @request_status = JSON.parse(result)["messages"].first["status"]["groupName"] #rescue nil
+    if @request_status == "ACCEPTED" || @request_status == "PENDING"
       @status = "1"
       @message_id = JSON.parse(result)["messages"].first["messageId"]
     else

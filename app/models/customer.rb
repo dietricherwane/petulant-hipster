@@ -1,6 +1,6 @@
 class Customer < ActiveRecord::Base
   # Set accessible fields
-  attr_accessible :label, :uuid, :login, :password, :service_id, :sender, :user_id, :status, :id, :md5_password, :sms_provider_id
+  attr_accessible :label, :uuid, :login, :password, :service_id, :sender, :user_id, :status, :id, :md5_password, :sms_provider_id, :bulk
   #attr_encrypted :encrypted_password
 
   # Relationships
