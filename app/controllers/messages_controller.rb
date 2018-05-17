@@ -165,7 +165,7 @@ class MessagesController < ApplicationController
       when "INFOBIP"
         send_with_infobip(parameter, msisdn, @sender, @message)
       else
-        send_with_routesms(parameter, msisdn, @sender, @message)
+        send_with_infobip(parameter, msisdn, @sender, @message)#send_with_routesms(parameter, msisdn, @sender, @message)
       end
 
       if @status == "1"
