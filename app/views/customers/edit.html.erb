@@ -29,6 +29,22 @@
           <%= f.hidden_field(:id, value: @customer.id) %>
 
           <div class="formRow">
+            <label><%= f.label(:sms_allowed) %></label>
+            <div class="formRight">
+              <%= f.check_box :sms_allowed, {checked: (@customer.sms_allowed ? true : false)}, "1", "0" %>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="formRow">
+            <label><%= f.label(:email_allowed) %></label>
+            <div class="formRight">
+              <%= f.check_box :email_allowed, {checked: (@customer.email_allowed ? true : false)}, "1", "0" %>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="formRow">
             <label><%= f.label(:label) %></label>
             <div class="formRight">
               <%= f.text_field :label, placeholder: "Libellé" %>
@@ -40,6 +56,14 @@
             <label><%= f.label(:bulk) %></label>
             <div class="formRight">
               <%= f.text_field :bulk, placeholder: "Nombre de SMS" %>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="formRow">
+            <label><%= f.label(:bulk_email) %></label>
+            <div class="formRight">
+              <%= f.text_field :bulk_email, placeholder: "Nombre d'emails" %>
             </div>
             <div class="clear"></div>
           </div>

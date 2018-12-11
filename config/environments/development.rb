@@ -9,7 +9,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  config.action_mailer.default_url_options = { :host => '41.189.40.193:9999' }
+  config.action_mailer.default_url_options = { :host => 'de2513.ispfr.net:9999' }
 
 	ActionMailer::Base.smtp_settings = {
   	:openssl_verify_mode => 'none',
@@ -17,7 +17,7 @@ Rails.application.configure do
 		:enable_starttls_auto => true,
 		:port => 25,
 		:authentication => :plain,
-		:user_name => "admin.lonaci@ngser.com",
+		:user_name => "SmsGateway NGSER",
 		:password => 'pushlonaci2015'
 	}
 

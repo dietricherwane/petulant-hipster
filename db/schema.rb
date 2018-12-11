@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202204453) do
+ActiveRecord::Schema.define(version: 20181202204541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pgcrypto"
 
   create_table "custom_logs", force: true do |t|
     t.text     "sender_service"
@@ -43,6 +42,9 @@ ActiveRecord::Schema.define(version: 20171202204453) do
     t.string   "md5_password"
     t.integer  "sms_provider_id"
     t.integer  "bulk"
+    t.integer  "bulk_email"
+    t.boolean  "sms_allowed"
+    t.boolean  "email_allowed"
   end
 
   create_table "delayed_jobs", force: true do |t|

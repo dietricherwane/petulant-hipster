@@ -1,6 +1,6 @@
 class Customer < ActiveRecord::Base
   # Set accessible fields
-  attr_accessible :label, :uuid, :login, :password, :service_id, :sender, :user_id, :status, :id, :md5_password, :sms_provider_id, :bulk
+  attr_accessible :label, :uuid, :login, :password, :service_id, :sender, :user_id, :status, :id, :md5_password, :sms_provider_id, :bulk, :bulk_email, :sms_allowed, :email_allowed
   #attr_encrypted :encrypted_password
 
   # Relationships
@@ -16,7 +16,11 @@ class Customer < ActiveRecord::Base
     password: "Mot de passe",
     sender: "Emetteur",
     status: "Statut",
-    sms_provider_id: "Fournisseur SMS"
+    sms_provider_id: "Fournisseur SMS",
+    bulk: "Bulk SMS",
+    bulkemail: "Blk Email",
+    sms_allowed: "Sms autorisés",
+    email_allowed: "Emails autorisés"
   }
 
   def self.human_attribute_name(attr, option = {})

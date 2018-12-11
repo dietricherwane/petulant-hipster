@@ -33,6 +33,10 @@ Rails.application.routes.draw do
   get "/customer/update" => "customers#list"
   get "/customer/disable/:customer_id" => "customers#disable", as: :disable_customer
   get "/customer/enable/:customer_id" => "customers#enable", as: :enable_customer
+
+  get "/administrator/edit" => "users#edit", as: :edit_admin_profile
+  post "/administrator/update" => "users#update", as: :update_admin_profile
+  get "/administrator/update" => "users#edit"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

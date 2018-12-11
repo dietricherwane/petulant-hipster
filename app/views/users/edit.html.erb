@@ -1,0 +1,53 @@
+<!-- Title area -->
+<div class="titleArea">
+    <div class="wrapper">
+        <div class="pageTitle">
+            <h5>Administrateur</h5>
+            <span>Modifier les informations relatives au profil</span>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<%#= render "messages/shared/sub_menu" %>
+
+<div class="line"></div>
+
+<!-- Main content wrapper -->
+<div class="wrapper">
+  <%= @error_message %>
+  <%= @success_message %>
+
+  <%= form_tag update_admin_profile_path do %>
+    <fieldset>
+      <div class="widget">
+        <div class="title"><img src="<%= asset_path 'icons/dark/users.png' %>" alt="" class="titleIcon" /><h6>Modifier le profil</h6></div>
+
+          <div class="formRow">
+            <label><%= label_tag(:firstname, "Nom") %></label>
+            <div class="formRight">
+              <%= text_field_tag "firstname", current_user.firstname, placeholder: "Nom" %>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="formRow">
+            <label><%= label_tag(:lastname, "Prénoms") %></label>
+            <div class="formRight">
+              <%= text_field_tag "lastname", current_user.lastname, placeholder: "Prénoms" %>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="formRow">
+            <%= submit_tag 'Modifier', class: 'basic' %>
+          </div>
+      </div>
+    </fieldset>
+  <% end %>
+
+
+</div>
+<!-- End Main content wrapper -->
