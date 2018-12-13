@@ -16,29 +16,29 @@ class CustomersController < ApplicationController
     init_customer_view
     @error_message = ""
     @success_message = ""
-    @customer_exists = (current_user.customers.count == 0 ? false : true)
+    #@customer_exists = (current_user.customers.count == 0 ? false : true)
     @existing_customer = current_user.customers.first rescue nil
     @sms_providers = SmsProvider.all
 
-    if @customer_exists#@existing_customer != blank?
-      params[:customer][:login] = @existing_customer.login #rescue nil
-      params[:customer][:password] = 'duke'
-      params[:password_confirmation] = 'duke'
-    end
+    #if @customer_exists#@existing_customer != blank?
+      #params[:customer][:login] = @existing_customer.login #rescue nil
+      #params[:customer][:password] = 'duke'
+      #params[:password_confirmation] = 'duke'
+    #end
 
-    @customer = Customer.new(params[:customer].merge({user_id: params[:customer][:user_id], md5_password: Digest::MD5.hexdigest(params[:customer][:password])}))
+    @customer = Customer.new(params[:customer].merge({user_id: params[:customer][:user_id], md5_password: Digest::MD5.hexdigest(params[:customer][:password]), clear_password: params[:customer][:password]}))
 
     if params[:customer][:password] =! params[:password_confirmation]
       @error_message = "Le mot de passe et sa confirmation doivent être identiques<br />"
       @error_message = messages!(@error_message + @customer.errors.full_messages.map { |msg| "#{msg}<br />" }.join, "error")
     else
       if @customer.save &&  @error_message.blank?
-        if @existing_customer.blank?
-          ActiveRecord::Base.connection.execute("UPDATE customers SET password = '\' || pgp_sym_encrypt('#{Digest::MD5.hexdigest(@customer.password)}', 'Pilote2017@key#') WHERE id = '#{@customer.id}'")# rescue nil
+        #if @existing_customer.blank?
+          ActiveRecord::Base.connection.execute("UPDATE customers SET password = '\' || pgp_sym_encrypt('#{Digest::MD5.hexdigest(@customer.password)}', 'Pilote2017@key#'), sms_allowed = #{1 if @customer.bulk != 0}, email_allowed = #{1 if @customer.bulk_email != 0} WHERE id = '#{@customer.id}'")# rescue nil
           #ActiveRecord::Base.connection.execute("UPDATE customers SET password = pgp_sym_encrypt('#{Digest::MD5.hexdigest(@customer.password)}', 'Pilote2017@key#') WHERE id = '#{@customer.id}'")# rescue nil
-        else
-          ActiveRecord::Base.connection.execute("UPDATE customers SET password = '#{@existing_customer.password}', login = '#{@existing_customer.login}' WHERE user_id = #{current_user.id}")# rescue nil
-        end
+        #else
+          #ActiveRecord::Base.connection.execute("UPDATE customers SET password = '#{@existing_customer.password}', login = '#{@existing_customer.login}' WHERE user_id = #{current_user.id}")# rescue nil
+        #end
         @success_message = messages!("Le client a été correctement créé", "success")
         @customer = current_user.customers.new()
       else

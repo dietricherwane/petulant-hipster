@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181202204541) do
+ActiveRecord::Schema.define(version: 20181213014557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20181202204541) do
     t.integer  "bulk_email"
     t.boolean  "sms_allowed"
     t.boolean  "email_allowed"
+    t.string   "email"
+    t.string   "clear_password"
   end
 
   create_table "delayed_jobs", force: true do |t|

@@ -1,6 +1,6 @@
 class Customer < ActiveRecord::Base
   # Set accessible fields
-  attr_accessible :label, :uuid, :login, :password, :service_id, :sender, :user_id, :status, :id, :md5_password, :sms_provider_id, :bulk, :bulk_email, :sms_allowed, :email_allowed
+  attr_accessible :label, :uuid, :login, :password, :service_id, :sender, :user_id, :status, :id, :md5_password, :sms_provider_id, :bulk, :bulk_email, :sms_allowed, :email_allowed, :email, :clear_password
   #attr_encrypted :encrypted_password
 
   # Relationships
@@ -14,13 +14,14 @@ class Customer < ActiveRecord::Base
     label: "Service ID",
     login: "Login",
     password: "Mot de passe",
-    sender: "Emetteur",
+    sender: "Emetteur du message",
     status: "Statut",
     sms_provider_id: "Fournisseur SMS",
     bulk: "Bulk SMS",
-    bulkemail: "Blk Email",
+    bulkemail: "Bulk Email",
     sms_allowed: "Sms autorisés",
-    email_allowed: "Emails autorisés"
+    email_allowed: "Emails autorisés",
+    email: "Email"
   }
 
   def self.human_attribute_name(attr, option = {})
@@ -28,7 +29,9 @@ class Customer < ActiveRecord::Base
   end
 
   # Validations
-  validates :user_id, :label, :sms_provider_id, :login, :password, presence: true
+  validates :user_id, :label, :sms_provider_id, :login, :password, :email, :sender, presence: true
+  validates :email, format: {with: /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i, multiline: true, allow_blank: false}
+  validates :email, uniqueness: true
   validates :label, uniqueness: true
-  validates :bulk, numericality: {greater_than_or_equal_to: 0}
+  validates :bulk, :bulk_email, numericality: {greater_than_or_equal_to: 0}
 end
