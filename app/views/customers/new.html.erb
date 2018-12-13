@@ -36,27 +36,35 @@
             <div class="clear"></div>
           </div>
 
-          <div class="formRow">
-            <label><%= f.label(:bulk) %></label>
-            <div class="formRight">
-              <%= f.text_field :bulk, placeholder: "Nombre de SMS", value: 0 %>
-            </div>
-            <div class="clear"></div>
-          </div>
-
-          <div class="formRow">
-            <label><%= label_tag(:sms_provider_id, "Profil") %></label>
-            <div class="formRight">
-              <%= collection_select(:customer, :sms_provider_id, @sms_providers, :id, :name, html_options = {class: "selector"}) %>
-            </div>
-            <div class="clear"></div>
-          </div>
-
-          <% if @customer_exists == false %>
+          <%# if @customer_exists == false %>
             <div class="formRow">
               <label><%= f.label(:login) %></label>
               <div class="formRight">
                 <%= f.text_field :login, placeholder: "Login" %>
+              </div>
+              <div class="clear"></div>
+            </div>
+
+            <div class="formRow">
+              <label><%= f.label(:sender) %></label>
+              <div class="formRight">
+                <%= f.text_field :sender, placeholder: "Emetteur du message" %>
+              </div>
+              <div class="clear"></div>
+            </div>
+
+            <div class="formRow">
+              <label><%= label_tag(:sms_provider_id, "Profil") %></label>
+              <div class="formRight">
+                <%= collection_select(:customer, :sms_provider_id, @sms_providers, :id, :name, html_options = {class: "selector"}) %>
+              </div>
+              <div class="clear"></div>
+            </div>
+
+            <div class="formRow">
+              <label><%= f.label(:email) %></label>
+              <div class="formRight">
+                <%= f.text_field :email, placeholder: "Email" %>
               </div>
               <div class="clear"></div>
             </div>
@@ -76,7 +84,23 @@
               </div>
               <div class="clear"></div>
             </div>
-          <% end %>
+
+            <div class="formRow">
+              <label><%= f.label(:bulk) %></label>
+              <div class="formRight">
+                <%= f.text_field :bulk, placeholder: "Nombre de SMS", value: 0 %>
+              </div>
+              <div class="clear"></div>
+            </div>
+
+            <div class="formRow">
+              <label><%= f.label(:bulk_email) %></label>
+              <div class="formRight">
+                <%= f.text_field :bulk_email, placeholder: "Nombre d'emails", value: 0 %>
+              </div>
+              <div class="clear"></div>
+            </div>
+          <%# end %>
 
           <div class="formRow">
             <%= submit_tag 'Créer', class: 'basic' %>
