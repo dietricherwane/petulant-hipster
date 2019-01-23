@@ -21,7 +21,8 @@ class Customer < ActiveRecord::Base
     bulkemail: "Bulk Email",
     sms_allowed: "Sms autorisés",
     email_allowed: "Emails autorisés",
-    email: "Email"
+    email: "Email",
+    clear_password: "Mot de passe"
   }
 
   def self.human_attribute_name(attr, option = {})
