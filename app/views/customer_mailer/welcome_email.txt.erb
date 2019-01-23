@@ -1,0 +1,12 @@
+Bonjour, <%= @customer.label %>
+===============================================
+
+Votre compte a été créé sur le SmsGateway NGSER. Vous pouvez désormais transmettre des sms et des emails.
+Vos paramètres d'accès sont:
+
+Login: <%= @customer.email %>
+Mot de passe: <%= @customer.clear_password %>
+
+Pour vous connecter, veuillez cliquer sur le lien: <%= @url %>.
+
+Merci pour votre inscription et à bientôt!</p>

@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions", :passwords => "users/passwords", :confirmations => "users/confirmations"}
 
   get 'message' => 'messages#new', as: :message
+  get 'customer_message' => 'customer_messages#new', as: :customer_message
   post 'message/send' => 'messages#send_message', as: :send_message
+  post 'customer_message/send' => 'customer_messages#send_message', as: :customer_send_message
   get 'message/send' => 'messages#new'
+  get 'customer_message/send' => 'customer_messages#new'
   get '/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/:sender/:msisdn/:message' => 'messages#filter_api_send_message', :constraints => {:message => /[^\/]+/}
   get '/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/:login/:password/:service_id/:sender/:msisdn/:message' => 'messages#filter_api_send_message', :constraints => {:message => /[^\/]+/}
   #get '/ad7e2b2a24677ed2eecf953edf1abfa1/b19e8e47-19f5-4162-8447-e56cb5ef8a34/api/message/:login/:password/:service_id/:sender/:msisdn/:message' => 'messages#filter_api_send_message'
@@ -29,10 +32,16 @@ Rails.application.routes.draw do
   get "/customer/create" => "customers#new"
   get "/customers/list" => "customers#list", as: :list_customers
   get "/customer/edit/:customer_id" => "customers#edit", as: :edit_customer
+  get "/customer/edit" => "customers#customer_edit", as: :customer_edit_customer
   post "/customer/update" => "customers#update", as: :update_customer
+  post "/customer/customer_update" => "customers#customer_update", as: :customer_update_customer
   get "/customer/update" => "customers#list"
   get "/customer/disable/:customer_id" => "customers#disable", as: :disable_customer
   get "/customer/enable/:customer_id" => "customers#enable", as: :enable_customer
+  get "/customer/sign_in" => "customers#new_session", as: :customer_login
+  delete "/customer/sign_out" => "customers#delete_session", as: :customer_sign_out
+  post "/customer/session/create" => "customers#create_session", as: :create_customer_session
+  get "/customer/message" => "customers#new_message", as: :customer_new_message
 
   get "/administrator/edit" => "users#edit", as: :edit_admin_profile
   post "/administrator/update" => "users#update", as: :update_admin_profile
