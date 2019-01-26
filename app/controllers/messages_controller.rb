@@ -195,7 +195,7 @@ class MessagesController < ApplicationController
         }
       }
     ]
-    request = Typhoeus::Request.new(sms_provider_url + "/outbound/#{URI.escape(sender)}/requests", body: body, followlocation: true, method: :post, headers: { Authorization: "Bearer #{sms_provider_token}", 'Content-Type'=> "application/json" })
+    request = Typhoeus::Request.new(sms_provider_url + "/outbound/#{URI.escape(sender) rescue 'SmsGateway'}/requests", body: body, followlocation: true, method: :post, headers: { Authorization: "Bearer #{sms_provider_token}", 'Content-Type'=> "application/json" })
     request.run
     result = request.response.body.strip rescue nil
     @request_status = JSON.parse(result)["outboundSMSMessageRequest"]["deliveryInfoList"]["deliveryInfo"].first["deliveryStatus"] rescue nil
@@ -221,7 +221,7 @@ class MessagesController < ApplicationController
   end
 
   def send_with_routesms(parameter, msisdn, sender, message)
-    request = Typhoeus::Request.new(parameter.routesms_provider_url + "?username=#{parameter.routesms_provider_username}&password=#{parameter.routesms_provider_password}&type=0&dlr=1&destination=#{msisdn}&source=#{URI.escape(sender)}&message=#{URI.escape(message)}", followlocation: true, method: :get)
+    request = Typhoeus::Request.new(parameter.routesms_provider_url + "?username=#{parameter.routesms_provider_username}&password=#{parameter.routesms_provider_password}&type=0&dlr=1&destination=#{msisdn}&source=#{URI.escape(sender) rescue 'SmsGateway'}&message=#{URI.escape(message)}", followlocation: true, method: :get)
     request.run
     result = request.response.body.strip.split("|") rescue nil
     @request_status = result[0]
