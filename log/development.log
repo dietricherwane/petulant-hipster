@@ -49538,3 +49538,12 @@ Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-01-22 20:36
 
 Started GET "/assets/ui/usualButtons.png" for 127.0.0.1 at 2019-01-22 20:36:50 +0000
 >>>>>>> a0b01a7ed7fc296a341ae100019a1a88d06d595e
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSessionsTable (20181217001044)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (277.8ms)[0m  [1mCREATE TABLE "sessions" ("id" serial primary key, "session_id" character varying(255) NOT NULL, "data" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (35.3ms)[0m  CREATE UNIQUE INDEX  "index_sessions_on_session_id" ON "sessions"  ("session_id")
+  [1m[36m (4.4ms)[0m  [1mCREATE  INDEX  "index_sessions_on_updated_at" ON "sessions"  ("updated_at")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20181217001044"]]
+  [1m[36m (10.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
