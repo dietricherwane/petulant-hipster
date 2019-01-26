@@ -49511,3 +49511,655 @@ Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-01-22 20:36
 
 
 Started GET "/assets/ui/usualButtons.png" for 127.0.0.1 at 2019-01-22 20:36:50 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-26 18:14:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (34.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MessagesController#new as HTML
+Completed 401 Unauthorized in 165ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-26 18:14:22 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb (1970.3ms)
+Completed 200 OK in 2043ms (Views: 2007.5ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:24 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/icons/dark/files.png" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/ui/usualButtons.png" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/icons/notifications/information.png" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-01-26 18:14:25 +0000
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LCVxP9s/Ga8TAG3eMm+ahc/qAeWoZ8L4xtnihXcOl3U=", "user"=>{"email"=>"dietricherwane@yahoo.fr", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (126.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'dietricherwane@yahoo.fr'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2019-01-26 18:14:37.645711"], ["last_sign_in_at", "2018-12-11 23:36:38.165836"], ["sign_in_count", 30], ["updated_at", "2019-01-26 18:14:37.648248"]]
+  [1m[35m (10.3ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/users/sign_up
+Completed 302 Found in 254ms (ActiveRecord: 137.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:38 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:38 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:38 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-26 18:14:38 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-26 18:17:01 +0000
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/message
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/message" for 127.0.0.1 at 2019-01-26 18:17:01 +0000
+Processing by MessagesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered messages/shared/_sub_menu.html.erb (28.8ms)
+  [1m[35mProfile Load (45.0ms)[0m  SELECT "profiles".* FROM "profiles"  WHERE (published IS NOT FALSE)
+  Rendered messages/new.html.erb within layouts/administrator (118.5ms)
+Completed 200 OK in 468ms (Views: 403.9ms | ActiveRecord: 49.1ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-01-26 18:17:02 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/backgrounds/titleRowBg.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/notifications/information.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/backgrounds/controlB.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/control/32/email.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/dark/users.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/forms/select_right.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/forms/select_left.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/addFiles.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/ui/usualButtons.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-01-26 18:17:03 +0000
