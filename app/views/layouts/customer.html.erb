@@ -32,10 +32,10 @@
         </ul>
       </li>
       <li class="files">
-        <a href="<%= transactions_path %>" class="<%= @transactions_active ? 'active' : '' %>"><span>Transactions</span></a>
+        <a href="<%= customer_transactions_path %>" class="<%= @transactions_active ? 'active' : '' %>"><span>Transactions</span></a>
       </li>
       <li class="magnify">
-        <a href="<%= search_path %>" class="<%= @search_active ? 'active' : '' %>"><span>Rechercher</span></a>
+        <a href="<%= customer_search_path %>" class="<%= @search_active ? 'active' : '' %>"><span>Rechercher</span></a>
       </li>
     </ul>
 </div>
@@ -61,8 +61,10 @@
                       </ul>
                   </li>
                   <li><a href="#" title=""><img src="<%= asset_path 'icons/topnav/settings.png' %>" alt="" /><span>Settings</span></a></li>-->
+                  <li><span>SMS:</span> <span class="numberTop"><%= session[:customer].bulk.to_i %></span></li>
+                  <li><span>Email:</span> <span class="numberTop"><%= session[:customer].bulk_email.to_i %></span></li>
                   <li>
-                    <%= link_to "Se déconnecter", customer_sign_out_path, :method => :delete %>
+                    <%= link_to "<img src='#{asset_path 'icons/topnav/logout.png'}' alt='' /><span>Se déconnecter</span>".html_safe, customer_sign_out_path, :method => :delete %>
                   </li>
               </ul>
             </div>

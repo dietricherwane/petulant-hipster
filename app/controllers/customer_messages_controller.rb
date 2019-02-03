@@ -29,6 +29,16 @@ class CustomerMessagesController < ApplicationController
     validate_profile_id
     validate_message
 
+    if session[:customer].sms_allowed == false
+      @error = true
+      @error_message = "Vous n'êtes pas autorisé à émettre des SMS. Veuillez contacter l'administrateur."
+    end
+
+    if session[:customer].bulk.to_i < 1
+      @error = true
+      @error_message = "Vous n'avez plus de SMS. Votre message n'a pas pu être envoyé."
+    end
+
     unless @error
       @profile = Profile.find_by_id(@profile_id)
       @service = session[:customer]
@@ -57,14 +67,10 @@ class CustomerMessagesController < ApplicationController
 
   def deliver_messages
     if @profile.name == "Numéro unique"
-      if session[:customer].bulk.to_i > 0
-        set_transaction("Envoi de message à un numéro.", 1)
-        send_message_request(@number.split.first)
-        @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages, user_id: (@service.user.id rescue nil))
-        @success_message = messages!("Le message a été envoyé. Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
-      else
-        @error_message = messages!("Vous n'avez plus de SMS. Votre message n'a pas pu être envoyé.", "error")
-      end
+      set_transaction("Envoi de message à un numéro.", 1)
+      send_message_request(@number.split.first)
+      @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages, user_id: (@service.user.id rescue nil))
+      @success_message = messages!("Le message a été envoyé. Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
     end
 
     if @profile.name == "Liste de numéros"
@@ -74,13 +80,15 @@ class CustomerMessagesController < ApplicationController
   end
 
   def set_transaction(description, subscribers_count)
-    @transaction = SmsTransaction.create(started_at: DateTime.now, profile_id: @profile.id, description: description, number_of_messages: subscribers_count, sender_service: @sender, service_id: @service_id)
+    @transaction = SmsTransaction.create(started_at: DateTime.now, profile_id: @profile.id, description: description, number_of_messages: subscribers_count, sender_service: session[:customer].sender, service_id: @service_id, customer_id: session[:customer].id)
     #@transaction = SmsTransaction.create(started_at: DateTime.now, profile_id: @profile.id, description: description, number_of_messages: subscribers_count, sender_service: session[:service], service_id: @service_id)
   end
 
   def deliver_message_to_excel_list
+    #matrix = {"application/vnd.ms-excel" => "xls", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" => "xlsx"}
     puts "entering thread"
     #Thread.new do
+      #@spreadsheet = Roo::Spreadsheet.open(@subscribers_file.path, extension: :xls).sheet(0)
       @spreadsheet = Spreadsheet.open(@subscribers_file.path).worksheet(0)
       puts "sheet opened"
       @spreadsheet.each do |row|
@@ -110,25 +118,25 @@ class CustomerMessagesController < ApplicationController
     #else
       case (@service.sms_provider.name rescue nil)
       when "BICS"
-        send_with_bics(parameter, msisdn, @sender, @message)
+        send_with_bics(parameter, msisdn, session[:customer].sender, @message)
       when "ROUTESMS"
-        send_with_routesms(parameter, msisdn, @sender, @message)
+        send_with_routesms(parameter, msisdn, session[:customer].sender, @message)
       when "INFOBIP"
-        send_with_infobip(parameter, msisdn, @sender, @message)
+        send_with_infobip(parameter, msisdn, session[:customer].sender, @message)
       else
-        send_with_infobip(parameter, msisdn, @sender, @message)#send_with_routesms(parameter, msisdn, @sender, @message)
+        send_with_infobip(parameter, msisdn, session[:customer].sender, @message)#send_with_routesms(parameter, msisdn, @sender, @message)
       end
 
       if @status == "1"
         @status = "1"
         @sent_messages += 1
-        @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, message_id: @message_id, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
+        @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, message_id: @message_id, customer_id: session[:customer].id, user_id: (@service.user.id rescue nil))
         # Décrémentation du compteur de SMS
         session[:customer].update_attributes(bulk: (@service.bulk.to_i rescue nil) - 1) rescue nil
       else
         #@status = "6"
         @failed_messages += 1
-        @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, customer_id: (@service.id rescue nil), user_id: (@service.user.id rescue nil))
+        @transaction.message_logs.create(subscriber_id: (@subscriber.id rescue nil), msisdn: msisdn, profile_id: (@subscriber.profile_id rescue nil), period_id: (@subscriber.period_id rescue nil), message: @message, status: @request_status, customer_id: session[:customer].id, user_id: (@service.user.id rescue nil))
       end
     #end
   end
@@ -146,7 +154,7 @@ class CustomerMessagesController < ApplicationController
         }
       }
     ]
-    request = Typhoeus::Request.new(sms_provider_url + "/outbound/#{URI.escape(sender)}/requests", body: body, followlocation: true, method: :post, headers: { Authorization: "Bearer #{sms_provider_token}", 'Content-Type'=> "application/json" })
+    request = Typhoeus::Request.new(sms_provider_url + "/outbound/#{URI.escape(sender) rescue 'SmsGateway'}/requests", body: body, followlocation: true, method: :post, headers: { Authorization: "Bearer #{sms_provider_token}", 'Content-Type'=> "application/json" })
     request.run
     result = request.response.body.strip rescue nil
     @request_status = JSON.parse(result)["outboundSMSMessageRequest"]["deliveryInfoList"]["deliveryInfo"].first["deliveryStatus"] rescue nil
@@ -172,7 +180,7 @@ class CustomerMessagesController < ApplicationController
   end
 
   def send_with_routesms(parameter, msisdn, sender, message)
-    request = Typhoeus::Request.new(parameter.routesms_provider_url + "?username=#{parameter.routesms_provider_username}&password=#{parameter.routesms_provider_password}&type=0&dlr=1&destination=#{msisdn}&source=#{URI.escape(sender)}&message=#{URI.escape(message)}", followlocation: true, method: :get)
+    request = Typhoeus::Request.new(parameter.routesms_provider_url + "?username=#{parameter.routesms_provider_username}&password=#{parameter.routesms_provider_password}&type=0&dlr=1&destination=#{msisdn}&source=#{URI.escape(sender) rescue 'SmsGateway'}&message=#{URI.escape(message) rescue 'none'}", followlocation: true, method: :get)
     request.run
     result = request.response.body.strip.split("|") rescue nil
     @request_status = result[0]
