@@ -158,7 +158,7 @@ class CustomersController < ApplicationController
     end
 
     if @error_message.blank?
-      redirect_to customer_new_message_path
+      redirect_to customer_message_path
     else
       render :new_session, layout: false
     end
@@ -167,7 +167,7 @@ class CustomersController < ApplicationController
   def delete_session
     session.delete(:customer)
     @success_message = messages!("Vous êtes à présent déconnecté", "success")
-    
+
     redirect_to customer_login_path
   end
 
