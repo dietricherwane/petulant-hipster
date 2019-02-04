@@ -68609,3 +68609,2334 @@ Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-03 23:10:04
 
 
 Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-03 23:10:04 +0000
+
+
+Started GET "/customer/search" for 127.0.0.1 at 2019-02-04 20:10:41 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomerSearchController#index as HTML
+  Rendered customer_search/shared/_sub_menu.html.erb (20.3ms)
+  Rendered customer_search/index.html.erb within layouts/customer (48.8ms)
+Completed 200 OK in 2347ms (Views: 2321.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:43 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/topnav/logout.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/backgrounds/titleRowBg.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/notifications/information.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/backgrounds/controlB.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/ui/usualButtons.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/backgrounds/numberBg.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/control/32/publish.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/dark/users.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-02-04 20:10:44 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-04 20:10:45 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-04 20:10:45 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-02-04 20:10:45 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-04 20:10:45 +0000
+
+
+Started GET "/assets/jquery_ui/datePickerArrows.png" for 127.0.0.1 at 2019-02-04 20:10:50 +0000
+
+
+Started POST "/customer/search/perform" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+Processing by CustomerSearchController#perform as HTML
+  Parameters: {"utf8"=>"âœ“", "authenticity_token"=>"F13xkNcaz0NuyawUplCv59LiSHo9907rWmX4sc7DIec=", "msisdn"=>"", "begin_date"=>"01-02-2019", "end_date"=>"", "commit"=>"Rechercher"}
+  [1m[35m (8.1ms)[0m  SELECT COUNT(*) FROM "sms_transactions"  WHERE ( customer_id = 31)
+  [1m[36mSmsTransaction Load (10.4ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE ( customer_id = 31) LIMIT 25 OFFSET 0[0m
+  Rendered customer_search/shared/_sub_menu.html.erb (0.4ms)
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles"  WHERE "profiles"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered customer_search/shared/_transactions_list.html.erb (43.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "sms_transactions"  WHERE ( customer_id = 31)[0m
+  Rendered customer_search/perform.html.erb within layouts/customer (126.0ms)
+Completed 200 OK in 320ms (Views: 286.3ms | ActiveRecord: 23.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:55 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/topnav/logout.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/notifications/information.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/titleRowBg.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/controlB.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/taskProgress.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/numberBg.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/control/32/publish.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/dark/full2.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-04 20:10:56 +0000
+
+
+Started GET "/customer/message_logs/84333" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+Processing by CustomerMessageLogsController#list as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.7ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1  [["sms_transaction_id", 84333]]
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT  "profiles".* FROM "profiles"  WHERE "profiles"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered customer_message_logs/shared/_sub_menu.html.erb (17.4ms)
+  [1m[35mMessageLog Load (0.4ms)[0m  SELECT  "message_logs".* FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1 LIMIT 25 OFFSET 0  [["sms_transaction_id", 84333]]
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  Rendered customer_message_logs/shared/_message_logs_list.html.erb (12.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1  [["sms_transaction_id", 84333]]
+  Rendered customer_message_logs/list.html.erb within layouts/customer (34.3ms)
+Completed 200 OK in 217ms (Views: 190.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:04 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/topnav/logout.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/dark/full2.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/control/32/archives.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/notifications/information.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/titleRowBg.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/controlB.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/taskProgress.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/numberBg.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-04 20:11:05 +0000
+
+
+Started GET "/customer/message_logs/84333" for 127.0.0.1 at 2019-02-04 20:33:58 +0000
+Processing by CustomerMessageLogsController#list as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[35mSmsTransaction Load (0.6ms)[0m  SELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1[0m  [["sms_transaction_id", 84333]]
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles"  WHERE "profiles"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered customer_message_logs/shared/_sub_menu.html.erb (2.5ms)
+  [1m[36mMessageLog Load (0.3ms)[0m  [1mSELECT  "message_logs".* FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1 LIMIT 25 OFFSET 0[0m  [["sms_transaction_id", 84333]]
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = $1 LIMIT 1  [["id", 31]]
+  Rendered customer_message_logs/shared/_message_logs_list.html.erb (19.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1[0m  [["sms_transaction_id", 84333]]
+  Rendered customer_message_logs/list.html.erb within layouts/customer (35.5ms)
+Completed 200 OK in 232ms (Views: 195.3ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/topnav/logout.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/control/32/database.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/notifications/information.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/backgrounds/titleRowBg.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/backgrounds/controlB.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/taskProgress.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/backgrounds/numberBg.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/dark/full2.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/control/32/archives.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-02-04 20:33:59 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-02-04 20:34:00 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-02-04 20:34:00 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-02-04 20:34:00 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-04 20:34:00 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-04 20:34:00 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-02-04 20:34:00 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-04 20:34:00 +0000
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 20:34:55 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.3ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+Completed 406 Not Acceptable in 4ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/customer_message_logs_controller.rb:24:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-04 20:37:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-04 20:37:40 +0000
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 20:37:45 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.4ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+Completed 500 Internal Server Error in 47ms
+
+NameError (uninitialized constant SmsTransaction::MessageLog):
+  app/controllers/customer_message_logs_controller.rb:23:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.6ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.8ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 20:46:11 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.4ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+Completed 406 Not Acceptable in 22ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/customer_message_logs_controller.rb:24:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.1ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.4ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 20:46:39 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.9ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+Completed 500 Internal Server Error in 31ms
+
+NameError (uninitialized constant SmsTransaction::MessageLog):
+  app/controllers/customer_message_logs_controller.rb:23:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.9ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.8ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 20:49:14 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.3ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+Completed 500 Internal Server Error in 27ms
+
+NameError (undefined local variable or method `acts_as_xlsx' for #<Class:0x00000006232458>):
+  app/models/message_log.rb:2:in `<class:MessageLog>'
+  app/models/message_log.rb:1:in `<top (required)>'
+  app/controllers/customer_message_logs_controller.rb:23:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.9ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 20:53:09 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.2ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+Completed 406 Not Acceptable in 27ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/customer_message_logs_controller.rb:24:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.9ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.3ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 20:53:26 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.4ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+Completed 500 Internal Server Error in 29ms
+
+NameError (undefined local variable or method `acts_as_xlsx' for #<Class:0x007f236c6cb0d8>):
+  app/models/message_log.rb:2:in `<class:MessageLog>'
+  app/models/message_log.rb:1:in `<top (required)>'
+  app/controllers/customer_message_logs_controller.rb:23:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.4ms)
+
+
+Started GET "/customer/message_logs/84333" for 127.0.0.1 at 2019-02-04 21:09:54 +0000
+Processing by CustomerMessageLogsController#list as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.7ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1  [["sms_transaction_id", 84333]]
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT  "profiles".* FROM "profiles"  WHERE "profiles"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered customer_message_logs/shared/_sub_menu.html.erb (1.0ms)
+  Rendered customer_message_logs/list.html.erb within layouts/customer (13.1ms)
+Completed 500 Internal Server Error in 51ms
+
+SyntaxError (/home/dietrich/Projects/Rails/SmsGateway/app/views/customer_message_logs/shared/_sub_menu.html.erb:12: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                               ^
+/home/dietrich/Projects/Rails/SmsGateway/app/views/customer_message_logs/shared/_sub_menu.html.erb:20: syntax error, unexpected keyword_ensure, expecting ')'
+/home/dietrich/Projects/Rails/SmsGateway/app/views/customer_message_logs/shared/_sub_menu.html.erb:22: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/customer_message_logs/shared/_sub_menu.html.erb:12: syntax error, unexpected keyword_end
+  app/views/customer_message_logs/shared/_sub_menu.html.erb:20: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/customer_message_logs/shared/_sub_menu.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+  app/views/customer_message_logs/list.html.erb:15:in `_app_views_customer_message_logs_list_html_erb__1936172624289254645_52591120'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.2ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.3ms)
+
+
+Started GET "/customer/message_logs/84333" for 127.0.0.1 at 2019-02-04 21:10:09 +0000
+Processing by CustomerMessageLogsController#list as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.6ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1  [["sms_transaction_id", 84333]]
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles"  WHERE "profiles"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered customer_message_logs/shared/_sub_menu.html.erb (3.1ms)
+  [1m[35mMessageLog Load (0.7ms)[0m  SELECT  "message_logs".* FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1 LIMIT 25 OFFSET 0  [["sms_transaction_id", 84333]]
+  [1m[36mCustomer Load (0.5ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  Rendered customer_message_logs/shared/_message_logs_list.html.erb (22.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1  [["sms_transaction_id", 84333]]
+  Rendered customer_message_logs/list.html.erb within layouts/customer (31.3ms)
+Completed 200 OK in 374ms (Views: 365.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/icons/topnav/logout.png" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-02-04 21:10:10 +0000
+
+
+Started GET "/assets/icons/notifications/information.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/backgrounds/titleRowBg.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/backgrounds/controlB.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/taskProgress.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/backgrounds/numberBg.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/control/32/database.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/control/32/archives.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/dark/full2.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-04 21:10:11 +0000
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 21:10:12 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[35mSmsTransaction Load (0.4ms)[0m  SELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1
+Completed 500 Internal Server Error in 4ms
+
+Errno::ENOENT (No such file or directory @ rb_sysopen - /public/export.xls):
+  app/controllers/customer_message_logs_controller.rb:30:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.9ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 21:11:17 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[35mSmsTransaction Load (0.3ms)[0m  SELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1
+Completed 500 Internal Server Error in 24ms
+
+NameError (uninitialized constant CustomerMessageLogsController::RAILS_ROOT):
+  app/controllers/customer_message_logs_controller.rb:29:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.1ms)
+
+
+Started GET "/customer/message_logs/84333" for 127.0.0.1 at 2019-02-04 21:12:38 +0000
+Processing by CustomerMessageLogsController#list as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[35mSmsTransaction Load (0.5ms)[0m  SELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1[0m  [["sms_transaction_id", 84333]]
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles"  WHERE "profiles"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered customer_message_logs/shared/_sub_menu.html.erb (0.6ms)
+  [1m[36mMessageLog Load (0.3ms)[0m  [1mSELECT  "message_logs".* FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1 LIMIT 25 OFFSET 0[0m  [["sms_transaction_id", 84333]]
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = $1 LIMIT 1  [["id", 31]]
+  Rendered customer_message_logs/shared/_message_logs_list.html.erb (18.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1[0m  [["sms_transaction_id", 84333]]
+  Rendered customer_message_logs/list.html.erb within layouts/customer (32.4ms)
+Completed 200 OK in 252ms (Views: 216.1ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-02-04 21:12:38 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-02-04 21:12:38 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-02-04 21:12:38 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-02-04 21:12:38 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-02-04 21:12:38 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/topnav/logout.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/titleRowBg.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/notifications/information.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/controlB.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/taskProgress.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/numberBg.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/control/32/archives.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/dark/full2.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/control/32/database.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-04 21:12:39 +0000
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 21:12:41 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.4ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+Completed 500 Internal Server Error in 4ms
+
+Errno::ENOENT (No such file or directory @ rb_sysopen - /public/export.xls):
+  app/controllers/customer_message_logs_controller.rb:30:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.5ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 21:15:58 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.7ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+  Rendered public/export.xls within layouts/customer (1.3ms)
+Completed 500 Internal Server Error in 76ms
+
+ActionView::Template::Error (Your template was not saved as valid UTF-8. Please either specify UTF-8 as the encoding for your template in your text editor, or mark the template with its encoding by inserting the following as the first line of the template:
+
+# encoding: <name of correct encoding>.
+
+The source of your template was:
+
+ÐÏà¡±á                ;  þÿ	                               þÿÿÿ       ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ	   »Ì       B  °a   =          =       @  8      å "       ·   Ú    1  È   ÿ     Arial ¤   GENERALà    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤          À à    ¤          À “  € ÿ’ â 8     ÿÿÿ ÿ    ÿ    ÿ ÿÿ  ÿ ÿ  ÿÿ €    €    € €€  € €  €€ ÀÀÀ €€€ ™™ÿ ™3f ÿÿÌ Ìÿÿ f f ÿ€€  fÌ ÌÌÿ   € ÿ ÿ ÿÿ   ÿÿ € € €    €€   ÿ  Ìÿ Ìÿÿ ÌÿÌ ÿÿ™ ™Ìÿ ÿ™Ì Ì™ÿ ÿÌ™ 3fÿ 3ÌÌ ™Ì  ÿÌ  ÿ™  ÿf  ff™ –––  3f 3™f  3  33  ™3  ™3f 33™ 333 …  7     exportü          ÿ   
+   	   »Ì         d        _   €        %   ò   ÁU                   > ¶                ¡ " 	 d     ,,      à?      à? (        ð?&        è?'        è?)        ð?
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              R o o t   E n t r y                                              ÿÿÿÿÿÿÿÿ                                                 W o r k b o o k                                                  ÿÿÿÿÿÿÿÿÿÿÿÿ                     {iÒÎ¼Ô {iÒÎ¼Ô                                                                                                                                                                                                                                                                                                  	   
+                     þÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ      þÿÿÿþÿÿÿþÿÿÿýÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ):
+  app/controllers/customer_message_logs_controller.rb:32:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.2ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 21:15:58 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (1.3ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+  Rendered public/export.xls within layouts/customer (0.4ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (Your template was not saved as valid UTF-8. Please either specify UTF-8 as the encoding for your template in your text editor, or mark the template with its encoding by inserting the following as the first line of the template:
+
+# encoding: <name of correct encoding>.
+
+The source of your template was:
+
+ÐÏà¡±á                ;  þÿ	                               þÿÿÿ       ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ	   »Ì       B  °a   =          =       @  8      å "       ·   Ú    1  È   ÿ     Arial ¤   GENERALà    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤          À à    ¤          À “  € ÿ’ â 8     ÿÿÿ ÿ    ÿ    ÿ ÿÿ  ÿ ÿ  ÿÿ €    €    € €€  € €  €€ ÀÀÀ €€€ ™™ÿ ™3f ÿÿÌ Ìÿÿ f f ÿ€€  fÌ ÌÌÿ   € ÿ ÿ ÿÿ   ÿÿ € € €    €€   ÿ  Ìÿ Ìÿÿ ÌÿÌ ÿÿ™ ™Ìÿ ÿ™Ì Ì™ÿ ÿÌ™ 3fÿ 3ÌÌ ™Ì  ÿÌ  ÿ™  ÿf  ff™ –––  3f 3™f  3  33  ™3  ™3f 33™ 333 …  7     exportü          ÿ   
+   	   »Ì         d        _   €        %   ò   ÁU                   > ¶                ¡ " 	 d     ,,      à?      à? (        ð?&        è?'        è?)        ð?
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              R o o t   E n t r y                                              ÿÿÿÿÿÿÿÿ                                                 W o r k b o o k                                                  ÿÿÿÿÿÿÿÿÿÿÿÿ                     {iÒÎ¼Ô {iÒÎ¼Ô                                                                                                                                                                                                                                                                                                  	   
+                     þÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ      þÿÿÿþÿÿÿþÿÿÿýÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ):
+  app/controllers/customer_message_logs_controller.rb:32:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4.7ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 21:32:08 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.3ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+  Rendered public/export.xls within layouts/customer (0.3ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (Your template was not saved as valid UTF-8. Please either specify UTF-8 as the encoding for your template in your text editor, or mark the template with its encoding by inserting the following as the first line of the template:
+
+# encoding: <name of correct encoding>.
+
+The source of your template was:
+
+ÐÏà¡±á                ;  þÿ	                               þÿÿÿ       ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ	   »Ì       B  °a   =          =       @  8      å "       ·   Ú    1  È   ÿ     Arial ¤   GENERALà    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤          À à    ¤          À “  € ÿ’ â 8     ÿÿÿ ÿ    ÿ    ÿ ÿÿ  ÿ ÿ  ÿÿ €    €    € €€  € €  €€ ÀÀÀ €€€ ™™ÿ ™3f ÿÿÌ Ìÿÿ f f ÿ€€  fÌ ÌÌÿ   € ÿ ÿ ÿÿ   ÿÿ € € €    €€   ÿ  Ìÿ Ìÿÿ ÌÿÌ ÿÿ™ ™Ìÿ ÿ™Ì Ì™ÿ ÿÌ™ 3fÿ 3ÌÌ ™Ì  ÿÌ  ÿ™  ÿf  ff™ –––  3f 3™f  3  33  ™3  ™3f 33™ 333 …  7     exportü          ÿ   
+   	   »Ì         d        _   €        %   ò   ÁU                   > ¶                ¡ " 	 d     ,,      à?      à? (        ð?&        è?'        è?)        ð?
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              R o o t   E n t r y                                              ÿÿÿÿÿÿÿÿ                                                 W o r k b o o k                                                  ÿÿÿÿÿÿÿÿÿÿÿÿ                     ¼“Ñ¼Ô ¼“Ñ¼Ô                                                                                                                                                                                                                                                                                                  	   
+                     þÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ      þÿÿÿþÿÿÿþÿÿÿýÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ):
+  app/controllers/customer_message_logs_controller.rb:32:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (5.8ms)
+
+
+Started GET "/customer/message_logs/84333" for 127.0.0.1 at 2019-02-04 21:42:27 +0000
+Processing by CustomerMessageLogsController#list as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.3ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1  [["sms_transaction_id", 84333]]
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT  "profiles".* FROM "profiles"  WHERE "profiles"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered customer_message_logs/shared/_sub_menu.html.erb (7.5ms)
+  [1m[35mMessageLog Load (0.4ms)[0m  SELECT  "message_logs".* FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1 LIMIT 25 OFFSET 0  [["sms_transaction_id", 84333]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  Rendered customer_message_logs/shared/_message_logs_list.html.erb (25.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1  [["sms_transaction_id", 84333]]
+  Rendered customer_message_logs/list.html.erb within layouts/customer (50.9ms)
+Completed 200 OK in 520ms (Views: 468.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-02-04 21:42:28 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/topnav/logout.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/notifications/information.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/backgrounds/titleRowBg.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/backgrounds/controlB.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/taskProgress.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/backgrounds/numberBg.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/control/32/database.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/dark/full2.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/control/32/archives.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-04 21:42:29 +0000
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 21:42:30 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[35mSmsTransaction Load (0.6ms)[0m  SELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1
+  Rendered public/export.xls within layouts/customer (0.3ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (Your template was not saved as valid UTF-8. Please either specify UTF-8 as the encoding for your template in your text editor, or mark the template with its encoding by inserting the following as the first line of the template:
+
+# encoding: <name of correct encoding>.
+
+The source of your template was:
+
+ÐÏà¡±á                ;  þÿ	                               þÿÿÿ       ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ	   »Ì       B  °a   =          =       @  8      å "       ·   Ú    1  È   ÿ     Arial ¤   GENERALà    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤          À à    ¤          À “  € ÿ’ â 8     ÿÿÿ ÿ    ÿ    ÿ ÿÿ  ÿ ÿ  ÿÿ €    €    € €€  € €  €€ ÀÀÀ €€€ ™™ÿ ™3f ÿÿÌ Ìÿÿ f f ÿ€€  fÌ ÌÌÿ   € ÿ ÿ ÿÿ   ÿÿ € € €    €€   ÿ  Ìÿ Ìÿÿ ÌÿÌ ÿÿ™ ™Ìÿ ÿ™Ì Ì™ÿ ÿÌ™ 3fÿ 3ÌÌ ™Ì  ÿÌ  ÿ™  ÿf  ff™ –––  3f 3™f  3  33  ™3  ™3f 33™ 333 …  7     exportü          ÿ   
+   	   »Ì         d        _   €        %   ò   ÁU                   > ¶                ¡ " 	 d     ,,      à?      à? (        ð?&        è?'        è?)        ð?
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              R o o t   E n t r y                                              ÿÿÿÿÿÿÿÿ                                                 W o r k b o o k                                                  ÿÿÿÿÿÿÿÿÿÿÿÿ                     gQ‡Ò¼Ô gQ‡Ò¼Ô                                                                                                                                                                                                                                                                                                  	   
+                     þÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ      þÿÿÿþÿÿÿþÿÿÿýÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ):
+  app/controllers/customer_message_logs_controller.rb:32:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (5.3ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 21:42:55 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[35mSmsTransaction Load (0.4ms)[0m  SELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1
+  Rendered public/export.xls within layouts/customer (0.2ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (Your template was not saved as valid UTF-8. Please either specify UTF-8 as the encoding for your template in your text editor, or mark the template with its encoding by inserting the following as the first line of the template:
+
+# encoding: <name of correct encoding>.
+
+The source of your template was:
+
+ÐÏà¡±á                ;  þÿ	                               þÿÿÿ       ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ	   »Ì       B  °a   =          =       @  8      å "       ·   Ú    1  È   ÿ     Arial ¤   GENERALà    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤          À à    ¤          À “  € ÿ’ â 8     ÿÿÿ ÿ    ÿ    ÿ ÿÿ  ÿ ÿ  ÿÿ €    €    € €€  € €  €€ ÀÀÀ €€€ ™™ÿ ™3f ÿÿÌ Ìÿÿ f f ÿ€€  fÌ ÌÌÿ   € ÿ ÿ ÿÿ   ÿÿ € € €    €€   ÿ  Ìÿ Ìÿÿ ÌÿÌ ÿÿ™ ™Ìÿ ÿ™Ì Ì™ÿ ÿÌ™ 3fÿ 3ÌÌ ™Ì  ÿÌ  ÿ™  ÿf  ff™ –––  3f 3™f  3  33  ™3  ™3f 33™ 333 …  7     exportü          ÿ   
+   	   »Ì         d        _   €        %   ò   ÁU                   > ¶                ¡ " 	 d     ,,      à?      à? (        ð?&        è?'        è?)        ð?
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              R o o t   E n t r y                                              ÿÿÿÿÿÿÿÿ                                                 W o r k b o o k                                                  ÿÿÿÿÿÿÿÿÿÿÿÿ                    €8–Ò¼Ô€8–Ò¼Ô                                                                                                                                                                                                                                                                                                  	   
+                     þÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ      þÿÿÿþÿÿÿþÿÿÿýÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ):
+  app/controllers/customer_message_logs_controller.rb:32:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (6.3ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 21:57:18 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[35mSmsTransaction Load (0.4ms)[0m  SELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1
+  [1m[36mMessageLog Load (0.4ms)[0m  [1mSELECT "message_logs".* FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1[0m  [["sms_transaction_id", 84333]]
+  Rendered public/export.xls within layouts/customer (0.3ms)
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (Your template was not saved as valid UTF-8. Please either specify UTF-8 as the encoding for your template in your text editor, or mark the template with its encoding by inserting the following as the first line of the template:
+
+# encoding: <name of correct encoding>.
+
+The source of your template was:
+
+ÐÏà¡±á                ;  þÿ	                               þÿÿÿ       ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ	   »Ì       B  °a   =          =       @  8      å "       ·   Ú    1  È   ÿ     Arial ¤   GENERALà    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤ ôÿ       À à    ¤          À à    ¤          À “  € ÿ’ â 8     ÿÿÿ ÿ    ÿ    ÿ ÿÿ  ÿ ÿ  ÿÿ €    €    € €€  € €  €€ ÀÀÀ €€€ ™™ÿ ™3f ÿÿÌ Ìÿÿ f f ÿ€€  fÌ ÌÌÿ   € ÿ ÿ ÿÿ   ÿÿ € € €    €€   ÿ  Ìÿ Ìÿÿ ÌÿÌ ÿÿ™ ™Ìÿ ÿ™Ì Ì™ÿ ÿÌ™ 3fÿ 3ÌÌ ™Ì  ÿÌ  ÿ™  ÿf  ff™ –––  3f 3™f  3  33  ™3  ™3f 33™ 333 …  T     exportü          22558908957  testÿ 
+  -     
+   	   »Ì         d        _   €        %   ò   ÁU   }      
+                        ò€    €  ý 
+          ý 
+        > ¶                ¡ " 	 d     ,,      à?      à? (        ð?&        è?'        è?)        ð?
+                                                                                                                                                                                                                                                                                                                                                                                                                                 R o o t   E n t r y                                              ÿÿÿÿÿÿÿÿ                                           b      W o r k b o o k                                                  ÿÿÿÿÿÿÿÿÿÿÿÿ                     s›˜Ô¼Ô s›˜Ô¼Ô    b                                                                                                                                                                                                                                                                                              	   
+                        þÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ      þÿÿÿþÿÿÿþÿÿÿýÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ):
+  app/controllers/customer_message_logs_controller.rb:37:in `export'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4.7ms)
+
+
+Started GET "/customer/message_logs/export/84333" for 127.0.0.1 at 2019-02-04 21:59:24 +0000
+Processing by CustomerMessageLogsController#export as HTML
+  Parameters: {"transaction_id"=>"84333"}
+  [1m[36mSmsTransaction Load (0.3ms)[0m  [1mSELECT  "sms_transactions".* FROM "sms_transactions"  WHERE "sms_transactions"."id" = 84333 LIMIT 1[0m
+  [1m[35mMessageLog Load (0.4ms)[0m  SELECT "message_logs".* FROM "message_logs"  WHERE "message_logs"."sms_transaction_id" = $1  [["sms_transaction_id", 84333]]
+Sent file /home/dietrich/Projects/Rails/SmsGateway/public/export.xls (0.1ms)
+Completed 200 OK in 44ms (ActiveRecord: 6.1ms)

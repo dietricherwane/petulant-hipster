@@ -53,6 +53,7 @@ gem 'roo', '~> 2.0.0'
 gem "attr_encrypted", "~> 3.0.0"
 
 gem 'activerecord-session_store'
+
 #gem 'daemons'
 
 # Use ActiveModel has_secure_password
