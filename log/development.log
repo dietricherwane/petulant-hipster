@@ -93472,3 +93472,61 @@ Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-12 23:58:3
   [1m[35mProfile Load (1.2ms)[0m  SELECT  "profiles".* FROM "profiles"   ORDER BY "profiles"."id" ASC LIMIT 1
   [1m[36mProfile Load (1.0ms)[0m  [1mSELECT  "profiles".* FROM "profiles"   ORDER BY "profiles"."id" ASC LIMIT 1[0m
 >>>>>>> 3b13f95e8893d4ded72865532e2ef50a65a6edc1
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdAndCustomerIdToProfiles (20190205220630)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (67.9ms)[0m  [1mALTER TABLE "profiles" ADD COLUMN "user_id" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "profiles" ADD COLUMN "customer_id" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20190205220630"]]
+  [1m[35m (12.7ms)[0m  COMMIT
+Migrating to CreateProfileData (20190205225720)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (141.1ms)[0m  CREATE TABLE "profile_data" ("id" serial primary key, "profile_id" integer, "published" boolean, "col1" character varying(255), "col2" character varying(255), "col3" character varying(255), "col4" character varying(255), "col5" character varying(255), "col6" character varying(255), "col7" character varying(255), "col8" character varying(255), "col9" character varying(255), "col10" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20190205225720"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Migrating to AddColumnAliasesToProfiles (20190205225903)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "profiles" ADD COLUMN "col1a" character varying(255)
+  [1m[36m (10.9ms)[0m  [1mALTER TABLE "profiles" ADD COLUMN "col2a" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "profiles" ADD COLUMN "col3a" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "profiles" ADD COLUMN "col4a" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "profiles" ADD COLUMN "col5a" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "profiles" ADD COLUMN "col6a" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "profiles" ADD COLUMN "col7a" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "profiles" ADD COLUMN "col8a" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "profiles" ADD COLUMN "col9a" character varying(255)
+  [1m[36m (19.6ms)[0m  [1mALTER TABLE "profiles" ADD COLUMN "col10a" character varying(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20190205225903"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddNumberOfColumnsToProfiles (20190209221153)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "profiles" ADD COLUMN "number_of_columns" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20190209221153"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddRowContentToProfileData (20190209221801)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "profile_data" ADD COLUMN "row_content" text[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20190209221801"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddProfileSeparatorToParameters (20190210221236)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "parameters" ADD COLUMN "profile_separator" character varying(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20190210221236"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to AddAliasesToProfiles (20190210222453)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "profiles" ADD COLUMN "aliases" text[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20190210222453"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddMsisdnColumnToProfiles (20190212232537)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "profiles" ADD COLUMN "msisdn_column" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20190212232537"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mProfile Load (0.7ms)[0m  [1mSELECT  "profiles".* FROM "profiles"   ORDER BY "profiles"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+WARNING: Can't mass-assign protected attributes for Profile: profile_separator
+
+  [1m[36mProfile Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "profiles"  WHERE ("profiles"."name" = 'PMU' AND "profiles"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
