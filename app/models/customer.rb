@@ -8,6 +8,7 @@ class Customer < ActiveRecord::Base
   has_many :message_logs
   belongs_to :sms_provider
   has_many :sms_transactions
+  has_many :profiles
 
   # Renaming attributes into more friendly text
   HUMANIZED_ATTRIBUTES = {

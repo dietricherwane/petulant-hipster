@@ -2,9 +2,12 @@ class Profile < ActiveRecord::Base
   # Relationships
   has_many :subscribers
   has_many :sms_transactions
+  belongs_to :customer
+  belongs_to :user
+  has_many :profile_data
 
   # Set accessible fields
-  attr_accessible :name, :published
+  attr_accessible :name, :published, :col1a, :col2a, :col3a, :col4a, :col5a, :col6a, :col7a, :col8a, :col9a, :col10a, :number_of_columns, :aliases, :msisdn_column
 
   # Renaming attributes into more friendly text
   HUMANIZED_ATTRIBUTES = {

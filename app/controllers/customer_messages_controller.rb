@@ -16,7 +16,7 @@ class CustomerMessagesController < ApplicationController
     @message_current_id = "current"
     @new_message_active_subclass = "this"
 
-    @profiles = Profile.where("published IS NOT FALSE")
+    @profiles = Profile.where("published IS NOT FALSE AND (customer_id IS NULL OR customer_id = #{session[:customer].id})")
   end
 
   def send_message
@@ -76,6 +76,15 @@ class CustomerMessagesController < ApplicationController
     if @profile.name == "Liste de numéros"
       set_transaction("Envoi de message à une liste de numéros.", 0)
       deliver_message_to_excel_list
+    else
+      parameter = Parameter.first
+      set_transaction("Envoi de message au pofil: #{@profile.name}.", 0)
+      profile_data = ProfileData.where("profile_id = #{@profile.id}")
+      profile_data.each do |pd|
+        send_message_request(pd.split(parameter.profile_separator)[@profile.msisdn_column])
+      end
+      @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages, user_id: (session[:customer].id rescue nil))
+      @success_message = messages!("Les messages ont été envoyés. Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
     end
   end
 
