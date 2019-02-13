@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile_id: 1
+  published: false
+  col1: MyString
+  col2: MyString
+  col3: MyString
+  col4: MyString
+  col5: MyString
+  col6: MyString
+  col7: MyString
+  col8: MyString
+  col9: MyString
+  col10: MyString
+
+two:
+  profile_id: 1
+  published: false
+  col1: MyString
+  col2: MyString
+  col3: MyString
+  col4: MyString
+  col5: MyString
+  col6: MyString
+  col7: MyString
+  col8: MyString
+  col9: MyString
+  col10: MyString

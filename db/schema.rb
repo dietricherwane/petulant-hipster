@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190203222336) do
+ActiveRecord::Schema.define(version: 20190212232537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20190203222336) do
     t.string   "infobip_provider_url"
     t.string   "infobip_provider_username"
     t.string   "infobip_provider_password"
+    t.string   "profile_separator"
   end
 
   create_table "periods", force: true do |t|
@@ -107,11 +108,44 @@ ActiveRecord::Schema.define(version: 20190203222336) do
     t.datetime "updated_at"
   end
 
+  create_table "profile_data", force: true do |t|
+    t.integer  "profile_id"
+    t.boolean  "published"
+    t.string   "col1"
+    t.string   "col2"
+    t.string   "col3"
+    t.string   "col4"
+    t.string   "col5"
+    t.string   "col6"
+    t.string   "col7"
+    t.string   "col8"
+    t.string   "col9"
+    t.string   "col10"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "row_content"
+  end
+
   create_table "profiles", force: true do |t|
-    t.string   "name",       limit: 100
+    t.string   "name",              limit: 100
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "customer_id"
+    t.string   "col1a"
+    t.string   "col2a"
+    t.string   "col3a"
+    t.string   "col4a"
+    t.string   "col5a"
+    t.string   "col6a"
+    t.string   "col7a"
+    t.string   "col8a"
+    t.string   "col9a"
+    t.string   "col10a"
+    t.integer  "number_of_columns"
+    t.text     "aliases"
+    t.integer  "msisdn_column"
   end
 
   create_table "registration_logs", force: true do |t|

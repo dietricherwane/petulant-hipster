@@ -1,4 +1,5 @@
 class MessageLog < ActiveRecord::Base
+
   # Relationships
   belongs_to :subscriber
   belongs_to :profile

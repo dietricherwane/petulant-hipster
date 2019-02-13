@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :customers
   has_many :message_logs
   has_many :sms_transactions
+  has_many :profiles
 
   # Renaming attributes into more friendly text
   HUMANIZED_ATTRIBUTES = {

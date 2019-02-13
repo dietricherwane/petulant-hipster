@@ -21,7 +21,9 @@ Rails.application.routes.draw do
   get 'customer/transactions' => 'customer_transactions#list', as: :customer_transactions
 
   get 'message_logs/:transaction_id' => 'message_logs#list', as: :message_logs
+  get 'message_logs/export/:transaction_id' => 'message_logs#export', as: :export_message_logs
   get 'customer/message_logs/:transaction_id' => 'customer_message_logs#list', as: :customer_message_logs
+  get 'customer/message_logs/export/:transaction_id' => 'customer_message_logs#export', as: :export_customer_message_logs
 
   get 'search' => 'search#index', as: :search
   get 'customer/search' => 'customer_search#index', as: :customer_search
@@ -51,6 +53,16 @@ Rails.application.routes.draw do
   get "/administrator/edit" => "users#edit", as: :edit_admin_profile
   post "/administrator/update" => "users#update", as: :update_admin_profile
   get "/administrator/update" => "users#edit"
+
+  get "/customer/message/profile" => "customer_profiles#new", as: :customer_message_profile
+  post "/customer/message/profile/create" => "customer_profiles#create", as: :customer_create_message_profile
+  get "/customer/message/profile/create" => "customer_profiles#new"
+  get "/customer/message/profile/finalize/:profile_id" => "customer_profiles#finalize", as: :customer_finalize_message_profile
+  post "/customer/message/profile/update" => "customer_profiles#update", as: :customer_update_message_profile
+  get "/administrator/message/profile/finalize" => "profiles#finalize", as: :finalize_message_profile
+  get "/customer/message/profile/list" => "customer_profiles#list", as: :list_customer_message_profile
+  get "/customer/message/profile/enable/:profile_id" => "customer_profiles#enable", as: :customer_enable_profile
+  get "/customer/message/profile/disable/:profile_id" => "customer_profiles#disable", as: :customer_disable_profile
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
