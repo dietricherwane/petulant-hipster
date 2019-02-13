@@ -79,9 +79,12 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
+    mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.11.0)
     netrc (0.11.0)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     paperclip (4.2.0)
       activemodel (>= 3.0.0)
@@ -118,13 +121,11 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-<<<<<<< HEAD
-=======
     roo (2.0.1)
       nokogiri (~> 1)
       rubyzip (~> 1.1, < 2.0.0)
->>>>>>> e3d3009d63f92b491437f2c5a3c8471d3d0b537a
     ruby-ole (1.2.11.8)
+    rubyzip (1.1.7)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -179,10 +180,7 @@ DEPENDENCIES
   protected_attributes
   rails (= 4.1.8)
   rest-client
-<<<<<<< HEAD
-=======
   roo (~> 2.0.0)
->>>>>>> e3d3009d63f92b491437f2c5a3c8471d3d0b537a
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spreadsheet (~> 1.0.3)
