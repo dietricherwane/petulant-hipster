@@ -89946,3 +89946,851 @@ Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-12 23:58:3
   [1m[36mProfile Load (1.0ms)[0m  [1mSELECT  "profiles".* FROM "profiles"   ORDER BY "profiles"."id" ASC LIMIT 1[0m
   [1m[35mProfile Load (1.2ms)[0m  SELECT  "profiles".* FROM "profiles"   ORDER BY "profiles"."id" ASC LIMIT 1
   [1m[36mProfile Load (1.0ms)[0m  [1mSELECT  "profiles".* FROM "profiles"   ORDER BY "profiles"."id" ASC LIMIT 1[0m
+
+
+Started GET "/customer/message/profile/list" for 127.0.0.1 at 2019-02-13 00:16:45 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomerProfilesController#list as HTML
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "profiles"  WHERE (customer_id = 31) LIMIT 25 OFFSET 0) subquery_for_count[0m
+  [1m[35mProfile Load (0.6ms)[0m  SELECT  "profiles".* FROM "profiles"  WHERE (customer_id = 31)  ORDER BY id ASC LIMIT 25 OFFSET 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "profiles"  WHERE (customer_id = 31)[0m
+  Rendered customer_profiles/list.html.erb within layouts/customer (78.8ms)
+Completed 200 OK in 1388ms (Views: 1333.8ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:46 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/topnav/logout.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/backgrounds/numberBg.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/control/16/pencil.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/taskProgress.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/taskDone.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/control/16/check.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/control/16/busy.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/dark/full2.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-13 00:16:47 +0000
+
+
+Started GET "/customer/message/profile/finalize/11" for 127.0.0.1 at 2019-02-13 00:16:50 +0000
+Processing by CustomerProfilesController#finalize as HTML
+  Parameters: {"profile_id"=>"11"}
+  [1m[36mParameter Load (0.5ms)[0m  [1mSELECT  "parameters".* FROM "parameters"   ORDER BY "parameters"."id" ASC LIMIT 1[0m
+  [1m[35mProfile Load (0.4ms)[0m  SELECT  "profiles".* FROM "profiles"  WHERE "profiles"."id" = 11 LIMIT 1
+  [1m[36mProfileData Load (0.5ms)[0m  [1mSELECT  "profile_data".* FROM "profile_data"  WHERE (profile_id = 11)  ORDER BY "profile_data"."id" ASC LIMIT 1[0m
+  Rendered customer_profiles/finalize.html.erb within layouts/customer (15.5ms)
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (comparison of Fixnum with nil failed):
+    28:         <div class="title"><img src="<%= asset_path 'icons/dark/users.png' %>" alt="" class="titleIcon" /><h6>Finaliser la création d'un profil</h6></div>
+    29: 
+    30:           <% i = 0 %>
+    31:           <% while i < @profile.number_of_columns %>
+    32:             <div class="formRow dnone">
+    33:               <label>Colonne <%= i %></label>
+    34:               <div class="formRight">
+  app/views/customer_profiles/finalize.html.erb:31:in `<'
+  app/views/customer_profiles/finalize.html.erb:31:in `block in _app_views_customer_profiles_finalize_html_erb___2077826442782858989_41033380'
+  app/views/customer_profiles/finalize.html.erb:24:in `_app_views_customer_profiles_finalize_html_erb___2077826442782858989_41033380'
+
+
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/dietrich/.rvm/gems/ruby-2.2.4@rails4.1.8/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.2ms)
+
+
+Started GET "/customer/message/profile/enable/14" for 127.0.0.1 at 2019-02-13 00:17:02 +0000
+Processing by CustomerProfilesController#enable as HTML
+  Parameters: {"profile_id"=>"14"}
+  [1m[36mProfile Load (0.6ms)[0m  [1mSELECT  "profiles".* FROM "profiles"  WHERE (id = 14)  ORDER BY "profiles"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mProfile Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "profiles"  WHERE ("profiles"."name" = 'Argh3' AND "profiles"."id" != 14) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "profiles" SET "published" = $1, "updated_at" = $2 WHERE "profiles"."id" = 14  [["published", "t"], ["updated_at", "2019-02-13 00:17:02.923515"]]
+  [1m[36m (13.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "profiles"  WHERE (customer_id = 31) LIMIT 25 OFFSET 0) subquery_for_count
+  [1m[36mProfile Load (0.5ms)[0m  [1mSELECT  "profiles".* FROM "profiles"  WHERE (customer_id = 31)  ORDER BY id ASC LIMIT 25 OFFSET 0[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "profiles"  WHERE (customer_id = 31)
+  Rendered customer_profiles/list.html.erb within layouts/customer (8.9ms)
+Completed 200 OK in 270ms (Views: 180.0ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/icons/topnav/logout.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/icons/notifications/accept.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/icons/taskProgress.png" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-02-13 00:17:03 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/backgrounds/numberBg.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/control/16/busy.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/dark/full2.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/control/16/pencil.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-13 00:17:04 +0000
+
+
+Started GET "/customer/message/profile/finalize/14" for 127.0.0.1 at 2019-02-13 00:17:05 +0000
+Processing by CustomerProfilesController#finalize as HTML
+  Parameters: {"profile_id"=>"14"}
+  [1m[35mParameter Load (0.4ms)[0m  SELECT  "parameters".* FROM "parameters"   ORDER BY "parameters"."id" ASC LIMIT 1
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT  "profiles".* FROM "profiles"  WHERE "profiles"."id" = 14 LIMIT 1[0m
+  [1m[35mProfileData Load (0.3ms)[0m  SELECT  "profile_data".* FROM "profile_data"  WHERE (profile_id = 14)  ORDER BY "profile_data"."id" ASC LIMIT 1
+  Rendered customer_profiles/finalize.html.erb within layouts/customer (1.2ms)
+Completed 200 OK in 168ms (Views: 160.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/elfinder.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/datatable.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/ui_custom.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/jquery-migrate-1.2.1.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/spinner/ui.spinner.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/spinner/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/charts/excanvas.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.orderBars.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.pie.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.flot.resize.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/charts/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/forms/uniform.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.cleditor.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine-en.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.validationEngine.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.tagsinput.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/forms/autogrowtextarea.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.maskedinput.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.dualListBox.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/forms/jquery.inputlimiter.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/forms/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.validate.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/wizard/jquery.form.wizard.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html5.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/uploader/plupload.html4.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/uploader/jquery.plupload.queue.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/tables/datatable.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/tables/tablesort.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/tables/resizable.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.tipsy.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.collapsible.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.progress.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.timeentry.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.jgrowl.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.breadcrumbs.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/ui/jquery.sourcerer.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/calendar.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/plugins/elfinder.min.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/charts/chart.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/backgrounds/bg.jpg" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/userPic.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/loginLogo.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/icons/topnav/logout.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/icons/light/home.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/ui/usualButtons.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/backgrounds/bodyBg.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/backgrounds/leftTop.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/backgrounds/titleBg.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/backgrounds/topnavBg.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/backgrounds/navItemBg.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/divider.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/arrow.gif" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/icons/light/magnify.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/icons/light/mail.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/icons/light/fullscreen.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/icons/light/files.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/sidebarSep.png" for 127.0.0.1 at 2019-02-13 00:17:06 +0000
+
+
+Started GET "/assets/backgrounds/numberBg.png" for 127.0.0.1 at 2019-02-13 00:17:07 +0000
+
+
+Started GET "/assets/icons/dark/users.png" for 127.0.0.1 at 2019-02-13 00:17:07 +0000
+
+
+Started GET "/assets/icons/light/stats.png" for 127.0.0.1 at 2019-02-13 00:17:07 +0000
+
+
+Started GET "/assets/icons/light/pencil.png" for 127.0.0.1 at 2019-02-13 00:17:07 +0000
+
+
+Started GET "/assets/icons/light/users.png" for 127.0.0.1 at 2019-02-13 00:17:07 +0000
+
+
+Started GET "/assets/icons/light/frames.png" for 127.0.0.1 at 2019-02-13 00:17:07 +0000
+
+
+Started GET "/assets/icons/light/alert.png" for 127.0.0.1 at 2019-02-13 00:17:07 +0000
+
+
+Started GET "/assets/icons/light/create.png" for 127.0.0.1 at 2019-02-13 00:17:07 +0000
+
+
+Started GET "/assets/backgrounds/respNavBg.png" for 127.0.0.1 at 2019-02-13 00:17:07 +0000
+
+
+Started GET "/assets/backgrounds/arrows.png" for 127.0.0.1 at 2019-02-13 00:17:07 +0000
