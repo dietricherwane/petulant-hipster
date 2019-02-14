@@ -25,6 +25,7 @@ class CustomerMessagesController < ApplicationController
     @number = params[:post][:custom_number]
     @subscribers_file = params[:post][:subscribers_file]
     @error = false
+    @error_status = 0
 
     validate_profile_id
     validate_message
@@ -62,7 +63,11 @@ class CustomerMessagesController < ApplicationController
 
     @error_message = messages!(@error_message, "error")
 
-    render :new
+    if @error_status == 0
+      render :new
+    else
+      redirect_to customer_finalize_message_profile_path(profile_id: @profile.id)
+    end
   end
 
   def deliver_messages
@@ -79,7 +84,7 @@ class CustomerMessagesController < ApplicationController
     else
       if @profile.msisdn_column.blank?
         @error_message = messages!("Veuillez définir la colonne contenant le MSISDN", "error")
-        redirect_to customer_finalize_message_profile_path(profile_id: @profile.id)
+        @error_status = 1
       else
         parameter = Parameter.first
         set_transaction("Envoi de message au pofil: #{@profile.name}.", 0)
