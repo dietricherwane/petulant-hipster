@@ -49,6 +49,7 @@ class CustomerProfilesController < ApplicationController
     @profile = Profile.find_by_id(params[:profile_id])
     @aliases = @profile.aliases.split(parameter.profile_separator) rescue Array.new(7)
     @sample_data = ProfileData.where("profile_id = #{@profile.id}").first.row_content.split(parameter.profile_separator)
+    @success_message = messages!("Veuillez sélectionner la colonne dans laquelle se trouve le MSISDN", "notice")
   end
 
   def update
