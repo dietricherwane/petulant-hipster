@@ -77,7 +77,7 @@ class CustomerMessagesController < ApplicationController
       set_transaction("Envoi de message à une liste de numéros.", 0)
       deliver_message_to_excel_list
     else
-      if @profile.msisd_column.blank?
+      if @profile.msisdn_column.blank?
         @error_message = messages!("Veuillez définir la colonne contenant le MSISDN", "error")
         redirect_to customer_finalize_message_profile_path(profile_id: @profile.id)
       else
