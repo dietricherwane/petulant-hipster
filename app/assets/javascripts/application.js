@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require customer_update_profile
 //= require jquery_ujs
 //= require jquery-migrate-1.2.1
 // require turbolinks

@@ -28,7 +28,7 @@
         <div class="title"><img src="<%= asset_path 'icons/dark/users.png' %>" alt="" class="titleIcon" /><h6>Finaliser la création d'un profil</h6></div>
 
           <% i = 0 %>
-          <% while i < @profile.number_of_columns %>
+          <% while i < @profile.number_of_columns.to_i %>
             <div class="formRow dnone">
               <label>Colonne <%= i %></label>
               <div class="formRight">

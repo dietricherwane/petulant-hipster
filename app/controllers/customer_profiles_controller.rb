@@ -25,7 +25,7 @@ class CustomerProfilesController < ApplicationController
       parameter = Parameter.first
       @spreadsheet = Spreadsheet.open(@subscribers_file.path).worksheet(0)
       number_of_columns = @spreadsheet.rows.max_by(&:size).count
-      profile = session[:customer].profiles.create(name: @label, number_of_columns: number_of_columns)
+      profile = session[:customer].profiles.create(name: @label, number_of_columns: number_of_columns, aliases: create_profile_header(number_of_columns))
       data_array = []
 
       @spreadsheet.each do |row|
@@ -41,6 +41,17 @@ class CustomerProfilesController < ApplicationController
 
       redirect_to customer_finalize_message_profile_path(profile_id: profile.id)
     end
+  end
+
+  def create_profile_header(number_of_columns)
+    headers = Array.new(number_of_columns)
+    i = 0
+    while i < number_of_columns
+      headers[i] = "Colonne #{i}"
+      i += 1
+    end
+
+    return headers.join("|")
   end
 
   def finalize
@@ -135,5 +146,48 @@ class CustomerProfilesController < ApplicationController
       @error = true
       @error_message << "Veuillez choisir un fichier Excel contenant une liste de numéros.<br />"
     end
+  end
+
+  def get_column_header
+    @column_headers = Profile.where("name = ? AND customer_id IS NOT NULL", params[:selected_profile]).first.aliases.split("|") rescue ""
+    content = "nil"
+
+    unless @column_headers.blank?
+      options = ""
+      format_column_header
+      @formatted_column_headers.split("|").each do |fch|
+        options << "<option>#{fch}</option>"
+      end
+      content = %Q[
+        <div class="formRow">
+          <label>Colonnes personnalisées</label>
+          <div class="formRight">
+            <div class="selector" id="sel">
+            <select class="selector" id="custom_columns" name="post[custom_column]" style="opacity: 0;"><option value="">-Veuillez insérer une colonne-</option>
+              #{options}
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      ]
+    end
+
+    render plain: content
+  end
+
+  def format_column_header
+    @formatted_column_headers = ""
+
+    i = 0
+    @column_headers.each do |column_header|
+      if column_header.blank?
+        @formatted_column_headers << "Colonne #{i.to_s}|"
+      else
+        @formatted_column_headers << column_header << "|"
+      end
+      i += 1
+    end
+
+    @formatted_column_headers = @formatted_column_headers[0..-2]
   end
 end

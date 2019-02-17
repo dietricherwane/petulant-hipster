@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get "/customer/sign_in" => "customers#new_session", as: :customer_login
   delete "/customer/sign_out" => "customers#delete_session", as: :customer_sign_out
   post "/customer/session/create" => "customers#create_session", as: :create_customer_session
+  get "/customer/profile/custom_fields" => "customer_profiles#get_column_header"
   #get "/customer/message" => "customers#new_message", as: :customer_new_message
 
   get "/administrator/edit" => "users#edit", as: :edit_admin_profile
