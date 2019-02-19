@@ -86,16 +86,37 @@ class CustomerMessagesController < ApplicationController
         @error_message = messages!("Veuillez définir la colonne contenant le MSISDN", "error")
         @error_status = 1
       else
-        parameter = Parameter.first
+        @parameter = Parameter.first
         set_transaction("Envoi de message au pofil: #{@profile.name}.", 0)
         profile_data = ProfileData.where("profile_id = #{@profile.id}")
         profile_data.each do |pd|
-          send_message_request(pd.row_content.split(parameter.profile_separator)[@profile.msisdn_column])
+          msisdn = pd.row_content.split(@parameter.profile_separator)[@profile.msisdn_column]
+          if msisdn.blank? || not_a_number?(msisdn) || (msisdn.length != 11)
+          else
+            @message = format_message(pd, @message)
+            send_message_request(msisdn)
+          end
         end
         @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages, user_id: (session[:customer].id rescue nil))
         @success_message = messages!("Les messages ont été envoyés. Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
       end
     end
+  end
+
+  def format_message(pd, message)
+    unless @profile.aliases.blank?
+      while !@message.match(/\{.*?\}/).blank?
+        puts @message
+        ccolumn = @message.match(/\{.*?\}/).to_s
+        puts ccolumn
+        data_index = @profile.aliases.split(@parameter.profile_separator).index(ccolumn.gsub("{", "").gsub("}", ""))
+        puts data_index
+        @message = @message.gsub(ccolumn.to_s, pd.row_content.split(@parameter.profile_separator)[data_index])
+        puts @message
+      end
+    end
+
+    return @message
   end
 
   def set_transaction(description, subscribers_count)
