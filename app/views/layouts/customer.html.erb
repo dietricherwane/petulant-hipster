@@ -40,8 +40,10 @@
       <li class="widgets">
         <a href="#" class="<%= @profile_active ? @profile_active : 'exp inactive' %>" id = "<%= @profile_current_id %>"><span>Profils</span><strong>2</strong></a>
         <ul class = "sub">
-          <li class = "<%= @new_profile_active_subclass %>"><%= link_to 'Créer un profil', customer_message_profile_path %></li>
-          <li class = "<%= @list_profile_active_subclass %>"><%= link_to 'Liste des profils', list_customer_message_profile_path %></li>
+          <li class = "<%= @new_profile_active_subclass %>"><%= link_to 'Créer un profil sms', customer_message_profile_path %></li>
+          <li class = "<%= @list_profile_active_subclass %>"><%= link_to 'Liste des profils sms', list_customer_message_profile_path %></li>
+          <li class = "<%= @new_profile_email_active_subclass %>"><%= link_to 'Créer un profil email', customer_email_profile_path %></li>
+          <li class = "<%= @list_profile_email_active_subclass %>"><%= link_to 'Liste des profils email', list_customer_email_profile_path %></li>
         </ul>
       </li>
     </ul>

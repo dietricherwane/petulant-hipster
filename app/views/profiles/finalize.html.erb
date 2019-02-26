@@ -21,26 +21,32 @@
   <%= @error_message %>
   <%= @success_message %>
 
-  <%= form_tag create_message_profile_path, multipart: true  do %>
+  <%= form_tag administrator_update_message_profile_path do %>
+    <%= hidden_field_tag "profile_id", @profile.id %>
     <fieldset>
       <div class="widget">
-        <div class="title"><img src="<%= asset_path 'icons/dark/users.png' %>" alt="" class="titleIcon" /><h6>Créer un profil</h6></div>
+        <div class="title"><img src="<%= asset_path 'icons/dark/users.png' %>" alt="" class="titleIcon" /><h6>Finaliser la création d'un profil</h6></div>
 
-          <div class="formRow">
-            <label>Libellé</label>
-            <div class="formRight">
-              <%= text_field_tag "name", params[:name], placeholder: "Libellé" %>
+          <% i = 0 %>
+          <% while i < @profile.number_of_columns.to_i %>
+            <div class="formRow dnone">
+              <label>Colonne <%= i %></label>
+              <div class="formRight">
+                <span class = "oneTwo">
+                  <%= text_field_tag "column#{i}", @sample_data[i], placeholder: "Donnée #{i}", readonly: true %>
+                </span>
+                <span class = "oneTwo">
+                  <%= text_field_tag "alias#{i}", (@aliases[i].match(/Colonne.*?/) rescue nil).blank? ? @aliases[i] : nil, placeholder: "Alias #{i}", list: "data" %>
+                  <datalist id="data">
+                    <option>MSISDN</option>
+                  </datalist>
+
+                </span>
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-          </div>
-          <div class="formRow">
-            <label><%= label_tag(:subscribers_file, "Fichier d'abonnés") %></label>
-            <div class="formRight">
-              <%= file_field_tag 'post[subscribers_file]' %>
-              <span class="formNote">Veuillez sélectionner un fichier d'abonnés</span>
-            </div>
-            <div class="clear"></div>
-          </div>
+            <% i += 1 %>
+          <% end %>
 
           <div class="formRow">
             <%= submit_tag 'Valider', class: 'basic' %>

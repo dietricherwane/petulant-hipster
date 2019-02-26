@@ -36,7 +36,7 @@
                   <%= text_field_tag "column#{i}", @sample_data[i], placeholder: "Donnée #{i}", readonly: true %>
                 </span>
                 <span class = "oneTwo">
-                  <%= text_field_tag "alias#{i}", @aliases[i], placeholder: "Alias #{i}", list: "data" %>
+                  <%= text_field_tag "alias#{i}", (@aliases[i].match(/Colonne.*?/) rescue nil).blank? ? @aliases[i] : nil, placeholder: "Alias #{i}", list: "data" %>
                   <datalist id="data">
                     <option>MSISDN</option>
                   </datalist>

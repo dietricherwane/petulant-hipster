@@ -87,6 +87,7 @@ class CustomerMessagesController < ApplicationController
         @error_status = 1
       else
         @parameter = Parameter.first
+        @message_backup = @message
         set_transaction("Envoi de message au pofil: #{@profile.name}.", 0)
         profile_data = ProfileData.where("profile_id = #{@profile.id}")
         profile_data.each do |pd|
@@ -95,6 +96,7 @@ class CustomerMessagesController < ApplicationController
           else
             @message = format_message(pd, @message)
             send_message_request(msisdn)
+            @message = @message_backup
           end
         end
         @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages, user_id: (session[:customer].id rescue nil))
@@ -106,13 +108,9 @@ class CustomerMessagesController < ApplicationController
   def format_message(pd, message)
     unless @profile.aliases.blank?
       while !@message.match(/\{.*?\}/).blank?
-        puts @message
         ccolumn = @message.match(/\{.*?\}/).to_s
-        puts ccolumn
         data_index = @profile.aliases.split(@parameter.profile_separator).index(ccolumn.gsub("{", "").gsub("}", ""))
-        puts data_index
-        @message = @message.gsub(ccolumn.to_s, pd.row_content.split(@parameter.profile_separator)[data_index])
-        puts @message
+        @message = @message.gsub(ccolumn.to_s, pd.row_content.split(@parameter.profile_separator)[data_index].to_s)
       end
     end
 

@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   post "/administrator/update" => "users#update", as: :update_admin_profile
   get "/administrator/update" => "users#edit"
 
+  # customer sms profile
   get "/customer/message/profile" => "customer_profiles#new", as: :customer_message_profile
   post "/customer/message/profile/create" => "customer_profiles#create", as: :customer_create_message_profile
   get "/customer/message/profile/create" => "customer_profiles#new"
@@ -64,6 +65,18 @@ Rails.application.routes.draw do
   get "/customer/message/profile/list" => "customer_profiles#list", as: :list_customer_message_profile
   get "/customer/message/profile/enable/:profile_id" => "customer_profiles#enable", as: :customer_enable_profile
   get "/customer/message/profile/disable/:profile_id" => "customer_profiles#disable", as: :customer_disable_profile
+  # customer email profile
+  get "/customer/message/profile" => "customer_profiles#new", as: :customer_message_profile
+  get "/customer/message/profile/list" => "customer_profiles#list", as: :list_customer_message_profile
+
+
+  get "/administrator/message/profile" => "profiles#new", as: :administrator_message_profile
+  post "/administrator/message/profile/create" => "profiles#create", as: :administrator_create_message_profile
+  get "/administrator/message/profile/finalize/:profile_id" => "profiles#finalize", as: :administrator_finalize_message_profile
+  post "/administrator/message/profile/update" => "profiles#update", as: :administrator_update_message_profile
+  get "/administrator/message/profile/list" => "profiles#list", as: :list_administrator_message_profile
+  get "/administrator/message/profile/enable/:profile_id" => "profiles#enable", as: :administrator_enable_profile
+  get "/administrator/message/profile/disable/:profile_id" => "profiles#disable", as: :administrator_disable_profile
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

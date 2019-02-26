@@ -12,30 +12,118 @@ class ProfilesController < ApplicationController
     @subscribers_file = params[:post][:subscribers_file] rescue nil
     @error = false
     @error_message = ""
-    subscribers_array = []
+    init_view
 
     validate_creation_params
 
     if @error
-      init_view
       params[:name] = params[:name]
       @error_message = messages!(@error_message, "error")
 
       render :new
     else
-      profile = current_user.profiles.create(name: @label)
+      parameter = Parameter.first
       @spreadsheet = Spreadsheet.open(@subscribers_file.path).worksheet(0)
-      @spreadsheet.each do |row|
-        subscribers_array << {profile_id: profile.id, col1: row[0].to_s, col2: row[1], col3: row[2], col4: row[3], col5: row[4], col6: row[5], col7: row[6], col8: row[7], col9: row[8], col10: row[9]}
-      end
-      ProfileData.create(subscribers_array)
+      number_of_columns = @spreadsheet.rows.max_by(&:size).count
+      profile = current_user.profiles.create(name: @label, number_of_columns: number_of_columns, aliases: create_profile_header(number_of_columns))
+      data_array = []
 
-      redirect_to finalize_message_profile_path(profile_id: profile.id)
+      @spreadsheet.each do |row|
+        i = 0
+        row_data = ""
+        while i < number_of_columns
+          row_data << %Q[#{row[i]}#{parameter.profile_separator}]
+          i += 1
+        end
+        data_array << {profile_id: Profile.find_by_name(@label).id, row_content: row_data[0..-(parameter.profile_separator.length)]}
+      end
+      ProfileData.create(data_array)
+
+      redirect_to administrator_finalize_message_profile_path(profile_id: profile.id)
     end
   end
 
-  def finalize
+  def update
+    init_view
     @profile = Profile.find_by_id(params[:profile_id])
+    parameter = Parameter.first
+    @sample_data = ProfileData.where("profile_id = #{@profile.id}").first.row_content.split(parameter.profile_separator)
+    @aliases = ""
+
+    i = 0
+    while i < @profile.number_of_columns
+      @aliases << (params["alias#{i}".to_sym]  rescue "") + parameter.profile_separator
+      i += 1
+    end
+
+    if valid_aliases?
+      msisdn_column_number = @aliases.split(parameter.profile_separator).index("MSISDN")
+      @profile.update_attributes(aliases: @aliases, msisdn_column: msisdn_column_number)
+      @success_message = messages!("Les alias ont été mis à jour", "success")
+    else
+      @error_message = messages!("Veuillez sélectionner une seule colonne contenant le MSISDN", "error")
+    end
+    @aliases = @profile.aliases.split(parameter.profile_separator) rescue Array.new(7)
+
+    render :finalize
+  end
+
+  def valid_aliases?
+    number_of_msisdn_occurence = @aliases.scan(/(?=MSISDN)/).count
+    number_of_msisdn_occurence != 1 ? false : true
+  end
+
+  def list
+    @profile_active = "active exp"
+    @profile_current_id = "current"
+    @list_profile_active_subclass = "this"
+
+    @profiles = Profile.where("user_id = #{current_user.id}").order("id ASC").page(params[:page])
+  end
+
+  def disable
+    disble_enable(params[:profile_id], false, "désactivé")
+  end
+
+  def enable
+    disble_enable(params[:profile_id], true, "activé")
+  end
+
+  def disble_enable(profile_id, status, status_text)
+    @profiles = Profile.where("user_id = #{current_user.id}").order("id ASC").page(params[:page])
+    @profile = Profile.where("id = #{profile_id}").first rescue nil
+    @profile_active = "active exp"
+    @profile_current_id = "current"
+    @list_profile_active_subclass = "this"
+
+    if @profile.blank?
+      @error_message = messages!("Le profil n'a pas été trouvé", "error")
+    else
+      @profile.update_attributes(published: status)
+      @success_message = messages!("Le profil a été correctement #{status_text}", "success")
+    end
+
+    render :list
+  end
+
+  def create_profile_header(number_of_columns)
+    headers = Array.new(number_of_columns)
+    i = 0
+    while i < number_of_columns
+      headers[i] = "Colonne #{i}"
+      i += 1
+    end
+
+    return headers.join("|")
+  end
+
+  def finalize
+    init_view
+    parameter = Parameter.first
+    @profile = Profile.find_by_id(params[:profile_id])
+    @aliases = @profile.aliases.split(parameter.profile_separator) rescue Array.new(7)
+    @sample_data = ProfileData.where("profile_id = #{@profile.id}").first.row_content.split(parameter.profile_separator)
+    @success_message = messages!("Veuillez sélectionner la colonne dans laquelle se trouve le MSISDN", "notice")
   end
 
   def validate_creation_params
