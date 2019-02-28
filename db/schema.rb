@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190212232537) do
+ActiveRecord::Schema.define(version: 20190226222924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,6 +145,8 @@ ActiveRecord::Schema.define(version: 20190212232537) do
     t.integer  "number_of_columns"
     t.text     "aliases"
     t.integer  "msisdn_column"
+    t.boolean  "email"
+    t.integer  "email_column"
   end
 
   create_table "registration_logs", force: true do |t|

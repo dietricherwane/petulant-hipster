@@ -7,7 +7,7 @@ class Profile < ActiveRecord::Base
   has_many :profile_data
 
   # Set accessible fields
-  attr_accessible :name, :published, :col1a, :col2a, :col3a, :col4a, :col5a, :col6a, :col7a, :col8a, :col9a, :col10a, :number_of_columns, :aliases, :msisdn_column
+  attr_accessible :name, :published, :col1a, :col2a, :col3a, :col4a, :col5a, :col6a, :col7a, :col8a, :col9a, :col10a, :number_of_columns, :aliases, :msisdn_column, :email, :email_column
 
   # Renaming attributes into more friendly text
   HUMANIZED_ATTRIBUTES = {
@@ -20,7 +20,7 @@ class Profile < ActiveRecord::Base
 
   # Validations
   validates :name, presence: true
-  validates :name, uniqueness: true
+  validates :name, uniqueness: { scope: :email }
 
   # Custom functions
   def self.pmu_profile_id

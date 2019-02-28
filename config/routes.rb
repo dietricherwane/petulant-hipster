@@ -66,8 +66,14 @@ Rails.application.routes.draw do
   get "/customer/message/profile/enable/:profile_id" => "customer_profiles#enable", as: :customer_enable_profile
   get "/customer/message/profile/disable/:profile_id" => "customer_profiles#disable", as: :customer_disable_profile
   # customer email profile
-  get "/customer/message/profile" => "customer_profiles#new", as: :customer_message_profile
-  get "/customer/message/profile/list" => "customer_profiles#list", as: :list_customer_message_profile
+  get "/customer/email/profile" => "customer_profiles#new_email", as: :customer_email_profile
+  post "/customer/email/profile/create" => "customer_profiles#create_email", as: :customer_create_email_profile
+  get "/customer/email/profile/create" => "customer_profiles#new_email"
+  get "/customer/email/profile/finalize/:profile_id" => "customer_profiles#finalize_email", as: :customer_finalize_email_profile
+  get "/customer/email/profile/list" => "customer_profiles#list_email", as: :list_customer_email_profile
+  get "/customer/email/profile/enable/:profile_id" => "customer_profiles#email_enable", as: :customer_enable_email_profile
+  get "/customer/email/profile/disable/:profile_id" => "customer_profiles#email_disable", as: :customer_disable_email_profile
+  post "/customer/email/profile/update" => "customer_profiles#update_email", as: :customer_update_email_profile
 
 
   get "/administrator/message/profile" => "profiles#new", as: :administrator_message_profile
