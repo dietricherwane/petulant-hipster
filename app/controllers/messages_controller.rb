@@ -17,13 +17,14 @@ class MessagesController < ApplicationController
     @number = params[:post][:custom_number]
     @subscribers_file = params[:post][:subscribers_file]
     @error = false
+    @error_status = 0
 
     validate_profile_id
     validate_message
 
     unless @error
       @profile = Profile.find_by_id(@profile_id)
-      @service = "Paymoney"
+      @service = "Administrator"
       if @profile
         if @profile.name == "Numéro unique"
           validate_custom_number
@@ -44,7 +45,11 @@ class MessagesController < ApplicationController
 
     @error_message = messages!(@error_message, "error")
 
-    render :new
+    if @error_status == 0
+      render :new
+    else
+      redirect_to administrator_finalize_message_profile_path(profile_id: @profile.id)
+    end
   end
 
   def filter_api_send_message
@@ -111,7 +116,40 @@ class MessagesController < ApplicationController
     if @profile.name == "Liste de numéros"
       set_transaction("Envoi de message à une liste de numéros.", 0)
       deliver_message_to_excel_list
+    else
+      if @profile.msisdn_column.blank?
+        @error_message = messages!("Veuillez définir la colonne contenant le MSISDN", "error")
+        @error_status = 1
+      else
+        @parameter = Parameter.first
+        @message_backup = @message
+        set_transaction("Envoi de message au pofil: #{@profile.name}.", 0)
+        profile_data = ProfileData.where("profile_id = #{@profile.id}")
+        profile_data.each do |pd|
+          msisdn = pd.row_content.split(@parameter.profile_separator)[@profile.msisdn_column]
+          if msisdn.blank? || not_a_number?(msisdn) || (msisdn.length != 11)
+          else
+            @message = format_message(pd, @message)
+            send_message_request(msisdn)
+            @message = @message_backup
+          end
+        end
+        @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages, user_id: (current_user.id rescue nil))
+        @success_message = messages!("Les messages ont été envoyés. Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
+      end
     end
+  end
+
+  def format_message(pd, message)
+    unless @profile.aliases.blank?
+      while !@message.match(/\{.*?\}/).blank?
+        ccolumn = @message.match(/\{.*?\}/).to_s
+        data_index = @profile.aliases.split(@parameter.profile_separator).index(ccolumn.gsub("{", "").gsub("}", ""))
+        @message = @message.gsub(ccolumn.to_s, pd.row_content.split(@parameter.profile_separator)[data_index].to_s)
+      end
+    end
+
+    return @message
   end
 
   def set_transaction(description, subscribers_count)
@@ -274,7 +312,7 @@ class MessagesController < ApplicationController
     @message_current_id = "current"
     @new_message_active_subclass = "this"
 
-    @profiles = Profile.where("published IS NOT FALSE")
+    @profiles = Profile.where("published IS NOT FALSE AND ((user_id IS NULL AND customer_id IS NULL) OR user_id IS NOT NULL)")
   end
 
   def api_md5_encrypt

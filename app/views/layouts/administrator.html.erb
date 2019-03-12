@@ -33,9 +33,10 @@
         </ul>
       </li>
       <li class="mail">
-        <a href="#" class="<%= @message_active ? @message_active : 'exp inactive' %>" id = "<%= @message_current_id %>"><span>Messages</span><strong>1</strong></a>
+        <a href="#" class="<%= @message_active ? @message_active : 'exp inactive' %>" id = "<%= @message_current_id %>"><span>Messages</span><strong>2</strong></a>
         <ul class = "sub">
           <li class = "<%= @new_message_active_subclass %>"><%= link_to 'Envoyer un message', message_path %></li>
+          <li class = "<%= @new_email_active_subclass %>"><%= link_to 'Envoyer des Emails', administrator_email_path %></li>
         </ul>
       </li>
       <li class="files">
@@ -44,10 +45,13 @@
       <li class="magnify">
         <a href="<%= search_path %>" class="<%= @search_active ? 'active' : '' %>"><span>Rechercher</span></a>
       </li>
-      <li class="typo">
-        <a href="#" class="<%= @settings_active ? @settings_active : 'exp inactive' %>"  id = "<%= @profile_current_id %>"><span>Réglages</span><strong>1</strong></a>
+      <li class="widgets">
+        <a href="#" class="<%= @profile_active ? @profile_active : 'exp inactive' %>" id = "<%= @profile_current_id %>"><span>Profils</span><strong>4</strong></a>
         <ul class = "sub">
-          <li class = "<%= @new_profile_active_subclass %>"><%#= link_to 'Profils', message_profile_path %></li>
+          <li class = "<%= @new_profile_active_subclass %>"><%= link_to 'Créer un profil', administrator_message_profile_path %></li>
+          <li class = "<%= @list_profile_active_subclass %>"><%= link_to 'Liste des profils', list_administrator_message_profile_path %></li>
+          <li class = "<%= @new_profile_email_active_subclass %>"><%= link_to 'Créer un profil email', administrator_email_profile_path %></li>
+          <li class = "<%= @list_profile_email_active_subclass %>"><%= link_to 'Liste des profils email', list_administrator_email_profile_path %></li>
         </ul>
       </li>
     </ul>

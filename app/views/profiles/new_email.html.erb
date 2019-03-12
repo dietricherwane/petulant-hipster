@@ -1,0 +1,54 @@
+<!-- Title area -->
+<div class="titleArea">
+    <div class="wrapper">
+        <div class="pageTitle">
+            <h5>Administrateur</h5>
+            <span>Créer un profil pour l'envoi d'emails</span>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<%#= render "messages/shared/sub_menu" %>
+
+<div class="line"></div>
+
+<!-- Main content wrapper -->
+<div class="wrapper">
+  <%= @error_message %>
+  <%= @success_message %>
+
+  <%= form_tag administrator_create_email_profile_path, multipart: true  do %>
+    <fieldset>
+      <div class="widget">
+        <div class="title"><img src="<%= asset_path 'icons/dark/users.png' %>" alt="" class="titleIcon" /><h6>Créer un profil</h6></div>
+
+          <div class="formRow">
+            <label>Libellé</label>
+            <div class="formRight">
+              <%= text_field_tag "name", params[:name], placeholder: "Libellé" %>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="formRow">
+            <label><%= label_tag(:subscribers_file, "Fichier d'abonnés") %></label>
+            <div class="formRight">
+              <%= file_field_tag 'post[subscribers_file]' %>
+              <span class="formNote">Veuillez sélectionner un fichier d'abonnés</span>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="formRow">
+            <%= submit_tag 'Valider', class: 'basic' %>
+          </div>
+      </div>
+    </fieldset>
+  <% end %>
+
+
+</div>
+<!-- End Main content wrapper -->

@@ -26,9 +26,10 @@
     <!-- Left navigation -->
     <ul id="menu" class="nav">
       <li class="mail">
-        <a href="#" class="<%= @message_active ? @message_active : 'exp inactive' %>" id = "<%= @message_current_id %>"><span>Messages</span><strong>1</strong></a>
+        <a href="#" class="<%= @message_active ? @message_active : 'exp inactive' %>" id = "<%= @message_current_id %>"><span>Messages</span><strong>2</strong></a>
         <ul class = "sub">
-          <li class = "<%= @new_message_active_subclass %>"><%= link_to 'Envoyer un message', customer_message_path %></li>
+          <li class = "<%= @new_message_active_subclass %>"><%= link_to 'Envoyer des SMS', customer_message_path %></li>
+          <li class = "<%= @new_email_active_subclass %>"><%= link_to 'Envoyer des Emails', customer_email_path %></li>
         </ul>
       </li>
       <li class="files">
@@ -38,10 +39,12 @@
         <a href="<%= customer_search_path %>" class="<%= @search_active ? 'active' : '' %>"><span>Rechercher</span></a>
       </li>
       <li class="widgets">
-        <a href="#" class="<%= @profile_active ? @profile_active : 'exp inactive' %>" id = "<%= @profile_current_id %>"><span>Profils</span><strong>2</strong></a>
+        <a href="#" class="<%= @profile_active ? @profile_active : 'exp inactive' %>" id = "<%= @profile_current_id %>"><span>Profils</span><strong>4</strong></a>
         <ul class = "sub">
-          <li class = "<%= @new_profile_active_subclass %>"><%= link_to 'Créer un profil', customer_message_profile_path %></li>
-          <li class = "<%= @list_profile_active_subclass %>"><%= link_to 'Liste des profils', list_customer_message_profile_path %></li>
+          <li class = "<%= @new_profile_active_subclass %>"><%= link_to 'Créer un profil sms', customer_message_profile_path %></li>
+          <li class = "<%= @list_profile_active_subclass %>"><%= link_to 'Liste des profils sms', list_customer_message_profile_path %></li>
+          <li class = "<%= @new_profile_email_active_subclass %>"><%= link_to 'Créer un profil email', customer_email_profile_path %></li>
+          <li class = "<%= @list_profile_email_active_subclass %>"><%= link_to 'Liste des profils email', list_customer_email_profile_path %></li>
         </ul>
       </li>
     </ul>
@@ -141,6 +144,5 @@
 </div>
 
 <div class="clear"></div>
-
 </body>
 </html>

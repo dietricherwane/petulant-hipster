@@ -9,8 +9,9 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  config.action_mailer.default_url_options = { :host => 'de2513.ispfr.net:9999' }
+  #config.action_mailer.default_url_options = { :host => 'de2513.ispfr.net:9999' }
 
+=begin
 	ActionMailer::Base.smtp_settings = {
   	:openssl_verify_mode => 'none',
 		:address => "smtp.1and1.com",
@@ -19,6 +20,18 @@ Rails.application.configure do
 		:authentication => :plain,
 		:user_name => "SmsGateway NGSER",
 		:password => 'pushlonaci2015'
+	}
+=end
+
+  ActionMailer::Base.smtp_settings = {
+  	#:openssl_verify_mode => 'none',
+    :domain => 'gmail.com',
+		:address => "smtp.gmail.com",
+		:enable_starttls_auto => true,
+		:port => 587,
+		:authentication => :login,
+		:user_name => "dietricherwane@gmail.com",
+		:password => 'Ras444Al464Gul'
 	}
 
   # Show full error reports and disable caching.

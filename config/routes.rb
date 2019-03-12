@@ -48,12 +48,14 @@ Rails.application.routes.draw do
   get "/customer/sign_in" => "customers#new_session", as: :customer_login
   delete "/customer/sign_out" => "customers#delete_session", as: :customer_sign_out
   post "/customer/session/create" => "customers#create_session", as: :create_customer_session
+  get "/customer/profile/custom_fields" => "customer_profiles#get_column_header"
   #get "/customer/message" => "customers#new_message", as: :customer_new_message
 
   get "/administrator/edit" => "users#edit", as: :edit_admin_profile
   post "/administrator/update" => "users#update", as: :update_admin_profile
   get "/administrator/update" => "users#edit"
 
+  # customer sms profile
   get "/customer/message/profile" => "customer_profiles#new", as: :customer_message_profile
   post "/customer/message/profile/create" => "customer_profiles#create", as: :customer_create_message_profile
   get "/customer/message/profile/create" => "customer_profiles#new"
@@ -63,6 +65,41 @@ Rails.application.routes.draw do
   get "/customer/message/profile/list" => "customer_profiles#list", as: :list_customer_message_profile
   get "/customer/message/profile/enable/:profile_id" => "customer_profiles#enable", as: :customer_enable_profile
   get "/customer/message/profile/disable/:profile_id" => "customer_profiles#disable", as: :customer_disable_profile
+  # customer email profile
+  get "/customer/email/profile" => "customer_profiles#new_email", as: :customer_email_profile
+  post "/customer/email/profile/create" => "customer_profiles#create_email", as: :customer_create_email_profile
+  get "/customer/email/profile/create" => "customer_profiles#new_email"
+  get "/customer/email/profile/finalize/:profile_id" => "customer_profiles#finalize_email", as: :customer_finalize_email_profile
+  get "/customer/email/profile/list" => "customer_profiles#list_email", as: :list_customer_email_profile
+  get "/customer/email/profile/enable/:profile_id" => "customer_profiles#email_enable", as: :customer_enable_email_profile
+  get "/customer/email/profile/disable/:profile_id" => "customer_profiles#email_disable", as: :customer_disable_email_profile
+  post "/customer/email/profile/update" => "customer_profiles#update_email", as: :customer_update_email_profile
+
+  # administrator email profile
+  get "/administrator/email/profile" => "profiles#new_email", as: :administrator_email_profile
+  post "/administrator/email/profile/create" => "profiles#create_email", as: :administrator_create_email_profile
+  get "/administrator/email/profile/create" => "profiles#new_email"
+  get "/administrator/email/profile/finalize/:profile_id" => "profiles#finalize_email", as: :administrator_finalize_email_profile
+  get "/administrator/email/profile/list" => "profiles#list_email", as: :list_administrator_email_profile
+  get "/administrator/email/profile/enable/:profile_id" => "profiles#email_enable", as: :administrator_enable_email_profile
+  get "/administrator/email/profile/disable/:profile_id" => "profiles#email_disable", as: :administrator_disable_email_profile
+  post "/administrator/email/profile/update" => "profiles#update_email", as: :administrator_update_email_profile
+
+
+  get "/administrator/message/profile" => "profiles#new", as: :administrator_message_profile
+  post "/administrator/message/profile/create" => "profiles#create", as: :administrator_create_message_profile
+  get "/administrator/message/profile/finalize/:profile_id" => "profiles#finalize", as: :administrator_finalize_message_profile
+  post "/administrator/message/profile/update" => "profiles#update", as: :administrator_update_message_profile
+  get "/administrator/message/profile/list" => "profiles#list", as: :list_administrator_message_profile
+  get "/administrator/message/profile/enable/:profile_id" => "profiles#enable", as: :administrator_enable_profile
+  get "/administrator/message/profile/disable/:profile_id" => "profiles#disable", as: :administrator_disable_profile
+
+  get '/customer/email' => 'customer_emails#new', as: :customer_email
+  post '/customer/email/send' => 'customer_emails#send_message', as: :customer_send_email
+
+  get '/administrator/email' => 'administrator_email#new', as: :administrator_email
+  post '/administrator/email/send' => 'administrator_email#send_message', as: :administrator_send_email
+  get "/administrator/profile/custom_fields" => "profiles#get_column_header"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,60 @@
+<!-- Title area -->
+<div class="titleArea">
+    <div class="wrapper">
+        <div class="pageTitle">
+            <h5>Administrateur</h5>
+            <span>Finaliser le profil email: <%= @profile.name %></span>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<%#= render "messages/shared/sub_menu" %>
+
+<div class="line"></div>
+
+<!-- Main content wrapper -->
+<div class="wrapper">
+  <%= @error_message %>
+  <%= @success_message %>
+
+  <%= form_tag administrator_update_email_profile_path do %>
+    <%= hidden_field_tag "profile_id", @profile.id %>
+    <fieldset>
+      <div class="widget">
+        <div class="title"><img src="<%= asset_path 'icons/dark/users.png' %>" alt="" class="titleIcon" /><h6>Finaliser la création d'un profil</h6></div>
+
+          <% i = 0 %>
+          <% while i < @profile.number_of_columns.to_i %>
+            <div class="formRow dnone">
+              <label>Colonne <%= i %></label>
+              <div class="formRight">
+                <span class = "oneTwo">
+                  <%= text_field_tag "column#{i}", @sample_data[i], placeholder: "Donnée #{i}", readonly: true %>
+                </span>
+                <span class = "oneTwo">
+                  <%= text_field_tag "alias#{i}", (@aliases[i].match(/Colonne.*?/) rescue nil).blank? ? @aliases[i] : nil, placeholder: "Alias #{i}", list: "data" %>
+                  <datalist id="data">
+                    <option>EMAIL</option>
+                  </datalist>
+
+                </span>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <% i += 1 %>
+          <% end %>
+
+          <div class="formRow">
+            <%= submit_tag 'Valider', class: 'basic' %>
+          </div>
+      </div>
+    </fieldset>
+  <% end %>
+
+
+</div>
+<!-- End Main content wrapper -->
