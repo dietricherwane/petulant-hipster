@@ -270,7 +270,7 @@ class CustomerProfilesController < ApplicationController
   end
 
   def get_column_header
-    @column_headers = Profile.where("name = ? AND customer_id IS NOT NULL", params[:selected_profile]).first.aliases.split("|") rescue ""
+    @column_headers = Profile.where("name = ?", params[:selected_profile]).first.aliases.split("|") rescue ""
     content = "nil"
 
     unless @column_headers.blank?

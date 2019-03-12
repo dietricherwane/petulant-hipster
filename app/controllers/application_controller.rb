@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
   	n.to_s.match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? true : false
   end
 
+  # Check if the parameter is not an email
+  def not_an_email?(e)
+  	e.to_s.match(/^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i) == nil ? true : false
+  end
+
   # Overwriting the sign_out redirect path method
 	def after_sign_out_path_for(resource_or_scope)
 		new_user_session_path

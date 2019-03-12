@@ -26,9 +26,10 @@
     <!-- Left navigation -->
     <ul id="menu" class="nav">
       <li class="mail">
-        <a href="#" class="<%= @message_active ? @message_active : 'exp inactive' %>" id = "<%= @message_current_id %>"><span>Messages</span><strong>1</strong></a>
+        <a href="#" class="<%= @message_active ? @message_active : 'exp inactive' %>" id = "<%= @message_current_id %>"><span>Messages</span><strong>2</strong></a>
         <ul class = "sub">
-          <li class = "<%= @new_message_active_subclass %>"><%= link_to 'Envoyer un message', customer_message_path %></li>
+          <li class = "<%= @new_message_active_subclass %>"><%= link_to 'Envoyer des SMS', customer_message_path %></li>
+          <li class = "<%= @new_email_active_subclass %>"><%= link_to 'Envoyer des Emails', customer_email_path %></li>
         </ul>
       </li>
       <li class="files">

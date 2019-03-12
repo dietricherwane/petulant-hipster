@@ -1,0 +1,2 @@
+module AdministratorEmailHelper
+end

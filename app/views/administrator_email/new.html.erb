@@ -1,0 +1,94 @@
+<%= javascript_include_tag "ckeditor" %>
+<%#= javascript_include_tag "customer_update_profile" %>
+
+<!-- Title area -->
+<div class="titleArea">
+    <div class="wrapper">
+        <div class="pageTitle">
+            <h5>Emails</h5>
+            <span>Interface d'envoi d'emails aux différentes catégories</span>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<%= render "administrator_email/shared/sub_menu" %>
+
+<div class="line"></div>
+
+<!-- Main content wrapper -->
+<div class="wrapper">
+  <div class="nNote nInformation hideit">
+    <p>
+      <strong>Email unique: </strong>Envoyer un message à un seul email.<br />
+      <strong>Liste d'emails: </strong>Envoyer un message à une liste d'emails au format csv.
+    </p>
+  </div>
+
+  <%= @error_message %>
+  <%= @success_message %>
+
+  <%= form_tag administrator_send_email_path, multipart: true do %>
+    <fieldset>
+      <div class="widget">
+        <div class="title"><img src="<%= asset_path 'icons/dark/users.png' %>" alt="" class="titleIcon" /><h6>Envoyer un email à une catégorie d'abonnés</h6></div>
+
+          <div class="formRow">
+            <label><%= label_tag(:profile_id, "Profil") %></label>
+            <div class="formRight">
+              <%= collection_select(:post, :profile_id, @profiles, :id, :name, options ={prompt: "-Veuillez choisir un profil-", selected: (params[:post][:profile_id] rescue nil)}, html_options = {class: "selector"}) %>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="formRow">
+            <label>Email</label>
+            <div class="formRight">
+              <%= text_field_tag "post[email]", (params[:post][:email] rescue nil), placeholder: "monemail@mondomaine.extension" %>
+              <span class="formNote">A remplir si vous avez choisi le profil: Email unique</span>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="formRow">
+            <label>Fichier d'abonnés</label>
+            <div class="formRight">
+              <%= file_field_tag 'post[subscribers_file]' %>
+              <span class="formNote">A remplir si vous avez choisi le profil: Liste d'emails</span>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="formRow">
+            <label>Objet du message</label>
+            <div class="formRight">
+              <%= text_field_tag "post[object]", (params[:post][:object] rescue nil), placeholder: "Objet du message" %>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="formRow">
+            <label>Emetteur du message</label>
+            <div class="formRight">
+              <%= text_field_tag "post[sender]", (params[:post][:sender] rescue nil), placeholder: "Emetteur du message" %>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="formRow">
+            <label><%= label_tag(:message, "Message") %></label>
+            <div class="formRight">
+              <%= text_area_tag "post[message]", (params[:post][:message] rescue nil), placeholder: "Veuillez entrer le contenu du message", rows: 8 %>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div id = "tarea">
+
+          </div>
+
+          <div class="formRow">
+            <%= submit_tag 'Envoyer', class: 'basic' %>
+          </div>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+<!-- End Main content wrapper -->
