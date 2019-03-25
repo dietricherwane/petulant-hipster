@@ -165,7 +165,7 @@ class AdministratorEmailController < ApplicationController
     @message_current_id = "current"
     @new_email_active_subclass = "this"
 
-    @profiles = Profile.where("published IS NOT FALSE AND ((user_id IS NULL AND customer_id IS NULL) OR user_id IS NOT NULL) AND email IS TRUE")
+    @profiles = Profile.where("published IS NOT FALSE AND ((user_id IS NULL AND customer_id IS NULL) OR user_id = #{current_user.id}) AND email IS TRUE")
   end
 
   def set_transaction(description, subscribers_count)

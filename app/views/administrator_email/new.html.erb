@@ -43,21 +43,25 @@
             </div>
             <div class="clear"></div>
           </div>
-          <div class="formRow">
-            <label>Email</label>
-            <div class="formRight">
-              <%= text_field_tag "post[email]", (params[:post][:email] rescue nil), placeholder: "monemail@mondomaine.extension" %>
-              <span class="formNote">A remplir si vous avez choisi le profil: Email unique</span>
+          <div id = "numero_unique">
+            <div class="formRow">
+              <label>Email</label>
+              <div class="formRight">
+                <%= text_field_tag "post[email]", (params[:post][:email] rescue nil), placeholder: "monemail@mondomaine.extension" %>
+                <span class="formNote">A remplir si vous avez choisi le profil: Email unique</span>
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
           </div>
-          <div class="formRow">
-            <label>Fichier d'abonnés</label>
-            <div class="formRight">
-              <%= file_field_tag 'post[subscribers_file]' %>
-              <span class="formNote">A remplir si vous avez choisi le profil: Liste d'emails</span>
+          <div id = "liste_numeros">
+            <div class="formRow">
+              <label>Fichier d'abonnés</label>
+              <div class="formRight">
+                <%= file_field_tag 'post[subscribers_file]' %>
+                <span class="formNote">A remplir si vous avez choisi le profil: Liste d'emails</span>
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
           </div>
           <div class="formRow">
             <label>Objet du message</label>
