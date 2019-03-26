@@ -31,7 +31,7 @@ Rails.application.configure do
 		:port => 587,
 		:authentication => :login,
 		:user_name => "dietricherwane@gmail.com",
-		:password => 'Ras444Al464Gul'
+		:password => 'Jeanne444Darc464'
 	}
 
   # Show full error reports and disable caching.
