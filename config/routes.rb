@@ -18,12 +18,16 @@ Rails.application.routes.draw do
   get "/md5_encrypt/:password/:service_id" => 'messages#api_md5_encrypt'
 
   get 'transactions' => 'transactions#list', as: :transactions
+  get 'transactions/email' => 'email_transactions#list', as: :email_transactions
   get 'customer/transactions' => 'customer_transactions#list', as: :customer_transactions
 
   get 'message_logs/:transaction_id' => 'message_logs#list', as: :message_logs
   get 'message_logs/export/:transaction_id' => 'message_logs#export', as: :export_message_logs
   get 'customer/message_logs/:transaction_id' => 'customer_message_logs#list', as: :customer_message_logs
   get 'customer/message_logs/export/:transaction_id' => 'customer_message_logs#export', as: :export_customer_message_logs
+
+  #get 'email_logs/:transaction_id' => 'message_logs#list', as: :message_logs
+  #get 'message_logs/export/:transaction_id' => 'message_logs#export', as: :export_message_logs
 
   get 'search' => 'search#index', as: :search
   get 'customer/search' => 'customer_search#index', as: :customer_search
