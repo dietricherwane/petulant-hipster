@@ -40,7 +40,11 @@
         </ul>
       </li>
       <li class="files">
-        <a href="<%= transactions_path %>" class="<%= @transactions_active ? 'active' : '' %>"><span>Transactions</span></a>
+        <a href="#" class="<%= @transactions_active ? @transactions_active : 'exp inactive' %>" id = "<%= @transaction_current_id %>"><span>Transactions</span><strong>2</strong></a>
+        <ul class = "sub">
+          <li class = "<%= @transaction_active_subclass %>"><%= link_to 'Liste des messages', transactions_path %></li>
+          <li class = "<%= @email_transaction_active_subclass %>"><%= link_to 'Liste des Emails', transactions_path %></li>
+        </ul>
       </li>
       <li class="magnify">
         <a href="<%= search_path %>" class="<%= @search_active ? 'active' : '' %>"><span>Rechercher</span></a>
