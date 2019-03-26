@@ -43,7 +43,7 @@
         <a href="#" class="<%= @transactions_active ? @transactions_active : 'exp inactive' %>" id = "<%= @transaction_current_id %>"><span>Transactions</span><strong>2</strong></a>
         <ul class = "sub">
           <li class = "<%= @transaction_active_subclass %>"><%= link_to 'Liste des messages', transactions_path %></li>
-          <li class = "<%= @email_transaction_active_subclass %>"><%= link_to 'Liste des Emails', transactions_path %></li>
+          <li class = "<%= @email_transaction_active_subclass %>"><%= link_to 'Liste des Emails', email_transactions_path %></li>
         </ul>
       </li>
       <li class="magnify">
