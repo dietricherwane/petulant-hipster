@@ -178,7 +178,7 @@ class CustomerEmailsController < ApplicationController
     @message_current_id = "current"
     @new_email_active_subclass = "this"
 
-    @profiles = Profile.where("published IS NOT FALSE AND (customer_id IS NULL OR customer_id = #{session[:customer].id}) AND email IS TRUE")
+    @profiles = Profile.where("published IS NOT FALSE AND ((customer_id IS NULL AND user_id IS NULL) OR customer_id = #{session[:customer].id}) AND email IS TRUE")
   end
 
   def set_transaction(description, subscribers_count)

@@ -111,33 +111,33 @@ class MessagesController < ApplicationController
       @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages, user_id: (@service.user.id rescue nil))
 
       @success_message = messages!("Le message a été envoyé. Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
-    end
-
-    if @profile.name == "Liste de numéros"
-      set_transaction("Envoi de message à une liste de numéros.", 0)
-      deliver_message_to_excel_list
     else
-      if @profile.msisdn_column.blank?
-        @error_message = messages!("Veuillez définir la colonne contenant le MSISDN", "error")
-        @error_status = 1
+      if @profile.name == "Liste de numéros"
+        set_transaction("Envoi de message à une liste de numéros.", 0)
+        deliver_message_to_excel_list
       else
-        @parameter = Parameter.first
-        @message_backup = @message
-        set_transaction("Envoi de message au pofil: #{@profile.name}.", 0)
-        profile_data = ProfileData.where("profile_id = #{@profile.id}")
-        profile_data.each do |pd|
-          msisdn = pd.row_content.split(@parameter.profile_separator)[@profile.msisdn_column]
-          if msisdn.blank? || not_a_number?(msisdn) || (msisdn.length != 11)
-          else
-            @message = format_message(pd, @message)
-            send_message_request(msisdn)
-            @message = @message_backup
+        if @profile.msisdn_column.blank?
+          @error_message = messages!("Veuillez définir la colonne contenant le MSISDN", "error")
+          @error_status = 1
+        else
+          @parameter = Parameter.first
+          @message_backup = @message
+          set_transaction("Envoi de message au pofil: #{@profile.name}.", 0)
+          profile_data = ProfileData.where("profile_id = #{@profile.id}")
+          profile_data.each do |pd|
+            msisdn = pd.row_content.split(@parameter.profile_separator)[@profile.msisdn_column]
+            if msisdn.blank? || not_a_number?(msisdn) || (msisdn.length != 11)
+            else
+              @message = format_message(pd, @message)
+              send_message_request(msisdn)
+              @message = @message_backup
+            end
           end
+          @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages, user_id: (current_user.id rescue nil))
+          @success_message = messages!("Les messages ont été envoyés. Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
         end
-        @transaction.update_attributes(ended_at: DateTime.now, send_messages: @sent_messages, failed_messages: @failed_messages, user_id: (current_user.id rescue nil))
-        @success_message = messages!("Les messages ont été envoyés. Veuillez consulter l'état de l'envoi dans la liste des tansactions.", "success")
       end
-    end
+    end  
   end
 
   def format_message(pd, message)
@@ -312,7 +312,7 @@ class MessagesController < ApplicationController
     @message_current_id = "current"
     @new_message_active_subclass = "this"
 
-    @profiles = Profile.where("published IS NOT FALSE AND ((user_id IS NULL AND customer_id IS NULL) OR user_id IS NOT NULL)")
+    @profiles = Profile.where("published IS NOT FALSE AND ((user_id IS NULL AND customer_id IS NULL) OR user_id = #{current_user.id}) AND email IS NOT TRUE")
   end
 
   def api_md5_encrypt

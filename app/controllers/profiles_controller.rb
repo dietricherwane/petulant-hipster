@@ -290,4 +290,47 @@ class ProfilesController < ApplicationController
     @profile_current_id = "current"
     @new_profile_active_subclass = "this"
   end
+
+  def get_column_header
+    @column_headers = Profile.where("name = ?", params[:selected_profile]).first.aliases.split("|") rescue ""
+    content = "nil"
+
+    unless @column_headers.blank?
+      options = ""
+      format_column_header
+      @formatted_column_headers.split("|").each do |fch|
+        options << "<option>#{fch}</option>"
+      end
+      content = %Q[
+        <div class="formRow">
+          <label>Colonnes personnalisées</label>
+          <div class="formRight">
+            <div class="selector" id="sel">
+            <select class="selector" id="custom_columns" name="post[custom_column]" style="opacity: 0;"><option value="">-Veuillez insérer une colonne-</option>
+              #{options}
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      ]
+    end
+
+    render plain: content
+  end
+
+  def format_column_header
+    @formatted_column_headers = ""
+
+    i = 0
+    @column_headers.each do |column_header|
+      if column_header.blank?
+        @formatted_column_headers << "Colonne #{i.to_s}|"
+      else
+        @formatted_column_headers << column_header << "|"
+      end
+      i += 1
+    end
+
+    @formatted_column_headers = @formatted_column_headers[0..-2]
+  end
 end

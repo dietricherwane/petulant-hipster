@@ -40,21 +40,25 @@
             </div>
             <div class="clear"></div>
           </div>
-          <div class="formRow">
-            <label><%= label_tag(:custom_number, "Numéro") %></label>
-            <div class="formRight">
-              <%= text_field_tag "post[custom_number]", (params[:post][:custom_number] rescue nil), placeholder: "22501020304" %>
-              <span class="formNote">A remplir si vous avez choisi le profil: Numéro unique</span>
+          <div id = "numero_unique">
+            <div class="formRow">
+              <label><%= label_tag(:custom_number, "Numéro") %></label>
+              <div class="formRight">
+                <%= text_field_tag "post[custom_number]", (params[:post][:custom_number] rescue nil), placeholder: "22501020304" %>
+                <span class="formNote">A remplir si vous avez choisi le profil: Numéro unique</span>
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
           </div>
-          <div class="formRow">
-            <label><%= label_tag(:subscribers_file, "Fichier d'abonnés") %></label>
-            <div class="formRight">
-              <%= file_field_tag 'post[subscribers_file]' %>
-              <span class="formNote">A remplir si vous avez choisi le profil: Liste de numéros</span>
+          <div id = "liste_numeros">
+            <div class="formRow">
+              <label><%= label_tag(:subscribers_file, "Fichier d'abonnés") %></label>
+              <div class="formRight">
+                <%= file_field_tag 'post[subscribers_file]' %>
+                <span class="formNote">A remplir si vous avez choisi le profil: Liste de numéros</span>
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
           </div>
           <div class="formRow">
             <label><%= label_tag(:message, "Message") %></label>
@@ -64,6 +68,9 @@
             </div>
             <div class="clear"></div>
           </div>
+          <div id = "tarea">
+
+          </div>
 
           <div class="formRow">
             <%= submit_tag 'Envoyer', class: 'basic' %>
@@ -72,6 +79,7 @@
     </fieldset>
   <% end %>
 
+  <%#= javascript_include_tag 'update_profile' %>
 
 </div>
 <!-- End Main content wrapper -->
