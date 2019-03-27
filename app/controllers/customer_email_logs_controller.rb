@@ -1,0 +1,2 @@
+class CustomerEmailLogsController < ApplicationController
+end

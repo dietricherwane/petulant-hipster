@@ -1,0 +1,2 @@
+module CustomerEmailTransactionsHelper
+end
