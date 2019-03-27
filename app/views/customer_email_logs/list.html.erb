@@ -1,0 +1,40 @@
+<!-- Title area -->
+<div class="titleArea">
+    <div class="wrapper">
+        <div class="pageTitle">
+            <h5>Liste des emails associés à la transaction: <%= "[ #{@transaction.profile.name} ] du #{@transaction.started_at.strftime('%d-%m-%Y')} - #{@transaction.started_at.strftime('%Hh %Mmn')}" %></h5>
+            <span>Nombre d'emails: <b><%= @message_logs_count %></b></span>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<%= render "customer_email_logs/shared/sub_menu" %>
+
+<div class="line"></div>
+
+<!-- Main content wrapper -->
+<div class="wrapper">
+  <div class="widget">
+    <div class="title"><img src="<%= asset_path 'icons/dark/full2.png' %>" alt="" class="titleIcon" /><h6>Liste des emails</h6></div>
+    <table cellpadding="0" cellspacing="0" border="0" class="sTable taskWidget" width = "100%">
+
+      <%= render "customer_email_logs/shared/email_logs_list", message_logs: @message_logs %>
+
+      <tfoot>
+        <tr>
+          <td colspan="8">
+            <div class="tPagination">
+              <%= paginate @message_logs, :params => {:controller => :customer_email_logs, :action => :list} %>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</div>
+<!-- End Main content wrapper -->
