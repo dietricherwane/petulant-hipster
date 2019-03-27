@@ -21,17 +21,17 @@ class EmailLogsController < ApplicationController
     book = Spreadsheet::Workbook.new
     sheet1 = book.create_worksheet
     sheet1.name = 'export'
-    @transaction = SmsTransaction.find_by_id(params[:transaction_id])
+    @transaction = EmailTransaction.find_by_id(params[:transaction_id])
     if @transaction.blank?
       render file: "#{Rails.root}/public/404.html", status: 404, layout: false
     else
-      @message_logs = @transaction.message_logs
+      @message_logs = @transaction.email_logs
       r = sheet1.row(0)
-      r.push "MSISDN", "Message", "Date et heure d'envoi"
+      r.push "Emetteur", "Sujet", "Message", "Date et heure d'envoi"
       i = 1
       @message_logs.each do |message_log|
         r = sheet1.row(i)
-        r.push message_log.msisdn, message_log.message, message_log.created_at
+        r.push message_log.sender, message_log.subject, message_log.message, message_log.created_at
         i += 1
       end
 

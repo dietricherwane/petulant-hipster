@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   get 'transactions' => 'transactions#list', as: :transactions
   get 'transactions/email' => 'email_transactions#list', as: :email_transactions
+  get 'customer/transactions/email' => 'customer_email_transactions#list', as: :customer_email_transactions
   get 'customer/transactions' => 'customer_transactions#list', as: :customer_transactions
 
   get 'message_logs/:transaction_id' => 'message_logs#list', as: :message_logs
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
 
   get 'email_logs/:transaction_id' => 'email_logs#list', as: :email_logs
   get 'email_logs/export/:transaction_id' => 'email_logs#export', as: :export_email_logs
+  get 'customer/email_logs/:transaction_id' => 'customer_email_logs#list', as: :customer_email_logs
+  get 'customer/email_logs/export/:transaction_id' => 'customer/email_logs#export', as: :customer_export_email_logs
 
   get 'search' => 'search#index', as: :search
   get 'customer/search' => 'customer_search#index', as: :customer_search
