@@ -2,12 +2,12 @@ class EmailLog < ActiveRecord::Base
   # Relationships
   belongs_to :subscriber
   belongs_to :profile
-  belongs_to :sms_transaction
+  belongs_to :email_transaction
   belongs_to :customer
   belongs_to :user
 
   # Set accessible fields
-  attr_accessible :subscriber_id, :msisdn, :profile_id, :period_id, :message, :sms_transaction_id, :status, :message_id, :created_at, :customer_id, :user_id
+  attr_accessible :subscriber_id, :msisdn, :profile_id, :period_id, :message, :sms_transaction_id, :status, :message_id, :created_at, :customer_id, :user_id, :email_transaction_id, :subject, :sender
 
   # Renaming attributes into more friendly text
   HUMANIZED_ATTRIBUTES = {

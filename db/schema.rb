@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190302225905) do
+ActiveRecord::Schema.define(version: 20190327055332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pgcrypto"
 
   create_table "custom_logs", force: true do |t|
     t.text     "sender_service"
@@ -74,6 +73,9 @@ ActiveRecord::Schema.define(version: 20190302225905) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "email_transaction_id"
+    t.string   "subject"
+    t.string   "sender"
   end
 
   create_table "email_transactions", force: true do |t|

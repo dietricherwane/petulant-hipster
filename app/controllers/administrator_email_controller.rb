@@ -92,6 +92,7 @@ class AdministratorEmailController < ApplicationController
               else
                 @message = format_message(pd, @message)
                 send_message_request(email, @object, @sender, @message)
+                @transaction.email_logs.create(subscriber_id: current_user.id rescue nil), email: email, profile_id: @profile.id, message: @message, subject: @object, sender: @sender) rescue nil
                 @message = @message_backup
                 sent_messages += 1
               end

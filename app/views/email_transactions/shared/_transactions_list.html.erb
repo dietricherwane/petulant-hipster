@@ -15,14 +15,14 @@
       <tr>
         <% status = (transaction.ended_at.blank? ? 'taskD' : 'taskPr') %>
         <td class = "<%= status %>">
-          <%#= link_to transaction.profile.name, email_logs_path(transaction.id) %>
+          <%= link_to transaction.description, email_logs_path(transaction.id) %>
         </td>
         <td>
-          <%= transaction.service_id %>
+          <%= Customer.find_by_id(transaction.customer_id).label rescue "Administrateur" %>
           <%#= transaction.sender_service %>
         </td>
         <td>
-          <%= transaction.sender_service %>
+          <%#= transaction.sender_service %>
           <%#= transaction.sender_service %>
         </td>
         <td>

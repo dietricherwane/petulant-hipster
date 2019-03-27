@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   get 'customer/message_logs/:transaction_id' => 'customer_message_logs#list', as: :customer_message_logs
   get 'customer/message_logs/export/:transaction_id' => 'customer_message_logs#export', as: :export_customer_message_logs
 
-  #get 'email_logs/:transaction_id' => 'message_logs#list', as: :message_logs
-  #get 'message_logs/export/:transaction_id' => 'message_logs#export', as: :export_message_logs
+  get 'email_logs/:transaction_id' => 'email_logs#list', as: :email_logs
+  get 'email_logs/export/:transaction_id' => 'email_logs#export', as: :export_email_logs
 
   get 'search' => 'search#index', as: :search
   get 'customer/search' => 'customer_search#index', as: :customer_search
