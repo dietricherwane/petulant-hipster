@@ -3,6 +3,7 @@ class CustomersController < ApplicationController
 
   before_action :init_customer_view, only: [:new, :list]
   prepend_before_filter :authenticate_user!, only: [:new, :create]
+  before_action :customer_authentication_filter
 
   layout "administrator"
 
