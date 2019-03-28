@@ -1,4 +1,5 @@
 class CustomerProfilesController < ApplicationController
+  before_action :customer_authentication_filter
   include MessagesHelper
 
   layout "customer"

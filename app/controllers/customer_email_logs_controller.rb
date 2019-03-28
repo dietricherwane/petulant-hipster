@@ -1,5 +1,6 @@
 class CustomerEmailLogsController < ApplicationController
   #prepend_before_filter :authenticate_user!
+  before_action :customer_authentication_filter
 
   layout "customer"
 

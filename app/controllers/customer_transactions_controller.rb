@@ -1,5 +1,5 @@
 class CustomerTransactionsController < ApplicationController
-
+  before_action :customer_authentication_filter
   layout "customer"
 
   def list
