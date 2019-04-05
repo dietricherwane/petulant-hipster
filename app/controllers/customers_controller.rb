@@ -5,7 +5,7 @@ class CustomersController < ApplicationController
   prepend_before_filter :authenticate_user!, only: [:new, :create]
   #before_action :customer_authentication_filter
 
-  layout "administrator"
+  #layout "administrator"
 
   layout :select_layout
 
