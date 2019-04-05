@@ -10,6 +10,7 @@ class CustomersController < ApplicationController
   layout :select_layout
 
   def select_layout
+    session[:customer] = nil if !current_user.blank?
     case session[:customer]
     when nil
         return "administrator"
